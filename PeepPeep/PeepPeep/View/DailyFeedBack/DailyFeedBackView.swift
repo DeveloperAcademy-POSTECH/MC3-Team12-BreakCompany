@@ -1,20 +1,20 @@
 //
-//  SplashView.swift
+//  DailyFeedBack.swift
 //  PeepPeep
 //
-//  Created by 예슬 on 2023/07/12.
+//  Created by MAX on 2023/07/12.
 //
 
 import SwiftUI
 
-struct SplashView: View {
+struct DailyFeedBackView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct SplashView_Previews: PreviewProvider {
+struct DailyFeedBackView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        DailyFeedBackView()
     }
 }
