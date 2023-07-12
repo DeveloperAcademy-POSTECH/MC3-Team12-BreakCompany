@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C9902A852A5D954100D3E345 /* PeepPeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9902A842A5D954100D3E345 /* PeepPeepApp.swift */; };
-		C9902A872A5D954100D3E345 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9902A862A5D954100D3E345 /* ContentView.swift */; };
-		C9902A892A5D954100D3E345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9902A882A5D954100D3E345 /* Assets.xcassets */; };
-		C9902A8C2A5D954100D3E345 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9902A8B2A5D954100D3E345 /* Preview Assets.xcassets */; };
-		C9902A942A5D957400D3E345 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9902A932A5D957400D3E345 /* Colors.swift */; };
-		C9902A962A5D958400D3E345 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9902A952A5D958400D3E345 /* Styles.swift */; };
-		C9902AA42A5D970F00D3E345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9902AA32A5D970F00D3E345 /* AppDelegate.swift */; };
-		C9902AA72A5D988500D3E345 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C9902AA62A5D988500D3E345 /* .swiftlint.yml */; };
+		C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953E82A5E633F0090E916 /* PeepPeepApp.swift */; };
+		C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953EA2A5E633F0090E916 /* ContentView.swift */; };
+		C91953ED2A5E63400090E916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91953EC2A5E63400090E916 /* Assets.xcassets */; };
+		C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91953EF2A5E63400090E916 /* Preview Assets.xcassets */; };
+		C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953F62A5E63500090E916 /* AppDelegate.swift */; };
+		C91954072A5E63BE0090E916 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954062A5E63BE0090E916 /* Colors.swift */; };
+		C91954092A5E63C50090E916 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954082A5E63C50090E916 /* Styles.swift */; };
+		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C9902A812A5D954100D3E345 /* PeepPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeepPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9902A842A5D954100D3E345 /* PeepPeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeepPeepApp.swift; sourceTree = "<group>"; };
-		C9902A862A5D954100D3E345 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C9902A882A5D954100D3E345 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C9902A8B2A5D954100D3E345 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C9902A932A5D957400D3E345 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		C9902A952A5D958400D3E345 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		C9902AA32A5D970F00D3E345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C9902AA62A5D988500D3E345 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C91953E52A5E633F0090E916 /* PeepPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeepPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91953E82A5E633F0090E916 /* PeepPeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeepPeepApp.swift; sourceTree = "<group>"; };
+		C91953EA2A5E633F0090E916 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C91953EC2A5E63400090E916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C91953EF2A5E63400090E916 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C91953F62A5E63500090E916 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C91954062A5E63BE0090E916 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C91954082A5E63C50090E916 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C9902A7E2A5D954100D3E345 /* Frameworks */ = {
+		C91953E22A5E633F0090E916 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,185 +40,184 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C920FE8A2A5E3E2000EC115C /* Common */ = {
+		C91953DC2A5E633F0090E916 = {
 			isa = PBXGroup;
 			children = (
-				C9902A922A5D956400D3E345 /* Themes */,
-				C9902A972A5D95A000D3E345 /* Utils */,
-				C920FE8C2A5E3E4200EC115C /* Extensions */,
-				C920FE8B2A5E3E2E00EC115C /* Components */,
-			);
-			name = Common;
-			path = "채ㅡㅡㅑㅜ";
-			sourceTree = "<group>";
-		};
-		C920FE8B2A5E3E2E00EC115C /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		C920FE8C2A5E3E4200EC115C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		C920FE8D2A5E506D00EC115C /* Widget */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Widget;
-			sourceTree = "<group>";
-		};
-		C9902A782A5D954100D3E345 = {
-			isa = PBXGroup;
-			children = (
-				C9902AA62A5D988500D3E345 /* .swiftlint.yml */,
-				C9902A832A5D954100D3E345 /* PeepPeep */,
-				C9902A822A5D954100D3E345 /* Products */,
+				C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */,
+				C91953E72A5E633F0090E916 /* PeepPeep */,
+				C91953E62A5E633F0090E916 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C9902A822A5D954100D3E345 /* Products */ = {
+		C91953E62A5E633F0090E916 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C9902A812A5D954100D3E345 /* PeepPeep.app */,
+				C91953E52A5E633F0090E916 /* PeepPeep.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C9902A832A5D954100D3E345 /* PeepPeep */ = {
+		C91953E72A5E633F0090E916 /* PeepPeep */ = {
 			isa = PBXGroup;
 			children = (
-				C9902AA32A5D970F00D3E345 /* AppDelegate.swift */,
-				C9902A842A5D954100D3E345 /* PeepPeepApp.swift */,
-				C9902A862A5D954100D3E345 /* ContentView.swift */,
-				C9902A982A5D95B500D3E345 /* Model */,
-				C9902A992A5D95BE00D3E345 /* View */,
-				C9902A9A2A5D95C500D3E345 /* ViewModel */,
-				C920FE8A2A5E3E2000EC115C /* Common */,
-				C9902A882A5D954100D3E345 /* Assets.xcassets */,
-				C9902A8A2A5D954100D3E345 /* Preview Content */,
+				C91953F62A5E63500090E916 /* AppDelegate.swift */,
+				C91953E82A5E633F0090E916 /* PeepPeepApp.swift */,
+				C91953EA2A5E633F0090E916 /* ContentView.swift */,
+				C91953F82A5E63560090E916 /* Model */,
+				C91954032A5E63AB0090E916 /* ViewModel */,
+				C91953FA2A5E63630090E916 /* View */,
+				C91954042A5E63B00090E916 /* Common */,
+				C91953EC2A5E63400090E916 /* Assets.xcassets */,
+				C91953EE2A5E63400090E916 /* Preview Content */,
 			);
 			path = PeepPeep;
 			sourceTree = "<group>";
 		};
-		C9902A8A2A5D954100D3E345 /* Preview Content */ = {
+		C91953EE2A5E63400090E916 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				C9902A8B2A5D954100D3E345 /* Preview Assets.xcassets */,
+				C91953EF2A5E63400090E916 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C9902A922A5D956400D3E345 /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				C9902A932A5D957400D3E345 /* Colors.swift */,
-				C9902A952A5D958400D3E345 /* Styles.swift */,
-			);
-			path = Themes;
-			sourceTree = "<group>";
-		};
-		C9902A972A5D95A000D3E345 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		C9902A982A5D95B500D3E345 /* Model */ = {
+		C91953F82A5E63560090E916 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C9902A992A5D95BE00D3E345 /* View */ = {
+		C91953FA2A5E63630090E916 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C9902A9B2A5D962800D3E345 /* SplashScreen */,
-				C9902A9C2A5D963C00D3E345 /* InitialSetupScreen */,
-				C9902A9D2A5D964D00D3E345 /* MainScreen */,
-				C9902A9F2A5D965D00D3E345 /* DailyFeedBack */,
-				C9902AA02A5D966D00D3E345 /* WeeklyFeedBack */,
-				C9902AA12A5D967E00D3E345 /* FinalReport */,
-				C9902AA22A5D968B00D3E345 /* CostumeBook */,
-				C920FE8D2A5E506D00EC115C /* Widget */,
+				C91954022A5E63A20090E916 /* SplashScreen */,
+				C91954012A5E63990090E916 /* InitialSetupScreen */,
+				C91954002A5E63920090E916 /* MainScreen */,
+				C91953FF2A5E638A0090E916 /* DailyFeedBack */,
+				C91953FE2A5E637F0090E916 /* WeeklyFeedBack */,
+				C91953FD2A5E63780090E916 /* FinalReport */,
+				C91953FC2A5E63710090E916 /* CostumeBook */,
+				C91953FB2A5E636A0090E916 /* Widget */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		C9902A9A2A5D95C500D3E345 /* ViewModel */ = {
+		C91953FB2A5E636A0090E916 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModel;
+			path = Widget;
 			sourceTree = "<group>";
 		};
-		C9902A9B2A5D962800D3E345 /* SplashScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SplashScreen;
-			sourceTree = "<group>";
-		};
-		C9902A9C2A5D963C00D3E345 /* InitialSetupScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InitialSetupScreen;
-			sourceTree = "<group>";
-		};
-		C9902A9D2A5D964D00D3E345 /* MainScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MainScreen;
-			sourceTree = "<group>";
-		};
-		C9902A9F2A5D965D00D3E345 /* DailyFeedBack */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DailyFeedBack;
-			sourceTree = "<group>";
-		};
-		C9902AA02A5D966D00D3E345 /* WeeklyFeedBack */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WeeklyFeedBack;
-			sourceTree = "<group>";
-		};
-		C9902AA12A5D967E00D3E345 /* FinalReport */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FinalReport;
-			sourceTree = "<group>";
-		};
-		C9902AA22A5D968B00D3E345 /* CostumeBook */ = {
+		C91953FC2A5E63710090E916 /* CostumeBook */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = CostumeBook;
 			sourceTree = "<group>";
 		};
+		C91953FD2A5E63780090E916 /* FinalReport */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FinalReport;
+			sourceTree = "<group>";
+		};
+		C91953FE2A5E637F0090E916 /* WeeklyFeedBack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeeklyFeedBack;
+			sourceTree = "<group>";
+		};
+		C91953FF2A5E638A0090E916 /* DailyFeedBack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DailyFeedBack;
+			sourceTree = "<group>";
+		};
+		C91954002A5E63920090E916 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		C91954012A5E63990090E916 /* InitialSetupScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InitialSetupScreen;
+			sourceTree = "<group>";
+		};
+		C91954022A5E63A20090E916 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		C91954032A5E63AB0090E916 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C91954042A5E63B00090E916 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C91954052A5E63B40090E916 /* Themes */,
+				C919540C2A5E63D70090E916 /* Components */,
+				C919540B2A5E63CE0090E916 /* Extensions */,
+				C919540A2A5E63CA0090E916 /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C91954052A5E63B40090E916 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				C91954062A5E63BE0090E916 /* Colors.swift */,
+				C91954082A5E63C50090E916 /* Styles.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		C919540A2A5E63CA0090E916 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C919540B2A5E63CE0090E916 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C919540C2A5E63D70090E916 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C9902A802A5D954100D3E345 /* PeepPeep */ = {
+		C91953E42A5E633F0090E916 /* PeepPeep */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9902A8F2A5D954100D3E345 /* Build configuration list for PBXNativeTarget "PeepPeep" */;
+			buildConfigurationList = C91953F32A5E63400090E916 /* Build configuration list for PBXNativeTarget "PeepPeep" */;
 			buildPhases = (
-				C9902A7D2A5D954100D3E345 /* Sources */,
-				C9902A7E2A5D954100D3E345 /* Frameworks */,
-				C9902A7F2A5D954100D3E345 /* Resources */,
-				C9902AA52A5D985600D3E345 /* ShellScript */,
+				C91953E12A5E633F0090E916 /* Sources */,
+				C91953E22A5E633F0090E916 /* Frameworks */,
+				C91953E32A5E633F0090E916 /* Resources */,
+				C992F9AC2A5E6B450050EBD1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -226,25 +225,25 @@
 			);
 			name = PeepPeep;
 			productName = PeepPeep;
-			productReference = C9902A812A5D954100D3E345 /* PeepPeep.app */;
+			productReference = C91953E52A5E633F0090E916 /* PeepPeep.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C9902A792A5D954100D3E345 /* Project object */ = {
+		C91953DD2A5E633F0090E916 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					C9902A802A5D954100D3E345 = {
+					C91953E42A5E633F0090E916 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = C9902A7C2A5D954100D3E345 /* Build configuration list for PBXProject "PeepPeep" */;
+			buildConfigurationList = C91953E02A5E633F0090E916 /* Build configuration list for PBXProject "PeepPeep" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,31 +251,31 @@
 				en,
 				Base,
 			);
-			mainGroup = C9902A782A5D954100D3E345;
-			productRefGroup = C9902A822A5D954100D3E345 /* Products */;
+			mainGroup = C91953DC2A5E633F0090E916;
+			productRefGroup = C91953E62A5E633F0090E916 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C9902A802A5D954100D3E345 /* PeepPeep */,
+				C91953E42A5E633F0090E916 /* PeepPeep */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C9902A7F2A5D954100D3E345 /* Resources */ = {
+		C91953E32A5E633F0090E916 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9902AA72A5D988500D3E345 /* .swiftlint.yml in Resources */,
-				C9902A8C2A5D954100D3E345 /* Preview Assets.xcassets in Resources */,
-				C9902A892A5D954100D3E345 /* Assets.xcassets in Resources */,
+				C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */,
+				C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */,
+				C91953ED2A5E63400090E916 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C9902AA52A5D985600D3E345 /* ShellScript */ = {
+		C992F9AC2A5E6B450050EBD1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,27 +290,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C9902A7D2A5D954100D3E345 /* Sources */ = {
+		C91953E12A5E633F0090E916 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9902AA42A5D970F00D3E345 /* AppDelegate.swift in Sources */,
-				C9902A962A5D958400D3E345 /* Styles.swift in Sources */,
-				C9902A872A5D954100D3E345 /* ContentView.swift in Sources */,
-				C9902A942A5D957400D3E345 /* Colors.swift in Sources */,
-				C9902A852A5D954100D3E345 /* PeepPeepApp.swift in Sources */,
+				C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */,
+				C91954092A5E63C50090E916 /* Styles.swift in Sources */,
+				C91954072A5E63BE0090E916 /* Colors.swift in Sources */,
+				C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */,
+				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C9902A8D2A5D954100D3E345 /* Debug */ = {
+		C91953F12A5E63400090E916 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -371,7 +370,7 @@
 			};
 			name = Debug;
 		};
-		C9902A8E2A5D954100D3E345 /* Release */ = {
+		C91953F22A5E63400090E916 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -425,7 +424,7 @@
 			};
 			name = Release;
 		};
-		C9902A902A5D954100D3E345 /* Debug */ = {
+		C91953F42A5E63400090E916 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -454,7 +453,7 @@
 			};
 			name = Debug;
 		};
-		C9902A912A5D954100D3E345 /* Release */ = {
+		C91953F52A5E63400090E916 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -486,25 +485,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9902A7C2A5D954100D3E345 /* Build configuration list for PBXProject "PeepPeep" */ = {
+		C91953E02A5E633F0090E916 /* Build configuration list for PBXProject "PeepPeep" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9902A8D2A5D954100D3E345 /* Debug */,
-				C9902A8E2A5D954100D3E345 /* Release */,
+				C91953F12A5E63400090E916 /* Debug */,
+				C91953F22A5E63400090E916 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9902A8F2A5D954100D3E345 /* Build configuration list for PBXNativeTarget "PeepPeep" */ = {
+		C91953F32A5E63400090E916 /* Build configuration list for PBXNativeTarget "PeepPeep" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C9902A902A5D954100D3E345 /* Debug */,
-				C9902A912A5D954100D3E345 /* Release */,
+				C91953F42A5E63400090E916 /* Debug */,
+				C91953F52A5E63400090E916 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C9902A792A5D954100D3E345 /* Project object */;
+	rootObject = C91953DD2A5E633F0090E916 /* Project object */;
 }

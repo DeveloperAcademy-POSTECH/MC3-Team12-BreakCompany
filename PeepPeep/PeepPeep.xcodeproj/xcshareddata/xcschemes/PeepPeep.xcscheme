@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9902A802A5D954100D3E345"
+               BlueprintIdentifier = "C91953E42A5E633F0090E916"
                BuildableName = "PeepPeep.app"
                BlueprintName = "PeepPeep"
                ReferencedContainer = "container:PeepPeep.xcodeproj">
@@ -43,7 +43,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C9902A802A5D954100D3E345"
+            BlueprintIdentifier = "C91953E42A5E633F0090E916"
             BuildableName = "PeepPeep.app"
             BlueprintName = "PeepPeep"
             ReferencedContainer = "container:PeepPeep.xcodeproj">
@@ -60,7 +60,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C9902A802A5D954100D3E345"
+            BlueprintIdentifier = "C91953E42A5E633F0090E916"
             BuildableName = "PeepPeep.app"
             BlueprintName = "PeepPeep"
             ReferencedContainer = "container:PeepPeep.xcodeproj">
