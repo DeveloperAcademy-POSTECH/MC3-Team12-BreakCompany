@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85A72B542A5E828E00828380 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A72B532A5E828E00828380 /* SplashView.swift */; };
 		C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953E82A5E633F0090E916 /* PeepPeepApp.swift */; };
 		C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953EA2A5E633F0090E916 /* ContentView.swift */; };
 		C91953ED2A5E63400090E916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91953EC2A5E63400090E916 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85A72B532A5E828E00828380 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = ../../SplashView.swift; sourceTree = "<group>"; };
 		C91953E52A5E633F0090E916 /* PeepPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeepPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91953E82A5E633F0090E916 /* PeepPeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeepPeepApp.swift; sourceTree = "<group>"; };
 		C91953EA2A5E633F0090E916 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		C91954022A5E63A20090E916 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				85A72B532A5E828E00828380 /* SplashView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				C91954072A5E63BE0090E916 /* Colors.swift in Sources */,
 				C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */,
 				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
+				85A72B542A5E828E00828380 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
