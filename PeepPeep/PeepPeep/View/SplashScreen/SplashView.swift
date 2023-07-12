@@ -2,7 +2,18 @@
 //  SplashView.swift
 //  PeepPeep
 //
-//  Created by Ha Jong Myeong on 2023/07/12.
+//  Created by 예슬 on 2023/07/12.
 //
+import SwiftUI
 
-import Foundation
+struct SplashView: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct SplashView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashView()
+    }
+}

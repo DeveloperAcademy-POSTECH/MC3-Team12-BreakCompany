@@ -2,7 +2,18 @@
 //  MainView.swift
 //  PeepPeep
 //
-//  Created by Ha Jong Myeong on 2023/07/12.
+//  Created by 이승용 on 2023/07/12.
 //
+import SwiftUI
 
-import Foundation
+struct MainView: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}
