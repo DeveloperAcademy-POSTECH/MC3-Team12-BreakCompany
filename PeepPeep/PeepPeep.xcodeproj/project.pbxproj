@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */; };
 		85A72B542A5E828E00828380 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A72B532A5E828E00828380 /* SplashView.swift */; };
 		67F2DA3C2A5E82440044588D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2DA3B2A5E82440044588D /* MainView.swift */; };
 		C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953E82A5E633F0090E916 /* PeepPeepApp.swift */; };
@@ -22,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeeklyFeedBackView.swift; path = WeeklyFeedBack/WeeklyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
+		32824F992A5E8281000DE3D4 /* DailyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyFeedBackView.swift; path = DailyFeedBack/DailyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
+		32824F9A2A5E82A4000DE3D4 /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalReportView.swift; path = FinalReport/FinalReportView.swift; sourceTree = SOURCE_ROOT; };
 		85A72B532A5E828E00828380 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = ../../SplashView.swift; sourceTree = "<group>"; };
 		67F2DA3B2A5E82440044588D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../../MainScreen/MainView.swift; sourceTree = "<group>"; };
 		C91953E52A5E633F0090E916 /* PeepPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeepPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,7 @@
 		C91953FD2A5E63780090E916 /* FinalReport */ = {
 			isa = PBXGroup;
 			children = (
+				32824F9A2A5E82A4000DE3D4 /* FinalReportView.swift */,
 			);
 			path = FinalReport;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 		C91953FE2A5E637F0090E916 /* WeeklyFeedBack */ = {
 			isa = PBXGroup;
 			children = (
+				32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */,
 			);
 			path = WeeklyFeedBack;
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 		C91953FF2A5E638A0090E916 /* DailyFeedBack */ = {
 			isa = PBXGroup;
 			children = (
+				32824F992A5E8281000DE3D4 /* DailyFeedBackView.swift */,
 			);
 			path = DailyFeedBack;
 			sourceTree = "<group>";
@@ -313,6 +320,7 @@
 			files = (
 				D90545982A5E82BB002033CF /* WidgetView.swift in Sources */,
 				C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */,
+				32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */,
 				67F2DA3C2A5E82440044588D /* MainView.swift in Sources */,
 				C91954092A5E63C50090E916 /* Styles.swift in Sources */,
 				C91954072A5E63BE0090E916 /* Colors.swift in Sources */,
