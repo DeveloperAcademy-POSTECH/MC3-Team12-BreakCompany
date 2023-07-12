@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct WeeklyFeedBack: View {
+struct WeeklyFeedBackView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct WeeklyFeedBack_Previews: PreviewProvider {
+struct WeeklyFeedBackView_Previews: PreviewProvider {
     static var previews: some View {
-        WeeklyFeedBack()
+        WeeklyFeedBackView()
     }
 }

@@ -1,20 +1,20 @@
 //
-//  DailyFeedBack.swift
+//  CostumesBook.swift
 //  PeepPeep
 //
-//  Created by MAX on 2023/07/12.
+//  Created by 예슬 on 2023/07/12.
 //
 
 import SwiftUI
 
-struct DailyFeedBack: View {
+struct CostumesBookView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct DailyFeedBack_Previews: PreviewProvider {
+struct CostumesBookView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyFeedBack()
+        CostumesBookView()
     }
 }
