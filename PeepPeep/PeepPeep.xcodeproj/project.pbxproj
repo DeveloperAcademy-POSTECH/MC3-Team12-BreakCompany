@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85A72B542A5E828E00828380 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A72B532A5E828E00828380 /* SplashView.swift */; };
 		67F2DA3C2A5E82440044588D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2DA3B2A5E82440044588D /* MainView.swift */; };
 		C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953E82A5E633F0090E916 /* PeepPeepApp.swift */; };
 		C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953EA2A5E633F0090E916 /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85A72B532A5E828E00828380 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = ../../SplashView.swift; sourceTree = "<group>"; };
 		67F2DA3B2A5E82440044588D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../../MainScreen/MainView.swift; sourceTree = "<group>"; };
 		C91953E52A5E633F0090E916 /* PeepPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeepPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91953E82A5E633F0090E916 /* PeepPeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeepPeepApp.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		C91954022A5E63A20090E916 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				85A72B532A5E828E00828380 /* SplashView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				C91954072A5E63BE0090E916 /* Colors.swift in Sources */,
 				C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */,
 				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
+				85A72B542A5E828E00828380 /* SplashView.swift in Sources */,
 				C9FE6E372A5E82A100E6C524 /* InitialSetupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
