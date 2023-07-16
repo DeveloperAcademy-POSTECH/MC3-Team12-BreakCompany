@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DailyFeedBackView: View {
     @State var month: Date
+    @State var offset: CGSize = CGSize()
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     
     var body: some View {
@@ -17,6 +18,19 @@ struct DailyFeedBackView: View {
             CalendarGridView
         }
         .padding(20)
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in self.offset = gesture.translation
+                }
+                .onEnded { gesture in
+                    if gesture.translation.width < 10 {
+                        changeMonth(by: 1)
+                    } else if gesture.translation.width > 10 {
+                        changeMonth(by: -1)
+                    }
+                    self.offset = CGSize()
+                }
+        )
     }
     
     private var HeaderView: some View {
@@ -86,6 +100,13 @@ private extension DailyFeedBackView {
         let firstDayOfMonth = Calendar.current.date(from: components)!
         
         return Calendar.current.component(.weekday, from: firstDayOfMonth)
+    }
+    
+    func changeMonth(by value: Int) {
+        let calendar = Calendar.current
+        if let newMonth = calendar.date(byAdding: .month, value: value, to: month) {
+            self.month = newMonth
+        }
     }
 }
 
