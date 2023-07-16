@@ -66,6 +66,7 @@ struct DailyFeedBackView: View {
 }
 
 struct CellView: View {
+    @State private var isClick: Bool = false
     @State var day: Int
     
     init(day: Int) {
@@ -74,9 +75,43 @@ struct CellView: View {
     
     var body: some View {
         ZStack {
+            if isClick {
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundColor(.orange)
+            }
             Text("\(day)")
                 .frame(width: 50, height: 50)
                 .cornerRadius(3)
+        }
+        .onTapGesture {
+            self.isClick.toggle()
+        }
+        .sheet(isPresented: $isClick) {
+            ResultSheetView(day: $day)
+        }
+    }
+}
+
+struct ResultSheetView: View {
+    @Binding var day: Int
+    
+    var body: some View {
+        VStack {
+            Text("\(day)일")
+                .font(.title2)
+                .padding(.bottom)
+            
+            VStack {
+                Text("사용시간")
+                Text("00 : 00")
+                    .font(.title)
+            }
+            .padding(.bottom)
+            
+            Text("스트레스 지수")
+                .padding(.bottom)
+            Text("90%")
+                .font(.title2)
         }
     }
 }
