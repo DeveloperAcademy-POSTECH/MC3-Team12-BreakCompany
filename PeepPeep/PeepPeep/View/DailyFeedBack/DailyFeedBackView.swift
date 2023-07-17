@@ -8,39 +8,47 @@
 import SwiftUI
 
 struct DailyFeedBackView: View {
+    @Binding var isClick: Bool
     @State var month: Date
     @State var offset: CGSize = CGSize()
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     
     var body: some View {
-        VStack {
-            HeaderView
-            CalendarGridView
-        }
-        .padding(20)
-        .gesture(
-            DragGesture()
-                .onChanged { gesture in self.offset = gesture.translation
-                }
-                .onEnded { gesture in
-                    if gesture.translation.width < 10 {
-                        changeMonth(by: 1)
-                    } else if gesture.translation.width > 10 {
-                        changeMonth(by: -1)
+        ZStack{
+            VStack {
+                Spacer()
+                HeaderView
+                CalendarGridView
+                Spacer()
+                Spacer()
+                Spacer()
+                Spacer()
+            }
+            .padding(30)
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in self.offset = gesture.translation
                     }
-                    self.offset = CGSize()
-                }
-        )
+                    .onEnded { gesture in
+                        if gesture.translation.width < 10 {
+                            changeMonth(by: 1)
+                        } else if gesture.translation.width > 10 {
+                            changeMonth(by: -1)
+                        }
+                        self.offset = CGSize()
+                    }
+            )
+        }
     }
     
     private var HeaderView: some View {
         return VStack {
             Text(month, formatter: Self.dateFormatter)
-                .font(.title)
             LazyVGrid(columns: columns, spacing: 2) {
                 ForEach(Self.weekdaySymbols.indices, id: \.self) { week in
                     Text("\(Self.weekdaySymbols[week])")
                         .frame(width: 50, height: 50)
+                        .foregroundColor(Color(.systemGray))
                 }
             }
         }
@@ -58,27 +66,36 @@ struct DailyFeedBackView: View {
                 }
                 
                 ForEach(1 ..< daysInMonth + 1, id: \.self) { day in
-                    CellView(day: day)
+                    CellView(day: day, cellColor: .yellow)
+                        .padding(.bottom, 5)
                 }
             }
         }
     }
 }
+    
 
 struct CellView: View {
-    @State private var isClick: Bool = false
+    @State var isClick: Bool = false
+    @State var cellColor: Color
     @State var day: Int
     
-    init(day: Int) {
+    init(day: Int, cellColor: Color) {
         self.day = day
+        self.cellColor = cellColor
     }
     
     var body: some View {
         ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundColor(cellColor)
+                .frame(width: 40, height: 40)
+            
             if isClick {
                 RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.orange)
+                    .foregroundColor(.white)
             }
+            
             Text("\(day)")
                 .frame(width: 50, height: 50)
                 .cornerRadius(3)
@@ -96,22 +113,32 @@ struct ResultSheetView: View {
     @Binding var day: Int
     
     var body: some View {
-        VStack {
-            Text("\(day)일")
-                .font(.title2)
-                .padding(.bottom)
+        ZStack{
+            Color.black.opacity(0.25)
+                .edgesIgnoringSafeArea(.all)
+            Image("Paper")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 250)
+                .offset(x: -10)
             
             VStack {
-                Text("사용시간")
-                Text("00 : 00")
-                    .font(.title)
-            }
-            .padding(.bottom)
-            
-            Text("스트레스 지수")
+                Text("\(day)일")
+                    .font(.title2)
+                    .padding(.bottom)
+                
+                VStack {
+                    Text("사용시간")
+                    Text("00 : 00")
+                        .font(.title)
+                }
                 .padding(.bottom)
-            Text("90%")
-                .font(.title2)
+                
+                Text("스트레스 지수")
+                    .padding(.bottom, 3)
+                Text("90%")
+                    .font(.title2)
+            }
         }
     }
 }
@@ -162,6 +189,6 @@ private extension DailyFeedBackView {
 
 struct DailyFeedBackView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyFeedBackView(month: Date())
+        DailyFeedBackView(isClick: .constant(false), month: Date())
     }
 }
