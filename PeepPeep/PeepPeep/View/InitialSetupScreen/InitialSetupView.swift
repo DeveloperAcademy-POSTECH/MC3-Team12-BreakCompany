@@ -4,6 +4,7 @@
 //
 //  Created by Ha Jong Myeong on 2023/07/12.
 //
+
 import SwiftUI
 import DeviceActivity
 import FamilyControls
@@ -16,7 +17,8 @@ struct InitialSetupView: View {
         VStack {
             if show {
                 ActivitySummaryView()
-            } else {
+            }
+            else {
                 STProgressView()
             }
         }.onAppear {
