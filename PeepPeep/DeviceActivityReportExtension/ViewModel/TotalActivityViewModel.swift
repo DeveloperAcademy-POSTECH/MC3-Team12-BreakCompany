@@ -1,6 +1,6 @@
 //
 //  TotalActivityViewModel.swift
-//  DevuceActuvityReportExtension
+//  DeviceActuvityReportExtension
 //
 //  Created by Ha Jong Myeong on 2023/07/12.
 //
