@@ -5,15 +5,35 @@
 //  Created by Ha Jong Myeong on 2023/07/12.
 //
 import SwiftUI
+import DeviceActivity
+import FamilyControls
 
 struct InitialSetupView: View {
+    @State var show = false
+    let center = AuthorizationCenter.shared
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if show {
+                ActivitySummaryView()
+            } else {
+                STProgressView()
+            }
+        }.onAppear {
+            Task {
+                do {
+                    try await center.requestAuthorization(for: .individual)
+                    show = true
+                }
+            }
+        }
     }
 }
 
-struct InitialSetupView_Previews: PreviewProvider {
-    static var previews: some View {
-        InitialSetupView()
+struct STProgressView: View {
+    var body: some View {
+        ProgressView {
+            Text("Loading")
+        }
     }
 }
