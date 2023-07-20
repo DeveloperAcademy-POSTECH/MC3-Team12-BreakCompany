@@ -10,22 +10,17 @@ import FamilyControls
 import SwiftUI
 
 struct InitialSetupView: View {
-    @State var show = false
+    @State var shouldDisplay = false
     let center = AuthorizationCenter.shared
-    
+
     var body: some View {
         VStack {
-            if show {
-                ActivitySummaryView()
-            }
-            else {
-                STProgressView()
-            }
+            shouldDisplay ? AnyView(ActivitySummaryView()) : AnyView(STProgressView())
         }.onAppear {
             Task {
                 do {
                     try await center.requestAuthorization(for: .individual)
-                    show = true
+                    shouldDisplay = true
                 }
             }
         }

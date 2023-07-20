@@ -29,7 +29,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
         await data.flatMap { $0.activitySegments }.reduce(0, { $0 + $1.totalActivityDuration })
     }
 
-    // 앱 별 활동 정보를 가져옵니다.
+    /// 앱 별 활동 정보를 가져옵니다.
     private func getAppDeviceActivities(from data: DeviceActivityResults<DeviceActivityData>) async -> [AppDeviceActivity] {
         var appDeviceActivities: [AppDeviceActivity] = []
         for await dataItem in data {
