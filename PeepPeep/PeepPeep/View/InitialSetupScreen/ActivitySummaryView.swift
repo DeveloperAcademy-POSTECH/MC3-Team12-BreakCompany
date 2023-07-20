@@ -5,8 +5,8 @@
 //  Created by Ha Jong Myeong on 2023/07/12.
 //
 
-import SwiftUI
 import DeviceActivity
+import SwiftUI
 
 struct ActivitySummaryView: View {
     @State private var totalActivityContext: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
@@ -19,7 +19,7 @@ struct ActivitySummaryView: View {
         users: .all,
         devices: .init([.iPhone, .iPad])
     )
-    
+
     var body: some View {
         ZStack {
             STProgressView()
