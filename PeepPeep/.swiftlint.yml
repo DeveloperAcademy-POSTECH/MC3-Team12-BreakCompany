@@ -1,8 +1,5 @@
 # 비활성화할 규칙들입니다.
 disabled_rules:
-  - trailing_whitespace # 라인 뒤의 공백을 피합니다.
-  - force_cast # 강제 캐스팅은 피합니다.
-  - force_unwrapping # 강제 언래핑은 피합니다.
   - line_length # 라인 길이 제한은 적용하지 않습니다.
 
 # 선택적으로 활성화할 규칙들입니다.
@@ -17,6 +14,9 @@ opt_in_rules:
   - multiline_parameters # 여러 줄의 매개변수 사용을 체크합니다.
   - vertical_whitespace_closing_braces # 닫는 중괄호 전에 공백을 피합니다.
   - vertical_whitespace_opening_braces # 여는 중괄호 후에 공백을 피합니다.
+  - trailing_whitespace # 라인 뒤의 공백을 피합니다.
+  - force_cast # 강제 캐스팅은 피합니다.
+  - force_unwrapping # 강제 언래핑은 피합니다.
 
 # 코드 분석 규칙입니다.
 analyzer_rules:
