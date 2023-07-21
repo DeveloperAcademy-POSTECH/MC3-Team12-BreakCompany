@@ -33,8 +33,16 @@ struct SplashView: View {
             
         }
         .tabViewStyle(.page)
-        .indexViewStyle(.page(backgroundDisplayMode: .always))
+        .indexViewStyle(.page(backgroundDisplayMode: .never))
+        .onAppear {
+            setupAppearance()
+        }
         
+    }
+    
+    func setupAppearance() {
+      UIPageControl.appearance().currentPageIndicatorTintColor = .black
+      UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
     }
 }
 
