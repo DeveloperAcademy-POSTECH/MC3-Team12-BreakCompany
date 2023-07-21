@@ -1,18 +1,19 @@
 //
 //  TotalActivityView.swift
-//  FeedBack
+//  DeviceActuvityReportExtension
 //
 //  Created by Ha Jong Myeong on 2023/07/12.
 //
 
-import SwiftUI
 import FamilyControls
+import PeepPeepCommons
+import SwiftUI
 
 struct TotalActivityView: View {
     var activityReport: ActivityReport
 
+    /// PieChartView에서 사용할 차트 데이터를 반환합니다
     var chartData: [(Double, Color)] {
-        // PieChartView에서 사용할 차트 데이터를 반환
         let colors: [Color] = [.red, .orange, .yellow, .green, .blue, .purple, .pink]
         return activityReport.apps.enumerated().map { (index, app) in
             (Double(app.duration), colors[index % colors.count])
@@ -50,7 +51,8 @@ struct ListRow: View {
 }
 
 struct PieChartView: View {
-    let data: [(Double, Color)] // 차트 데이터
+    /// 차트 데이터에 해당합니다.
+    let data: [(Double, Color)]
 
     var body: some View {
         GeometryReader { geometry in
@@ -68,7 +70,7 @@ struct PieChartView: View {
         }
     }
 
-    // 중심을 기준으로 반지름에 따른 원을 그리고, 각각의 파이 슬라이스를 색상에 맞게 채웁니다.
+    /// 중심을 기준으로 반지름에 따른 원을 그리고, 각각의 파이 슬라이스를 색상에 맞게 채웁니다.
     private func drawPieSlice(context: GraphicsContext, size: CGSize) {
         let total = data.reduce(0) { $0 + $1.0 }
         let radius = min(size.width, size.height) * 0.4
