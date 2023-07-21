@@ -22,7 +22,7 @@ struct SplashView: View {
             }
             
             VStack {
-                Text("앗 병아리잖아? 옛날부터 너무 키워보고 싶었는데...")
+                Text("앗 병아리잖아?\n옛날부터 너무 키워보고 싶었는데...")
                     .font(.custom("DOSSaemmul", size: 17))
                     .lineSpacing(19)
                     .multilineTextAlignment(.center)
