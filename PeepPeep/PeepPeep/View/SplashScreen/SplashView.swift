@@ -15,7 +15,7 @@ struct SplashView: View {
                     .lineSpacing(19)
                     .multilineTextAlignment(.center)
                     .frame(width: 300)
-                    
+                
                 Image("BoxOff")
                     .resizable()
                     .frame(width: 300, height: 350)
@@ -28,7 +28,45 @@ struct SplashView: View {
                     .multilineTextAlignment(.center)
                     .frame(width: 300)
                 
+                Image("Base1")
+                    .resizable()
+                    .frame(width: 400, height: 400)
+            }
+            
+            VStack {
+                Text("\"병아리는 많이 만지면 아프단다.\"")
+                    .font(.custom("DOSSaemmul", size: 17))
+                    .lineSpacing(19)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 300)
                 
+                Image("Base1")
+                    .resizable()
+                    .frame(width: 400, height: 400)
+            }
+            
+            VStack {
+                Text("\"핸드폰을 만지는 동안\n병아리가 스트레스를 받으니,\n주의해서 잘 키워주거라!\"")
+                    .font(.custom("DOSSaemmul", size: 17))
+                    .lineSpacing(19)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 300)
+                
+                Image("Base1")
+                    .resizable()
+                    .frame(width: 400, height: 400)
+            }
+            
+            VStack {
+                Text("우리집으로 가장!")
+                    .font(.custom("DOSSaemmul", size: 17))
+                    .lineSpacing(19)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 300)
+                
+                Image("BoxOn")
+                    .resizable()
+                    .frame(width: 280, height: 280)
             }
             
         }
@@ -41,8 +79,8 @@ struct SplashView: View {
     }
     
     func setupAppearance() {
-      UIPageControl.appearance().currentPageIndicatorTintColor = .black
-      UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
+        UIPageControl.appearance().currentPageIndicatorTintColor = .black
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.3)
     }
 }
 
