@@ -232,7 +232,7 @@
 		C91953DC2A5E633F0090E916 = {
 			isa = PBXGroup;
 			children = (
-				C9B6863C2A6A7E1500C70079 /* Asset */,
+				C909C2C32A683B7100854575 /* Assets.xcassets */,
 				C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */,
 				C91953E72A5E633F0090E916 /* PeepPeep */,
 				C9242BD62A64D78D000ECECF /* DeviceActivityReportExtension */,
@@ -505,22 +505,6 @@
 				C9713FEE2A65944C00589A1C /* CostumeBookView.swift */,
 			);
 			path = CostumeBook;
-			sourceTree = "<group>";
-		};
-		C9B6863C2A6A7E1500C70079 /* Asset */ = {
-			isa = PBXGroup;
-			children = (
-				C9B6863D2A6A7E2800C70079 /* Images */,
-			);
-			path = Asset;
-			sourceTree = "<group>";
-		};
-		C9B6863D2A6A7E2800C70079 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				C909C2C32A683B7100854575 /* Assets.xcassets */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
