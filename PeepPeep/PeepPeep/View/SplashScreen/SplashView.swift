@@ -77,6 +77,9 @@ struct SplashView: View {
                     .resizable()
                     .frame(width: 300, height: 300)
                     .offset(y: 50)
+                
+                
+
             }
             
         }
