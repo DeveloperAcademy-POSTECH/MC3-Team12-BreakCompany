@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */; };
+		8582EA3B2A69765800184200 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8582EA3A2A69765800184200 /* DOSSaemmul.ttf */; };
+		8582EA3C2A69765800184200 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8582EA3A2A69765800184200 /* DOSSaemmul.ttf */; };
 		C909C2B82A6803D300854575 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954062A5E63BE0090E916 /* Colors.swift */; };
 		C909C2BA2A68106F00854575 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954082A5E63C50090E916 /* Styles.swift */; };
 		C909C2BB2A68107200854575 /* EmptyComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03B62A5EA04F00B86493 /* EmptyComponents.swift */; };
@@ -131,6 +133,8 @@
 		32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeeklyFeedBackView.swift; path = PeepPeep/View/WeeklyFeedBack/WeeklyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F992A5E8281000DE3D4 /* DailyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyFeedBackView.swift; path = PeepPeep/View/DailyFeedBack/DailyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F9A2A5E82A4000DE3D4 /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalReportView.swift; path = PeepPeep/View/FinalReport/FinalReportView.swift; sourceTree = SOURCE_ROOT; };
+		8582EA3A2A69765800184200 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DOSSaemmul.ttf; sourceTree = "<group>"; };
+		8582EA3D2A6976D300184200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C909C2BE2A68379700854575 /* ActivityReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportModels.swift; sourceTree = "<group>"; };
 		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/hajongmyeong/Desktop/Project/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
 		C910C9B52A67D8A300EEF718 /* PeepPeepCommons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeepPeepCommons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +213,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8582EA392A69757B00184200 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8582EA3A2A69765800184200 /* DOSSaemmul.ttf */,
+			);
+			path = Fonts;
 		C910C9B62A67D8A300EEF718 /* PeepPeepCommons */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		C91953E72A5E633F0090E916 /* PeepPeep */ = {
 			isa = PBXGroup;
 			children = (
+				8582EA3D2A6976D300184200 /* Info.plist */,
 				C9242BD02A64D6BE000ECECF /* PeepPeep.entitlements */,
 				C91953F62A5E63500090E916 /* AppDelegate.swift */,
 				C91953E82A5E633F0090E916 /* PeepPeepApp.swift */,
@@ -351,6 +362,7 @@
 		C91954022A5E63A20090E916 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8582EA392A69757B00184200 /* Fonts */,
 				C96B03BF2A5EA10100B86493 /* SplashView.swift */,
 			);
 			path = SplashScreen;
@@ -680,6 +692,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8582EA3B2A69765800184200 /* DOSSaemmul.ttf in Resources */,
 				C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */,
 				C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */,
 				C909C2C42A683B7100854575 /* Assets.xcassets in Resources */,
@@ -690,6 +703,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8582EA3C2A69765800184200 /* DOSSaemmul.ttf in Resources */,
 				C909C2C52A683B7100854575 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1048,6 +1062,7 @@
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeepPeep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1081,6 +1096,7 @@
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeepPeep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
