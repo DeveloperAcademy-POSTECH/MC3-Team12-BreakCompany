@@ -15,13 +15,13 @@ struct HelperView: View {
             
             // MARK: Happy Chick
             HStack{
-                Image("Happy 1")
+                Image("Happy")
                     .resizable()
                     .frame(width: 91, height: 91)
                 VStack(alignment: .leading){
                     Text("기분 체고!")
                         .font(.system(size:16))
-                    Image("Happy 2")
+                    Image("HappyBar")
                         .resizable()
                         .frame(width: 80, height: 8)
                     Text("0~20%")
@@ -33,13 +33,13 @@ struct HelperView: View {
             
             // MARK: Base Chick,
             HStack{
-                Image("Base 1")
+                Image("Normal")
                     .resizable()
                     .frame(width: 91, height: 91)
                 VStack(alignment: .leading){
                     Text("나쁘지 않아")
                         .font(.system(size:16))
-                    Image("Base 2")
+                    Image("NormalBar")
                         .resizable()
                         .frame(width: 80, height: 8)
                     Text("20~40%")
@@ -51,13 +51,13 @@ struct HelperView: View {
             
             // MARK: Sad Chick
             HStack{
-                Image("Sad 1")
+                Image("Sad")
                     .resizable()
                     .frame(width: 91, height: 91)
                 VStack(alignment: .leading){
                     Text("고만 좀 만져라..")
                         .font(.system(size:16))
-                    Image("Sad 2")
+                    Image("SadBar")
                         .resizable()
                         .frame(width: 80, height: 8)
                     Text("40~60%")
@@ -69,13 +69,13 @@ struct HelperView: View {
             
             // MARK: SoSad Chick
             HStack{
-                Image("SoSad 1")
+                Image("SoSad")
                     .resizable()
                     .frame(width: 91, height: 91)
                 VStack(alignment: .leading){
                     Text("살려조라ㅠ")
                         .font(.system(size:16))
-                    Image("SoSad 2")
+                    Image("SoSadBar")
                         .resizable()
                         .frame(width: 80, height: 8)
                     Text("60~80%")
@@ -87,13 +87,13 @@ struct HelperView: View {
             
             // MARK: Angry Chick
             HStack{
-                Image("Angry 1")
+                Image("Angry")
                     .resizable()
                     .frame(width: 91, height: 91)
                 VStack(alignment: .leading){
                     Text("%$#^&@!")
                         .font(.system(size:16))
-                    Image("Angry 2")
+                    Image("AngryBar")
                         .resizable()
                         .frame(width: 80, height: 8)
                     Text("80~100%")
