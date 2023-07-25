@@ -14,13 +14,13 @@ public struct UnderlinedTextFieldStyle: TextFieldStyle {
     // swiftlint:disable:next identifier_name
     public func _body(configuration: TextField<Self._Label>) -> some View {
         configuration
-            .padding(.horizontal, 70)
+            .padding(.horizontal, 90)
             .padding(.vertical, 10)
             .overlay(
                 Divider()
                     .frame(height: 2)
                     .background(Color.black)
-                    .padding(.horizontal, 70),
+                    .padding(.horizontal, 90),
                 alignment: .bottom
             )
     }
