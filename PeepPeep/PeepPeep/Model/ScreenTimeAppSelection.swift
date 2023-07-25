@@ -7,9 +7,14 @@
 
 import FamilyControls
 import Foundation
+import ManagedSettings
 
 class ScreenTimeAppSelection: ObservableObject {
-    @Published var activitySelection = FamilyActivitySelection()
+    static let shared = ScreenTimeAppSelection()
 
-    init() { }
+    @Published var newSelection: FamilyActivitySelection = .init()
+
+    var selectedAppTokens: Set<ApplicationToken> {
+        newSelection.applicationTokens
+    }
 }
