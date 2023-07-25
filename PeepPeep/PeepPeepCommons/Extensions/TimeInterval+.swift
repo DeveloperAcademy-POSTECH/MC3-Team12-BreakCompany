@@ -13,6 +13,6 @@ public extension TimeInterval {
         let time = NSInteger(self)
         let minutes = (time / 60) % 60
         let hours = (time / 3600)
-        return hours > 0 ? String(format: "%d hrs, %d min", hours, minutes) : String(format: "%d min", minutes)
+        return hours > 0 ? String(format: "%dh %dm", hours, minutes) : String(format: "%dm", minutes)
     }
 }
