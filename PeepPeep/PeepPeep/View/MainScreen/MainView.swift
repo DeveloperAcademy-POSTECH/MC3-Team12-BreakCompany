@@ -20,6 +20,8 @@ struct MainView: View {
     var currentUsageTime: CGFloat = 217  // minutes, 사용시간
     var targetUsageTime: CGFloat = 240   // minutes, 목표시간
     
+    let lightGray: Color = Color("LightGray")
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -29,10 +31,11 @@ struct MainView: View {
                         self.showModal.toggle()
                     }){
                         Text("!")
+                            .font(.custom("DOSSaemmul", size: 25))
                             .background(
                                 Circle()
                                     .frame(width: 36, height: 36)
-                                    .foregroundColor(Color(red: 0.8509803921568627, green: 0.8509803921568627, blue: 0.8509803921568627))   // D9D9D9 in HEX
+                                    .foregroundColor(lightGray)
                             )
                             .foregroundColor(.black)
                         
@@ -62,12 +65,12 @@ struct MainView: View {
                         CostumesBookView()
                     } label: {
                         VStack{
-                            Image("twitter")
+                            Image("Closet")
                                 .resizable()
                                 .frame(width: 49, height: 49, alignment: .center)
                             Text("옷장")
                                 .foregroundColor(.black)
-                                .font(.system(size: 16))
+                                .font(.custom("DOSSaemmul", size: 16))
                         }
                     }
 
@@ -78,12 +81,12 @@ struct MainView: View {
                         self.showModal2 = true
                     } label: {
                         VStack{
-                            Image("clock")
+                            Image("Setting")
                                 .resizable()
                                 .frame(width: 49, height: 49, alignment: .center)
                             Text("시간설정")
                                 .foregroundColor(.black)
-                                .font(.system(size: 16))
+                                .font(.custom("DOSSaemmul", size: 16))
                         }
                     }
                     .sheet(isPresented: self.$showModal2){
@@ -97,12 +100,12 @@ struct MainView: View {
                         DailyFeedBackView(isClick: false, month: Date(), nowDay: Date(), stressLevel: 0)
                     } label: {
                         VStack{
-                            Image("note")
+                            Image("Diary")
                                 .resizable()
                                 .frame(width: 49, height: 49, alignment: .center)
                             Text("성장일지")
                                 .foregroundColor(.black)
-                                .font(.system(size: 16))
+                                .font(.custom("DOSSaemmul", size: 16))
                         }
                     }
                     Spacer()

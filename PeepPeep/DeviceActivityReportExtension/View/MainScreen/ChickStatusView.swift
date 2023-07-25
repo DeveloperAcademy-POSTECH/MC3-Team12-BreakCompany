@@ -36,6 +36,7 @@ struct ChickStatusView: View {
                     }
                 
                 Text("88%")
+                    .font(.custom("DOSSaemmul", size: 17))
                     .foregroundColor(.white)
             }   // ZStack
             

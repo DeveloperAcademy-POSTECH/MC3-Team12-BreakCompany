@@ -21,7 +21,7 @@ struct SplashView: View {
                         .frame(width: 300)
                         .offset(y: -200)
                     
-                    Image("BoxOff")
+                    Image("ChickSeller1")
                         .resizable()
                         .frame(width: 300, height: 300)
                         .offset(y: 50)
@@ -35,7 +35,7 @@ struct SplashView: View {
                         .frame(width: 300)
                         .offset(y: -200)
                     
-                    Image("Base1")
+                    Image("ChickSeller2")
                         .resizable()
                         .frame(width: 300, height: 300)
                         .offset(y: 50)
@@ -49,7 +49,7 @@ struct SplashView: View {
                         .frame(width: 300)
                         .offset(y: -200)
                     
-                    Image("Base1")
+                    Image("ChickSeller3")
                         .resizable()
                         .frame(width: 300, height: 300)
                         .offset(y: 50)
@@ -63,7 +63,7 @@ struct SplashView: View {
                         .frame(width: 300)
                         .offset(y: -200)
                     
-                    Image("Base1")
+                    Image("ChickSeller3")
                         .resizable()
                         .frame(width: 300, height: 300)
                         .offset(y: 50)
@@ -78,7 +78,7 @@ struct SplashView: View {
                         .frame(width: 300)
                         .offset(y: -200)
                     
-                    Image("BoxOn")
+                    Image("ChickInBox")
                         .resizable()
                         .frame(width: 300, height: 300)
                         .offset(y: 50)
@@ -89,6 +89,9 @@ struct SplashView: View {
                             InitialSetupView()
                         } label: {
                             Image("NextButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 40)
                         }
                         Spacer(minLength: 115)
                     }

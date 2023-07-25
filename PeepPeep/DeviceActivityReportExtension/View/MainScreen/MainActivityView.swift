@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainActivityView: View {
     let mainActivity : String
+    let lightGreen: Color = Color("LightGreen")
     
     var body: some View {
         Text(mainActivity)
