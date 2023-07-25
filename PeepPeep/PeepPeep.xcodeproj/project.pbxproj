@@ -542,13 +542,20 @@
 			path = CostumeBook;
 			sourceTree = "<group>";
 		};
-		C9B686442A6DD4AA00C70079 /* Font */ = {
+		C9B6863C2A6A7E1500C70079 /* Asset */ = {
 			isa = PBXGroup;
 			children = (
-				C9B686492A6DD69C00C70079 /* FontManager.swift */,
-				C9B686452A6DD51A00C70079 /* DOSSaemmul.ttf */,
+				C9B6863D2A6A7E2800C70079 /* Images */,
 			);
-			path = Font;
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		C9B6863D2A6A7E2800C70079 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C909C2C32A683B7100854575 /* Assets.xcassets */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
