@@ -23,9 +23,6 @@ struct TotalActivityView: View {
     var body: some View {
         VStack {
             // 파이 차트 뷰와 총 활동 시간을 보여주는 텍스트 뷰를 중첩
-            Text("오늘, 이만큼 휴대폰을 사용했네요!")
-                .font(.dosSsaemmul(size: 20))
-
             ZStack {
                 PieChartView(data: chartData)
                 Text("Total\n\(activityReport.totalDuration.stringFromTimeInterval())")
