@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */; };
+		32F265F82A70384400979BB2 /* CostumeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F265F72A70384400979BB2 /* CostumeBookView.swift */; };
 		C909C2B82A6803D300854575 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954062A5E63BE0090E916 /* Colors.swift */; };
 		C909C2BA2A68106F00854575 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954082A5E63C50090E916 /* Styles.swift */; };
 		C909C2BB2A68107200854575 /* EmptyComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03B62A5EA04F00B86493 /* EmptyComponents.swift */; };
@@ -41,7 +42,6 @@
 		C96B03BE2A5EA0E600B86493 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03BD2A5EA0E600B86493 /* MainView.swift */; };
 		C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03BF2A5EA10100B86493 /* SplashView.swift */; };
 		C96B03C22A5EA11500B86493 /* InitialSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03C12A5EA11500B86493 /* InitialSetupView.swift */; };
-		C96B03C42A5EA16B00B86493 /* CostumesBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */; };
 		C9713FC52A65389F00589A1C /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FC42A65389F00589A1C /* EmptyModel.swift */; };
 		C9713FC82A6538B300589A1C /* EmptyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FC72A6538B300589A1C /* EmptyViewModel.swift */; };
 		C9713FE52A6593E400589A1C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FE42A6593E400589A1C /* SplashView.swift */; };
@@ -131,8 +131,9 @@
 		32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeeklyFeedBackView.swift; path = PeepPeep/View/WeeklyFeedBack/WeeklyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F992A5E8281000DE3D4 /* DailyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyFeedBackView.swift; path = PeepPeep/View/DailyFeedBack/DailyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F9A2A5E82A4000DE3D4 /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalReportView.swift; path = PeepPeep/View/FinalReport/FinalReportView.swift; sourceTree = SOURCE_ROOT; };
+		32F265F72A70384400979BB2 /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
 		C909C2BE2A68379700854575 /* ActivityReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportModels.swift; sourceTree = "<group>"; };
-		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/yeseul/Desktop/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
+		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/kim_yejin/Documents/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
 		C910C9B52A67D8A300EEF718 /* PeepPeepCommons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeepPeepCommons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C910C9B72A67D8A300EEF718 /* PeepPeepCommons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeepPeepCommons.h; sourceTree = "<group>"; };
 		C910C9B82A67D8A300EEF718 /* PeepPeepCommons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PeepPeepCommons.docc; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 		C96B03BD2A5EA0E600B86493 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C96B03BF2A5EA10100B86493 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C96B03C12A5EA11500B86493 /* InitialSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupView.swift; sourceTree = "<group>"; };
-		C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CostumesBookView.swift; path = PeepPeep/View/CostumeBook/CostumesBookView.swift; sourceTree = SOURCE_ROOT; };
 		C9713FC42A65389F00589A1C /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
 		C9713FC72A6538B300589A1C /* EmptyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewModel.swift; sourceTree = "<group>"; };
 		C9713FE42A6593E400589A1C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -302,7 +302,7 @@
 		C91953FC2A5E63710090E916 /* CostumeBook */ = {
 			isa = PBXGroup;
 			children = (
-				C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */,
+				32F265F72A70384400979BB2 /* CostumeBookView.swift */,
 			);
 			path = CostumeBook;
 			sourceTree = "<group>";
@@ -727,6 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F265F82A70384400979BB2 /* CostumeBookView.swift in Sources */,
 				C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */,
 				C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */,
 				C96B03B52A5EA03200B86493 /* WidgetVIew.swift in Sources */,
@@ -738,7 +739,6 @@
 				C96B03A52A5E9F6300B86493 /* EmptyModel.swift in Sources */,
 				C96B03AA2A5E9F8B00B86493 /* EmptyViewModel.swift in Sources */,
 				C96B03BE2A5EA0E600B86493 /* MainView.swift in Sources */,
-				C96B03C42A5EA16B00B86493 /* CostumesBookView.swift in Sources */,
 				C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */,
 				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
 			);
