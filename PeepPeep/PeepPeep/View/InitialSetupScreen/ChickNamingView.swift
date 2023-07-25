@@ -84,7 +84,7 @@ struct SkipButton: View {
 
     var body: some View {
         Button(action: {
-            viewModel.updateChickName(name: name)
+            viewModel.updateChickName(name: "병아리")
         }) {
             NavigationLink(destination: ScreenTimeRequestView()) {
                 Text("Skip")
