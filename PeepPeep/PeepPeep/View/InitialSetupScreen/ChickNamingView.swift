@@ -15,24 +15,25 @@ struct ChickNamingView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TitleText()
+                ProgressBar(currentStep: 1)
+                CustomSpacer(height: 80)
+                Text("병아리의 이름을 지어주세요")
+                    .font(.dosSsaemmul(size: 20))
+                CustomSpacer(height: 70)
                 ChickNameTextField(name: $name)
-                ChickImageView()
-                DecisionButton(viewModel: viewModel, name: name)
+                ScrollView {
+                    CustomSpacer(height: 20)
+                    ChickImageView()
+                    CustomSpacer(height: 150)
+                    DecisionButton(viewModel: viewModel, name: name)
+                    CustomSpacer(height: 30)
+                }.scrollDisabled(true)
             }
-            .padding()
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(trailing: SkipButton(viewModel: viewModel, name: name))
             .font(.dosSsaemmul(size: 20))
             .foregroundColor(Color.black)
         }
-    }
-}
-
-struct TitleText: View {
-    var body: some View {
-        Text("병아리의 이름을 지어주세요")
-            .font(.dosSsaemmul(size: 20))
     }
 }
 

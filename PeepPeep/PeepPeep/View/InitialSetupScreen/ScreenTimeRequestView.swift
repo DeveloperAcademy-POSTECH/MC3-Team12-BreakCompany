@@ -17,10 +17,15 @@ struct ScreenTimeRequestView: View {
 
     var body: some View {
         VStack {
+            ProgressBar(currentStep: 2)
+            Spacer()
             HourGlassImage()
             RequestText()
+            CustomSpacer(height: 50)
             DescriptionText()
+            CustomSpacer(height: 80)
             ConfirmationButton()
+            CustomSpacer(height: 30)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton())
@@ -40,7 +45,7 @@ struct HourGlassImage: View {
         Image("hourglass")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 200, height: 200)
+            .frame(width: 288, height: 288)
     }
 }
 
@@ -55,6 +60,7 @@ struct DescriptionText: View {
     var body: some View {
         Text("핸드폰 사용시간은\n스크린 타임 데이터를 기반으로\n측정됩니다")
             .font(.dosSsaemmul(size: 17))
+            .lineSpacing(3)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.gray)
     }
@@ -63,12 +69,11 @@ struct DescriptionText: View {
 struct ConfirmationButton: View {
     var body: some View {
         Button(action: {
-            // Add the action for the button here
         }) {
             NavigationLink(destination: ActivitySummaryView()) {
-                Text("승인했어요!")
+                Text("확인")
             }
         }
-        .buttonStyle(CommonButtonStyle(paddingSize: 94))
+        .buttonStyle(CommonButtonStyle(paddingSize: 30))
     }
 }

@@ -29,13 +29,17 @@ struct ActivitySummaryView: View {
     }()
 
     var body: some View {
-        ZStack {
-            VStack {
+        VStack {
+            ProgressBar(currentStep: 3)
+            Spacer()
                 DeviceActivityReport(totalActivityContext, filter: filter)
-                Button("확인했어요!") { isPresented = true }
-                    .familyActivityPicker(isPresented: $isPresented, selection: $selection)
-                }
+            Button("확인") { isPresented = true }
+                .familyActivityPicker(isPresented: $isPresented, selection: $selection)
                 .buttonStyle(CommonButtonStyle(paddingSize: 94))
-            }
+            CustomSpacer(height: 30)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton())
+        .foregroundColor(Color.black)
     }
+}
