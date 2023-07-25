@@ -132,7 +132,7 @@
 		32824F992A5E8281000DE3D4 /* DailyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyFeedBackView.swift; path = PeepPeep/View/DailyFeedBack/DailyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F9A2A5E82A4000DE3D4 /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalReportView.swift; path = PeepPeep/View/FinalReport/FinalReportView.swift; sourceTree = SOURCE_ROOT; };
 		C909C2BE2A68379700854575 /* ActivityReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportModels.swift; sourceTree = "<group>"; };
-		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/hajongmyeong/Desktop/Project/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
+		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/yeseul/Desktop/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
 		C910C9B52A67D8A300EEF718 /* PeepPeepCommons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeepPeepCommons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C910C9B72A67D8A300EEF718 /* PeepPeepCommons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeepPeepCommons.h; sourceTree = "<group>"; };
 		C910C9B82A67D8A300EEF718 /* PeepPeepCommons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PeepPeepCommons.docc; sourceTree = "<group>"; };
