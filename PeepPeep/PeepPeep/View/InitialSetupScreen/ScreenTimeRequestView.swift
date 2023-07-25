@@ -74,7 +74,8 @@ struct ConfirmationButton: View {
     var body: some View {
         Button(action: {
         }) {
-            NavigationLink(destination: ActivitySummaryView()) {
+            NavigationLink(destination: ActivitySummaryView()
+                .environmentObject(ScreenTimeAppSelection.shared)) {
                 Text("확인")
             }
         }
