@@ -11,9 +11,22 @@ import SwiftUI
 
 struct InitialSetupView: View {
     @State var shouldDisplay = false
+    @State var isPresented = false
     let center = AuthorizationCenter.shared
-
+    
     var body: some View {
+        Button {
+            isPresented = true
+        } label: {
+            Text("hahahah")
+                .background(.red)
+            
+        }
+        .fullScreenCover(isPresented: $isPresented) {
+            MainView()
+        }
+        
+        
         VStack {
             shouldDisplay ? AnyView(ActivitySummaryView()) : AnyView(STProgressView())
         }.onAppear {
