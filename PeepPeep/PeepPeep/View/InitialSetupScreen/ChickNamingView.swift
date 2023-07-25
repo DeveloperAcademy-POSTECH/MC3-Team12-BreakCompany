@@ -21,6 +21,7 @@ struct ChickNamingView: View {
                     .font(.dosSsaemmul(size: 20))
                 CustomSpacer(height: 70)
                 ChickNameTextField(name: $name)
+                // 스크롤을 비활성화한 스크롤 뷰 추가, 키보드 영역으로 인한 UI 요소가 변화하지 않도록 합니다.
                 ScrollView {
                     CustomSpacer(height: 20)
                     ChickImageView()
@@ -37,6 +38,7 @@ struct ChickNamingView: View {
     }
 }
 
+// 병아리 이름 입력 텍스트 필드
 struct ChickNameTextField: View {
     @Binding var name: String
 
@@ -48,6 +50,7 @@ struct ChickNameTextField: View {
     }
 }
 
+// 병아리 이미지 뷰
 struct ChickImageView: View {
     var body: some View {
         Image("chick")
@@ -57,6 +60,7 @@ struct ChickImageView: View {
     }
 }
 
+// 결정 버튼
 struct DecisionButton: View {
     let viewModel: ChickNamingViewModel
     let name: String
@@ -73,6 +77,7 @@ struct DecisionButton: View {
     }
 }
 
+// 스킵 버튼
 struct SkipButton: View {
     let viewModel: ChickNamingViewModel
     let name: String
