@@ -8,7 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isLoading: Bool = true
+    
     var body: some View {
-        SplashView()
+        ZStack{
+            SplashView()
+            
+            if isLoading {
+                LoadingView()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                isLoading.toggle()
+            })
+        }
     }
 }

@@ -14,6 +14,7 @@
 		676551312A7011C700617638 /* ChickStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676551302A7011C700617638 /* ChickStatusView.swift */; };
 		676551332A70238A00617638 /* TimeSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676551322A70238A00617638 /* TimeSettingView.swift */; };
 		85DBE1DA2A70365C00AECFB5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DBE1D92A70365C00AECFB5 /* SettingView.swift */; };
+		85DBE1DC2A7060FE00AECFB5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DBE1DB2A7060FE00AECFB5 /* LoadingView.swift */; };
 		C909C2B82A6803D300854575 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954062A5E63BE0090E916 /* Colors.swift */; };
 		C909C2BA2A68106F00854575 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954082A5E63C50090E916 /* Styles.swift */; };
 		C909C2BB2A68107200854575 /* EmptyComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03B62A5EA04F00B86493 /* EmptyComponents.swift */; };
@@ -142,6 +143,7 @@
 		676551302A7011C700617638 /* ChickStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickStatusView.swift; sourceTree = "<group>"; };
 		676551322A70238A00617638 /* TimeSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingView.swift; sourceTree = "<group>"; };
 		85DBE1D92A70365C00AECFB5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		85DBE1DB2A7060FE00AECFB5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C909C2BE2A68379700854575 /* ActivityReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportModels.swift; sourceTree = "<group>"; };
 		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/yeseul/Desktop/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
 		C910C9B52A67D8A300EEF718 /* PeepPeepCommons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeepPeepCommons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				C96B03BF2A5EA10100B86493 /* SplashView.swift */,
+				85DBE1DB2A7060FE00AECFB5 /* LoadingView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				C96B03C42A5EA16B00B86493 /* CostumesBookView.swift in Sources */,
 				C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */,
 				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
+				85DBE1DC2A7060FE00AECFB5 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

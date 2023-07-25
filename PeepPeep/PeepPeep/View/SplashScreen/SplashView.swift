@@ -9,8 +9,12 @@ import SwiftUI
 struct SplashView: View {
     
     @State var goNext: Bool = false
+    @State var loadingViewOpacity: CGFloat = 1.0
     
     var body: some View {
+        
+        
+        
         NavigationView {
             TabView{
                 ZStack {
