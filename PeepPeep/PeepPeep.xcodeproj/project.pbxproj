@@ -234,6 +234,7 @@
 		C910C9B62A67D8A300EEF718 /* PeepPeepCommons */ = {
 			isa = PBXGroup;
 			children = (
+				C918F31D2A71018000819BF4 /* Fonts */,
 				C9B6864E2A6DE63A00C70079 /* Info.plist */,
 				C91954052A5E63B40090E916 /* Themes */,
 				C919540C2A5E63D70090E916 /* Components */,
@@ -250,6 +251,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C918F31D2A71018000819BF4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C918F3172A70E4F800819BF4 /* FontManager.swift */,
+				C918F3192A70E52C00819BF4 /* DOSSaemmul.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C91953DC2A5E633F0090E916 = {
@@ -398,8 +408,6 @@
 			children = (
 				C91954062A5E63BE0090E916 /* Colors.swift */,
 				C91954082A5E63C50090E916 /* Styles.swift */,
-				C918F3172A70E4F800819BF4 /* FontManager.swift */,
-				C918F3192A70E52C00819BF4 /* DOSSaemmul.ttf */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
