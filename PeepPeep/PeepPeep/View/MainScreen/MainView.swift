@@ -90,7 +90,9 @@ struct MainView: View {
                         }
                     }
                     .sheet(isPresented: self.$showModal2){
-//                        TimeSettingView()
+                        TimeSettingView()
+                            .presentationDetents([.large])
+                            .presentationDragIndicator(.visible)
                     }
                     
                     Spacer()
