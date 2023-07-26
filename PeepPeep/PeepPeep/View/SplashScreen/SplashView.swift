@@ -85,7 +85,7 @@ struct SplashView: View {
                         Rectangle().foregroundColor(.clear)
                         Button(action: {
                         }) {
-                            NavigationLink(destination: ScreenTimeRequestView()) {
+                            NavigationLink(destination: ChickNamingView()) {
                                 Text("다음")
                             }
                         }
