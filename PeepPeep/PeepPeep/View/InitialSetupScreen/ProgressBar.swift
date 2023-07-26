@@ -9,9 +9,9 @@ import SwiftUI
 struct ProgressBar: View {
     var currentStep: Int
     var endStep: Int = 4
-    var activeColor: Color = .black
-    var inactiveColor: Color = Color.gray.opacity(0.5)
-    var sectionWidth: CGFloat = 60
+    var activeColor: Color = Color.gray.opacity(0.8)
+    var inactiveColor: Color = Color.gray.opacity(0.3)
+    var sectionWidth: CGFloat = 40
 
     var body: some View {
         HStack {
@@ -25,6 +25,6 @@ struct ProgressBar: View {
             }
             Spacer()
         }
-        .frame(height: 10)
+        .frame(height: 5)
     }
 }

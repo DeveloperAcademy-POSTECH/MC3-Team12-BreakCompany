@@ -30,15 +30,17 @@ struct ActivitySummaryView: View {
     var body: some View {
         VStack {
             ProgressBar(currentStep: 3)
-            Spacer()
+            CustomSpacer(height: 30)
+            Text("오늘, 이만큼 휴대폰을 사용했어요!")
+                .font(.dosSsaemmul(size: 20))
+                .padding(.bottom, 5)
             DeviceActivityReport(totalActivityContext, filter: filter)
             Button("확인") { isPresented = true }
-                .buttonStyle(CommonButtonStyle(paddingSize: 94))
+                .buttonStyle(CommonButtonStyle(paddingSize: 30))
                 .familyActivityPicker(isPresented: $isPresented, selection: $model.newSelection)
                 .onChange(of: model.newSelection) { _ in
                     navigateToMain = true
                 }
-
                 NavigationLink(destination: MainView(), isActive: $navigateToMain) {
                     EmptyView()
                 }

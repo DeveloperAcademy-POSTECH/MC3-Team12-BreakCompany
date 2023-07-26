@@ -17,12 +17,12 @@ struct ScreenTimeRequestView: View {
     var body: some View {
         VStack {
             ProgressBar(currentStep: 2)
-            Spacer()
-            HourGlassImage()
-            RequestText()
-            CustomSpacer(height: 50)
-            DescriptionText()
             CustomSpacer(height: 80)
+            RequestText()
+            CustomSpacer(height: 70)
+            HourGlassImage()
+            DescriptionText()
+            CustomSpacer(height: 100)
             ConfirmationButton()
             CustomSpacer(height: 30)
         }
@@ -42,7 +42,7 @@ struct ScreenTimeRequestView: View {
 // 모래시계 이미지 뷰
 struct HourGlassImage: View {
     var body: some View {
-        Image("hourglass")
+        Image("Hourglass")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 288, height: 288)
@@ -53,7 +53,7 @@ struct HourGlassImage: View {
 struct RequestText: View {
     var body: some View {
         Text("스크린타임을 승인해주세요")
-            .font(.dosSsaemmul(size: 17))
+            .font(.dosSsaemmul(size: 20))
     }
 }
 

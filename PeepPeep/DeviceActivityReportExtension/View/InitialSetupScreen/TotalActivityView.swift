@@ -27,7 +27,10 @@ struct TotalActivityView: View {
                     .font(.dosSsaemmul(size: 24))
                     .multilineTextAlignment(.center)
             }
-
+            Text("확인 버튼을 눌러서\n자주 사용하는 앱들을 선택해주세요!")
+                .multilineTextAlignment(.center)
+                .lineSpacing(5)
+                .font(.dosSsaemmul(size: 14))
             // 앱 별 Activity 리스트
             List(activityReport.apps.indices, id: \.self) { index in
                 ListRow(eachApp: activityReport.apps[index], color: colors[index % colors.count])
