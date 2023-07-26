@@ -21,11 +21,11 @@ struct MainActivityReport: DeviceActivityReportScene {
    
     
     // Define the custom configuration and the resulting view for this report.
-    let content: (String) -> MainActivityView
+    let content: (Double) -> MainActivityView
     
 //    let goalTime = CoreData.shared.getStoredDataFromCoreData()
     
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> String {
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> Double {
         // Reformat the data into a configuration that can be used to create
         // the report's view.
         
@@ -41,7 +41,7 @@ struct MainActivityReport: DeviceActivityReportScene {
         
         
 //        return formatter.string(from: totalActivityDuration) ?? "No activity data"
-        return formatter.string(from: totalActivityDuration) ?? "No activity data"
+        return totalActivityDuration
     }
 }
 
