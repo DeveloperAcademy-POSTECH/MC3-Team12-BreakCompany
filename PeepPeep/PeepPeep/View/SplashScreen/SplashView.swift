@@ -8,7 +8,9 @@ import SwiftUI
 import PeepPeepCommons
 
 struct SplashView: View {
+
     @State var goNext: Bool = false
+    @State var loadingViewOpacity: CGFloat = 1.0
 
     var body: some View {
         NavigationStack {
@@ -93,8 +95,13 @@ struct SplashView: View {
                         Spacer(minLength: 115)
                     }
                 }
-                .padding(.bottom, 50)
             }
+            .tabViewStyle(.page)
+            .indexViewStyle(.page(backgroundDisplayMode: .never))
+            .onAppear {
+                setupAppearance()
+            }
+            .padding(.bottom, 50)
         }
     }
 
