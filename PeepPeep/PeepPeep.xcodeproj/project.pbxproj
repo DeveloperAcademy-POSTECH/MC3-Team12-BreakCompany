@@ -67,6 +67,8 @@
 		C9DFECEB2A716169003190FD /* ActivityReportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C2BE2A68379700854575 /* ActivityReportModels.swift */; };
 		C9DFECED2A716211003190FD /* TimeSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECEC2A716211003190FD /* TimeSettingView.swift */; };
 		C9DFECEE2A71638D003190FD /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECD52A715B1C003190FD /* PieChartView.swift */; };
+		C9DFECEF2A716974003190FD /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9DFECD12A7159C6003190FD /* DOSSaemmul.ttf */; };
+		C9DFECF02A716975003190FD /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9DFECD12A7159C6003190FD /* DOSSaemmul.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -733,6 +735,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DFECF02A716975003190FD /* DOSSaemmul.ttf in Resources */,
 				C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */,
 				C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */,
 				C909C2C42A683B7100854575 /* Assets.xcassets in Resources */,
@@ -743,6 +746,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DFECEF2A716974003190FD /* DOSSaemmul.ttf in Resources */,
 				C909C2C52A683B7100854575 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
