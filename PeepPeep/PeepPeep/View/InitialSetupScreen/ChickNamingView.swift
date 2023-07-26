@@ -13,7 +13,7 @@ struct ChickNamingView: View {
     @State private var name = ""
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 ProgressBar(currentStep: 1)
                 CustomSpacer(height: 80)

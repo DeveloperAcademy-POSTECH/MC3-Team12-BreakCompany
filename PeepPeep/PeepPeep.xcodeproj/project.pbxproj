@@ -24,6 +24,8 @@
 		C910C9D42A67D8FE00EEF718 /* PeepPeepCommons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C910C9B52A67D8A300EEF718 /* PeepPeepCommons.framework */; };
 		C910C9D52A67D8FE00EEF718 /* PeepPeepCommons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C910C9B52A67D8A300EEF718 /* PeepPeepCommons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C910C9DA2A67DA1200EEF718 /* TimeInterval+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C910C9D92A67DA1200EEF718 /* TimeInterval+.swift */; };
+		C918F3182A70E4F800819BF4 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C918F3172A70E4F800819BF4 /* FontManager.swift */; };
+		C918F31A2A70E52C00819BF4 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C918F3192A70E52C00819BF4 /* DOSSaemmul.ttf */; };
 		C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953E82A5E633F0090E916 /* PeepPeepApp.swift */; };
 		C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953EA2A5E633F0090E916 /* ContentView.swift */; };
 		C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91953EF2A5E63400090E916 /* Preview Assets.xcassets */; };
@@ -53,10 +55,6 @@
 		C9B6863F2A6DCFB600C70079 /* Chick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6863E2A6DCFB600C70079 /* Chick.swift */; };
 		C9B686412A6DD09D00C70079 /* ChickNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B686402A6DD09D00C70079 /* ChickNamingView.swift */; };
 		C9B686432A6DD13400C70079 /* ChickNamingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B686422A6DD13400C70079 /* ChickNamingViewModel.swift */; };
-		C9B686462A6DD51A00C70079 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9B686452A6DD51A00C70079 /* DOSSaemmul.ttf */; };
-		C9B686472A6DD61800C70079 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9B686452A6DD51A00C70079 /* DOSSaemmul.ttf */; };
-		C9B686482A6DD61900C70079 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9B686452A6DD51A00C70079 /* DOSSaemmul.ttf */; };
-		C9B6864A2A6DD69C00C70079 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B686492A6DD69C00C70079 /* FontManager.swift */; };
 		C9B6864C2A6DDE0200C70079 /* ScreenTimeRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B6864B2A6DDE0200C70079 /* ScreenTimeRequestView.swift */; };
 		C9B686582A6F1D5700C70079 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B686572A6F1D5700C70079 /* PieChartView.swift */; };
 		C9B686602A6FBCE600C70079 /* ScreenTimeAppSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B686512A6EE9E000C70079 /* ScreenTimeAppSelection.swift */; };
@@ -150,6 +148,8 @@
 		C910C9B82A67D8A300EEF718 /* PeepPeepCommons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PeepPeepCommons.docc; sourceTree = "<group>"; };
 		C910C9BE2A67D8A300EEF718 /* PeepPeepCommonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeepPeepCommonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C910C9D92A67DA1200EEF718 /* TimeInterval+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+.swift"; sourceTree = "<group>"; };
+		C918F3172A70E4F800819BF4 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		C918F3192A70E52C00819BF4 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DOSSaemmul.ttf; sourceTree = "<group>"; };
 		C91953E52A5E633F0090E916 /* PeepPeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeepPeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91953E82A5E633F0090E916 /* PeepPeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeepPeepApp.swift; sourceTree = "<group>"; };
 		C91953EA2A5E633F0090E916 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,8 +186,6 @@
 		C9B6863E2A6DCFB600C70079 /* Chick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chick.swift; sourceTree = "<group>"; };
 		C9B686402A6DD09D00C70079 /* ChickNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickNamingView.swift; sourceTree = "<group>"; };
 		C9B686422A6DD13400C70079 /* ChickNamingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickNamingViewModel.swift; sourceTree = "<group>"; };
-		C9B686452A6DD51A00C70079 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOSSaemmul.ttf; path = "../../../../../../Downloads/fonts-master/ttf/DOSSaemmul.ttf"; sourceTree = "<group>"; };
-		C9B686492A6DD69C00C70079 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		C9B6864B2A6DDE0200C70079 /* ScreenTimeRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeRequestView.swift; sourceTree = "<group>"; };
 		C9B6864D2A6DE4C600C70079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9B6864E2A6DE63A00C70079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -237,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				C9B6864E2A6DE63A00C70079 /* Info.plist */,
-				C9B686442A6DD4AA00C70079 /* Font */,
 				C91954052A5E63B40090E916 /* Themes */,
 				C919540C2A5E63D70090E916 /* Components */,
 				C919540B2A5E63CE0090E916 /* Extensions */,
@@ -401,6 +398,8 @@
 			children = (
 				C91954062A5E63BE0090E916 /* Colors.swift */,
 				C91954082A5E63C50090E916 /* Styles.swift */,
+				C918F3172A70E4F800819BF4 /* FontManager.swift */,
+				C918F3192A70E52C00819BF4 /* DOSSaemmul.ttf */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -540,22 +539,6 @@
 				C9713FEE2A65944C00589A1C /* CostumeBookView.swift */,
 			);
 			path = CostumeBook;
-			sourceTree = "<group>";
-		};
-		C9B6863C2A6A7E1500C70079 /* Asset */ = {
-			isa = PBXGroup;
-			children = (
-				C9B6863D2A6A7E2800C70079 /* Images */,
-			);
-			path = Asset;
-			sourceTree = "<group>";
-		};
-		C9B6863D2A6A7E2800C70079 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				C909C2C32A683B7100854575 /* Assets.xcassets */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -701,7 +684,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B686462A6DD51A00C70079 /* DOSSaemmul.ttf in Resources */,
+				C918F31A2A70E52C00819BF4 /* DOSSaemmul.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,7 +699,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B686472A6DD61800C70079 /* DOSSaemmul.ttf in Resources */,
 				C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */,
 				C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */,
 				C909C2C42A683B7100854575 /* Assets.xcassets in Resources */,
@@ -727,7 +709,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B686482A6DD61900C70079 /* DOSSaemmul.ttf in Resources */,
 				C909C2C52A683B7100854575 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C918F3182A70E4F800819BF4 /* FontManager.swift in Sources */,
 				C9C2A6F22A702C8400C5B129 /* CustomSpacer.swift in Sources */,
 				C909C2BD2A68108300854575 /* EmptyUtils.swift in Sources */,
 				C910C9B92A67D8A300EEF718 /* PeepPeepCommons.docc in Sources */,
@@ -768,7 +750,6 @@
 				C910C9DA2A67DA1200EEF718 /* TimeInterval+.swift in Sources */,
 				C9C2A6EC2A70162600C5B129 /* BackButton.swift in Sources */,
 				C909C2BB2A68107200854575 /* EmptyComponents.swift in Sources */,
-				C9B6864A2A6DD69C00C70079 /* FontManager.swift in Sources */,
 				C909C2BA2A68106F00854575 /* Styles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
