@@ -52,7 +52,7 @@ struct ChickNameTextField: View {
 // 병아리 이미지 뷰
 struct ChickImageView: View {
     var body: some View {
-        Image("chick")
+        Image("Chick")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 200, height: 200)

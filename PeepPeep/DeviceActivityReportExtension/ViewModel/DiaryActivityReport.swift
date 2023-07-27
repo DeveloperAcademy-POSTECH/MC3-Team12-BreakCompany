@@ -1,9 +1,11 @@
 //
-//  MainActivityReport.swift
+//  DiaryActivityReport.swift
 //  DeviceActivityReportExtension
 //
-//  Created by 이승용 on 2023/07/25.
+//  Created by Youngbin Choi on 2023/07/27.
 //
+
+import Foundation
 
 import DeviceActivity
 import SwiftUI
@@ -12,16 +14,16 @@ extension DeviceActivityReport.Context {
     // If your app initializes a DeviceActivityReport with this context, then the system will use
     // your extension's corresponding DeviceActivityReportScene to render the contents of the
     // report.
-    static let mainActivity = Self("Main Activity")
+    static let diaryActivity = Self("Diary Activity")
 }
 
-struct MainActivityReport: DeviceActivityReportScene {
+struct DiaryActivityReport: DeviceActivityReportScene {
     // Define which context your scene will represent.
-    let context: DeviceActivityReport.Context = .mainActivity
+    let context: DeviceActivityReport.Context = .diaryActivity
    
     
     // Define the custom configuration and the resulting view for this report.
-    let content: (Double) -> MainActivityView
+    let content: (Double) -> DiaryActivityView
     
 //    let goalTime = CoreData.shared.getStoredDataFromCoreData()
     
@@ -44,4 +46,3 @@ struct MainActivityReport: DeviceActivityReportScene {
         return totalActivityDuration
     }
 }
-

@@ -19,5 +19,8 @@ struct DeviceActivityExtension: DeviceActivityReportExtension {
         MainActivityReport { mainActivity in
             MainActivityView(mainActivity: mainActivity)
         }
+        DiaryActivityReport { diaryActivity in
+            DiaryActivityView(mainActivity: diaryActivity)
+        }
     }
 }

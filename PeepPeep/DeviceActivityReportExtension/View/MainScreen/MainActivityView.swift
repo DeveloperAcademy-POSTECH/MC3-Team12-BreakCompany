@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainActivityView: View {
+    @State private var currentTime = Date()
     let goalTime: Int = 480
     let mainActivity : Double
     var color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
@@ -49,17 +50,33 @@ struct MainActivityView: View {
                     .foregroundColor(.black)
                 
             }
-            chickImage(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))
-                .resizable()
-                .frame(width: 250, height: 250, alignment: .center)
-                
-            Text("Lv. 1")
-                .font(.custom("DOSSaemmul", size: 13))
-            Text("병만이")
-                .font(.custom("DOSSaemmul", size: 20))
-                .padding(.top, 3)
+            //현재시간이 자정부터 오전 8시 사이면 자는 병아리이미지, 그 외에는 일반이미지
+            if isWithinRange() {
+                Image("Sleep2")
+                    .resizable()
+                    .frame(width: 250, height: 250, alignment: .center)
+            } else {
+                chickImage(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))
+                    .resizable()
+                    .frame(width: 250, height: 250, alignment: .center)
+                Text("Lv. 1")
+                    .font(.custom("DOSSaemmul", size: 13))
+                Text("병만이")
+                    .font(.custom("DOSSaemmul", size: 20))
+                    .padding(.top, 3)
+            }
+            
+        }
+        //60초 마다 현재 시간을 업데이트
+        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+            self.currentTime = Date()
         }
     }
+    private func isWithinRange() -> Bool {
+            let calendar = Calendar.current
+            let currentHour = calendar.component(.hour, from: currentTime)
+            return currentHour >= 0 && currentHour < 8
+        }
 }
 func chickImage(stress: Int) -> Image {
     switch stress {
@@ -80,7 +97,7 @@ func chickImage(stress: Int) -> Image {
     }
 }
 func statusColor(stress: Int) -> Color {
-    var color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
+    let color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
     switch stress {
     case 0 ..< 20 :
         return color[0]

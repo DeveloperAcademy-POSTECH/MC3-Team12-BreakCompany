@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+import DeviceActivity
+
+extension DeviceActivityReport.Context{
+    static let diaryActivity = Self("Diary Activity")
+}
 
 struct DailyFeedBackView: View {
     @State var isClick: Bool
@@ -104,7 +109,7 @@ struct CellView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(stressLevelColor(stressLevel: stressLevel))
+                .foregroundColor(stressLevelColor(stressLevel: stressLevel % 6))
                 .frame(width: 40, height: 40)
 
             Text("\(day)")
@@ -117,6 +122,23 @@ struct CellView: View {
 struct DiaryView: View {
     @Binding var nowDay: Date
     @Binding var stressLevel: Int
+    @State private var context: DeviceActivityReport.Context = .diaryActivity
+    @State private var filter: DeviceActivityFilter
+    init(nowDay: Binding<Date>, stressLevel: Binding<Int>) {
+        _nowDay = nowDay
+        _stressLevel = stressLevel
+        let now = Date()
+        let startOfDay = Calendar.current.date(byAdding: .day, value: -1, to: nowDay.wrappedValue + 1) ?? now
+        let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
+        let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
+        
+        _filter = State(initialValue: DeviceActivityFilter(
+            segment: .daily(during: dateInterval),
+            users: .all,
+            devices: .init([.iPhone, .iPad])
+        ))
+    }
+
 
     var body: some View {
         ZStack {
@@ -126,30 +148,32 @@ struct DiaryView: View {
                 .frame(height: 250)
                 .offset(x: -10, y: 10)
 
+            VStack {
+                Text("\(nowDay, formatter: Self.dateFormatter)")
+                    .font(.custom("DOSSaemmul", size: 13))
+                    .padding(.top)
+                DeviceActivityReport(context, filter: filter)
+                    .frame(width: 150, height: 180)
+//                    .background(Color(hex: "f6efe3"))
+
+//                VStack {
+//                    Text("사용시간")
+//                    DeviceActivityReport(context, filter: filter)
+//                        .frame(width: 100, height: 30)
+//                }
+//                .padding(.bottom)
+//
+//                Text("스트레스 지수")
+//                    .padding(.bottom, 3)
+//                Text("\(stressLevel)%")
+//                    .font(.title2)
+            }
             Image("Chick")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 200)
                 .offset(x: -120, y: 75)
                 .scaleEffect(x: -1, y: 1, anchor: .center)
-
-            VStack {
-                Text("\(nowDay, formatter: Self.dateFormatter)")
-                    .font(.title2)
-                    .padding(.bottom)
-
-                VStack {
-                    Text("사용시간")
-                    Text("00 : 00")
-                        .font(.title)
-                }
-                .padding(.bottom)
-
-                Text("스트레스 지수")
-                    .padding(.bottom, 3)
-                Text("\(stressLevel)%")
-                    .font(.title2)
-            }
         }
     }
 }
@@ -201,16 +225,18 @@ private extension DailyFeedBackView {
 private extension CellView {
     func stressLevelColor(stressLevel: Int = 90) -> Color {
         switch stressLevel {
-        case 0...20:
-            return Color.blue
-        case 21...40:
-            return Color.green
-        case 41...60:
-            return Color.yellow
-        case 61...80:
-            return Color.orange
-        case 81...100:
-            return Color.pink
+        case 0:
+            return Color(hex: "FFE500").opacity(0.1)
+        case 1:
+            return Color(hex: "FFE500").opacity(0.25)
+        case 2:
+            return Color(hex: "FFE500").opacity(0.45)
+        case 3:
+            return Color(hex: "FFE500").opacity(0.65)
+        case 4:
+            return Color(hex: "FFE500").opacity(1.0)
+        case 5:
+            return Color(hex: "EF692F").opacity(0.5)
         default:
             return Color.red
         }
@@ -230,4 +256,19 @@ struct DailyFeedBackView_Previews: PreviewProvider {
     static var previews: some View {
         DailyFeedBackView(isClick: false, month: Date(), nowDay: Date(), stressLevel: 0)
     }
+}
+
+extension Color {
+  init(hex: String) {
+    let scanner = Scanner(string: hex)
+    _ = scanner.scanString("#")
+    
+    var rgb: UInt64 = 0
+    scanner.scanHexInt64(&rgb)
+    
+    let r = Double((rgb >> 16) & 0xFF) / 255.0
+    let g = Double((rgb >>  8) & 0xFF) / 255.0
+    let b = Double((rgb >>  0) & 0xFF) / 255.0
+    self.init(red: r, green: g, blue: b)
+  }
 }
