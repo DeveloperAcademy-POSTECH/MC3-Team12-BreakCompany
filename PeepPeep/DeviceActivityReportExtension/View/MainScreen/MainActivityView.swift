@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MainActivityView: View {
     @State private var currentTime = Date()
-    let goalTime: Int = 480
+    @State var goalTime: Int = 480
+    @State var chickName: String = "병아리"
+    let gaugeWidth : CGFloat = 106
     let mainActivity : Double
     var color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
     let formatter: DateComponentsFormatter = {
@@ -34,7 +36,7 @@ struct MainActivityView: View {
             ZStack{
                 RoundedRectangle(cornerRadius: 5)
                     .fill(.white)
-                    .frame(width: 106, height: 24)
+                    .frame(width: gaugeWidth, height: 24)
                     .overlay{
                         RoundedRectangle(cornerRadius: 5)
                             .stroke(Color.black)
@@ -42,7 +44,7 @@ struct MainActivityView: View {
                     .overlay(alignment: .leading){
                         RoundedRectangle(cornerRadius: 5)
                             .fill(statusColor(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100)))
-                            .frame(width: (CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 106))
+                            .frame(width: ((CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth) > CGFloat(gaugeWidth) ? CGFloat(gaugeWidth) : CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth))
                     }
 
                 Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
@@ -59,17 +61,30 @@ struct MainActivityView: View {
                 chickImage(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))
                     .resizable()
                     .frame(width: 250, height: 250, alignment: .center)
-                Text("Lv. 1")
-                    .font(.custom("DOSSaemmul", size: 13))
-                Text("병만이")
-                    .font(.custom("DOSSaemmul", size: 20))
-                    .padding(.top, 3)
             }
+            Text("Lv. 1")
+                .font(.custom("DOSSaemmul", size: 13))
+            Text(chickName)
+                .font(.custom("DOSSaemmul", size: 20))
+                .padding(.top, 3)
             
+        }
+        .onAppear{
+            let DateFormatter = DateFormatter()
+            DateFormatter.dateFormat = "yyyy.MM.dd"
+            let today = DateFormatter.string(from: Date())
+            //오늘 목표 설정시간이 있다면 가져오고 없다면 240분이 목표시간 기본값
+            if UserDefaults.shared.object(forKey: today) == nil {
+                goalTime = 240
+            } else{
+                goalTime = UserDefaults.shared.integer(forKey: today)
+            }
+            chickName = UserDefaults.shared.string(forKey: "chickName") ?? "병아리"
         }
         //60초 마다 현재 시간을 업데이트
         .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
             self.currentTime = Date()
+            
         }
     }
     private func isWithinRange() -> Bool {
@@ -107,7 +122,7 @@ func statusColor(stress: Int) -> Color {
         return color[2]
     case 60 ..< 80 :
         return color[3]
-    case 80 ..< 100 :
+    case 80 ..< 1000 :
         return color[4]
     default:
         return color[1]

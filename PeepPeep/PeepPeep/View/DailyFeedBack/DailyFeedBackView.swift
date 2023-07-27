@@ -154,19 +154,6 @@ struct DiaryView: View {
                     .padding(.top)
                 DeviceActivityReport(context, filter: filter)
                     .frame(width: 150, height: 180)
-//                    .background(Color(hex: "f6efe3"))
-
-//                VStack {
-//                    Text("사용시간")
-//                    DeviceActivityReport(context, filter: filter)
-//                        .frame(width: 100, height: 30)
-//                }
-//                .padding(.bottom)
-//
-//                Text("스트레스 지수")
-//                    .padding(.bottom, 3)
-//                Text("\(stressLevel)%")
-//                    .font(.title2)
             }
             Image("Chick")
                 .resizable()
@@ -174,6 +161,12 @@ struct DiaryView: View {
                 .frame(height: 200)
                 .offset(x: -120, y: 75)
                 .scaleEffect(x: -1, y: 1, anchor: .center)
+        }
+        .onAppear{
+            let DateFormatter = DateFormatter()
+            DateFormatter.dateFormat = "yyyy.MM.dd"
+            let clickedDate = DateFormatter.string(from: nowDay)
+            UserDefaults.shared.set(clickedDate, forKey: "clickedDate")
         }
     }
 }
