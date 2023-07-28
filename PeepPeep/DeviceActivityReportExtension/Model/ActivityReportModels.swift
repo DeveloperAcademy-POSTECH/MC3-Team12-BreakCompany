@@ -15,7 +15,7 @@ struct ActivityReport {
     let apps: [AppDeviceActivity]
     var chartData: [(Double, Color)] {
         apps.enumerated().map { (index, app) in
-            (Double(app.duration), colorPalette[index % colorPalette.count])
+            (Double(app.duration), pieChartColorPalette[index % pieChartColorPalette.count])
         }
     }
 }
@@ -26,6 +26,6 @@ struct AppDeviceActivity: Identifiable {
     var iconToken: ApplicationToken
     var duration: TimeInterval
     var color: Color {
-        return colorPalette[Int(id)! % colorPalette.count]
+        return pieChartColorPalette[Int(id)! % pieChartColorPalette.count]
     }
 }
