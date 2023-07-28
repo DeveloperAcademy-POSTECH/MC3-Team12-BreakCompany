@@ -54,7 +54,7 @@
 		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
 		C9DFECD02A7159A9003190FD /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECCF2A7159A9003190FD /* FontManager.swift */; };
 		C9DFECDA2A715BB2003190FD /* Chick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECD92A715BB2003190FD /* Chick.swift */; };
-		C9DFECDC2A715BF0003190FD /* ScreenTimeAppSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelection.swift */; };
+		C9DFECDC2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift */; };
 		C9DFECDE2A715C6B003190FD /* ChickNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */; };
 		C9DFECE02A715C9A003190FD /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECDF2A715C9A003190FD /* ProgressBar.swift */; };
 		C9DFECE22A715CD0003190FD /* ScreenTimeRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */; };
@@ -64,10 +64,10 @@
 		C9DFECEB2A716169003190FD /* ActivityReportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C2BE2A68379700854575 /* ActivityReportModels.swift */; };
 		C9DFECED2A716211003190FD /* TimeSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECEC2A716211003190FD /* TimeSettingView.swift */; };
 		C9DFECEE2A71638D003190FD /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECD52A715B1C003190FD /* PieChartView.swift */; };
-		D99ED3952A717A56005D3878 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D99ED3942A717A56005D3878 /* DOSSaemmul.ttf */; };
-		D99ED3962A717A56005D3878 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D99ED3942A717A56005D3878 /* DOSSaemmul.ttf */; };
-		D99ED3972A717A56005D3878 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D99ED3942A717A56005D3878 /* DOSSaemmul.ttf */; };
-		D99ED3982A717A56005D3878 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D99ED3942A717A56005D3878 /* DOSSaemmul.ttf */; };
+		C9DFECEF2A716974003190FD /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9DFECD12A7159C6003190FD /* DOSSaemmul.ttf */; };
+		C9DFECF02A716975003190FD /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9DFECD12A7159C6003190FD /* DOSSaemmul.ttf */; };
+		C9DFECF62A72EBCA003190FD /* ScreenTimeAppSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECF52A72EBCA003190FD /* ScreenTimeAppSelection.swift */; };
+		C9DFECF82A73D6FF003190FD /* TimeIntervalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECF72A73D6FF003190FD /* TimeIntervalFormatter.swift */; };
 		D99ED39A2A725549005D3878 /* DiaryActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99ED3992A725549005D3878 /* DiaryActivityReport.swift */; };
 		D99ED39C2A7255C2005D3878 /* DiaryActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99ED39B2A7255C2005D3878 /* DiaryActivityView.swift */; };
 /* End PBXBuildFile section */
@@ -194,11 +194,12 @@
 		C9713FEE2A65944C00589A1C /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
 		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9DFECCF2A7159A9003190FD /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		C9DFECD12A7159C6003190FD /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DOSSaemmul.ttf; sourceTree = "<group>"; };
 		C9DFECD32A7159F2003190FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9DFECD42A715A8F003190FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9DFECD52A715B1C003190FD /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		C9DFECD92A715BB2003190FD /* Chick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chick.swift; sourceTree = "<group>"; };
-		C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAppSelection.swift; sourceTree = "<group>"; };
+		C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAppSelectionViewModel.swift; sourceTree = "<group>"; };
 		C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickNamingView.swift; sourceTree = "<group>"; };
 		C9DFECDF2A715C9A003190FD /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeRequestView.swift; sourceTree = "<group>"; };
@@ -206,7 +207,8 @@
 		C9DFECE52A715EF6003190FD /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		C9DFECE72A715F1F003190FD /* CustomSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacer.swift; sourceTree = "<group>"; };
 		C9DFECEC2A716211003190FD /* TimeSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingView.swift; sourceTree = "<group>"; };
-		D99ED3942A717A56005D3878 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DOSSaemmul.ttf; sourceTree = "<group>"; };
+		C9DFECF52A72EBCA003190FD /* ScreenTimeAppSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAppSelection.swift; sourceTree = "<group>"; };
+		C9DFECF72A73D6FF003190FD /* TimeIntervalFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalFormatter.swift; sourceTree = "<group>"; };
 		D99ED3992A725549005D3878 /* DiaryActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryActivityReport.swift; sourceTree = "<group>"; };
 		D99ED39B2A7255C2005D3878 /* DiaryActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,7 +331,7 @@
 			children = (
 				C96B03A42A5E9F6300B86493 /* EmptyModel.swift */,
 				C9DFECD92A715BB2003190FD /* Chick.swift */,
-				C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelection.swift */,
+				C9DFECF52A72EBCA003190FD /* ScreenTimeAppSelection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DFECE32A715EBF003190FD /* ChickNamingVIewModel.swift */,
+				C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift */,
 				C96B03A92A5E9F8B00B86493 /* EmptyViewModel.swift */,
 			);
 			path = ViewModel;
@@ -434,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				C96B03BB2A5EA0D600B86493 /* EmptyUtils.swift */,
+				C9DFECF72A73D6FF003190FD /* TimeIntervalFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -787,6 +791,7 @@
 				C909C2BC2A68107500854575 /* EmptyExtensions.swift in Sources */,
 				C909C2B82A6803D300854575 /* Colors.swift in Sources */,
 				C910C9DA2A67DA1200EEF718 /* TimeInterval+.swift in Sources */,
+				C9DFECF82A73D6FF003190FD /* TimeIntervalFormatter.swift in Sources */,
 				C9DFECE62A715EF6003190FD /* BackButton.swift in Sources */,
 				C909C2BB2A68107200854575 /* EmptyComponents.swift in Sources */,
 				C9DFECD02A7159A9003190FD /* FontManager.swift in Sources */,
@@ -818,7 +823,7 @@
 				6765512B2A7010F800617638 /* HelperView.swift in Sources */,
 				C9DFECDE2A715C6B003190FD /* ChickNamingView.swift in Sources */,
 				C96B03A52A5E9F6300B86493 /* EmptyModel.swift in Sources */,
-				C9DFECDC2A715BF0003190FD /* ScreenTimeAppSelection.swift in Sources */,
+				C9DFECDC2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift in Sources */,
 				C96B03AA2A5E9F8B00B86493 /* EmptyViewModel.swift in Sources */,
 				C9DFECDA2A715BB2003190FD /* Chick.swift in Sources */,
 				C96B03BE2A5EA0E600B86493 /* MainView.swift in Sources */,
@@ -827,6 +832,7 @@
 				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
 				C9DFECE02A715C9A003190FD /* ProgressBar.swift in Sources */,
 				85DBE1DC2A7060FE00AECFB5 /* LoadingView.swift in Sources */,
+				C9DFECF62A72EBCA003190FD /* ScreenTimeAppSelection.swift in Sources */,
 				C9DFECE22A715CD0003190FD /* ScreenTimeRequestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -887,10 +893,12 @@
 		C910C9CD2A67D8A300EEF718 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -923,10 +931,12 @@
 		C910C9CE2A67D8A300EEF718 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1127,6 +1137,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PeepPeep/PeepPeep.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1165,6 +1176,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PeepPeep/PeepPeep.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1201,6 +1213,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = DeviceActivityReportExtension/DeviceActivityReportExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1233,6 +1246,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = DeviceActivityReportExtension/DeviceActivityReportExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
