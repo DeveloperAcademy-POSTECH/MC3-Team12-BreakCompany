@@ -152,7 +152,8 @@ struct DiaryView: View {
                     .font(.custom("DOSSaemmul", size: 13))
                     .padding(.top)
                 DeviceActivityReport(context, filter: filter)
-                    .frame(width: 150, height: 180)
+                    .frame(width: 120, height: 144)
+                    
             }
             Image("Chick")
                 .resizable()
@@ -161,7 +162,7 @@ struct DiaryView: View {
                 .offset(x: -120, y: 75)
                 .scaleEffect(x: -1, y: 1, anchor: .center)
         }
-        .onAppear {
+        .onAppear{
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
             let clickedDate = dateFormatter.string(from: nowDay)

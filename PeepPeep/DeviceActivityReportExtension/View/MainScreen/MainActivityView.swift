@@ -70,15 +70,16 @@ struct MainActivityView: View {
             
         }
         .onAppear{
+            let today = Date()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
-            let today = dateFormatter.string(from: Date())
-            //오늘 목표 설정시간이 있다면 가져오고 없다면 240분이 목표시간 기본값
-            if UserDefaults.shared.object(forKey: today) == nil {
-                goalTime = 240
-            } else{
-                goalTime = UserDefaults.shared.integer(forKey: today)
+            //메인화면에서 병아리의 상태를 표출할 때, 이전 날짜를 하나씩 검사하며 목표 시간 설정이 된 가장 최근 날짜의 목표시간을 가져와 반영
+            //목표시간이 설정된 적이 없으면 무한루프를 돌기에, 메인화면이 나타날 때 onAppear 로 7월17일의 목표시간을 600분으로 임의로 정함
+            var dayCount = 0
+            while (UserDefaults.shared.object(forKey: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: dayCount, to: today)!)) == nil){
+                dayCount -= 1
             }
+            goalTime = UserDefaults.shared.integer(forKey: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: dayCount, to: today)!))
             chickName = UserDefaults.shared.string(forKey: "chickName") ?? "병아리"
         }
         //60초 마다 현재 시간을 업데이트
