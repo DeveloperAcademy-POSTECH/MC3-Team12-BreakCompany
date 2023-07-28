@@ -12,7 +12,7 @@ struct MainActivityView: View {
     @State var goalTime: Int = 480
     @State var chickName: String = "병아리"
     let gaugeWidth : CGFloat = 106
-    let mainActivity : String
+    let mainActivity : Double
     var color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
     let formatter: DateComponentsFormatter = {
             let formatter = DateComponentsFormatter()

@@ -23,11 +23,10 @@ struct MainActivityReport: DeviceActivityReportScene {
     let context: DeviceActivityReport.Context = .mainActivity
 
     // Define the custom configuration and the resulting view for this report.
-    let content: (String) -> MainActivityView
+    let content: (Double) -> MainActivityView
 
-    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> String {
-        let selectedAppsActivityDuration = await calculateSelectedAppsActivityDuration(from: data)
-        return formatTimeInterval(selectedAppsActivityDuration) ?? "No activity data"
+    func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> Double {
+        return await calculateSelectedAppsActivityDuration(from: data)
     }
 
     /// 앱 토큰을 UserDefaults에 저장된 앱 토큰과 비교해 선택한 앱들의 총 활동 시간의 합을 반환.
