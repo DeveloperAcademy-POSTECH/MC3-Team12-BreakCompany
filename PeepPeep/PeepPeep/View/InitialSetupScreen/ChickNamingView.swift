@@ -34,6 +34,9 @@ struct ChickNamingView: View {
             .navigationBarItems(trailing: SkipButton(viewModel: viewModel, name: name))
             .font(.dosSsaemmul(size: 20))
             .foregroundColor(Color.black)
+            .onAppear{
+                print(name)
+            }
         }
     }
 }
@@ -53,7 +56,7 @@ struct ChickNameTextField: View {
 // 병아리 이미지 뷰
 struct ChickImageView: View {
     var body: some View {
-        Image("chick")
+        Image("Chick")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 200, height: 200)
@@ -64,7 +67,7 @@ struct ChickImageView: View {
 struct DecisionButton: View {
     let viewModel: ChickNamingViewModel
     let name: String
-
+    
     var body: some View {
         NavigationLink {
             ScreenTimeRequestView()
@@ -73,7 +76,12 @@ struct DecisionButton: View {
         }
         .buttonStyle(CommonButtonStyle(paddingSize: 30))
         .simultaneousGesture(TapGesture().onEnded({ _ in
-            viewModel.updateChickName(name: name)
+            // 아무것도 입력하지 않고 결정을 누르면 기본값 "병아리"로 이름이 지어짐
+            if name == "" {
+                viewModel.updateChickName(name: "병아리")
+            } else{
+                viewModel.updateChickName(name: name)
+            }
         }))
     }
 }
@@ -84,12 +92,14 @@ struct SkipButton: View {
     let name: String
 
     var body: some View {
-        Button(action: {
-            viewModel.updateChickName(name: "병아리")
-        }) {
-            NavigationLink(destination: ScreenTimeRequestView()) {
-                Text("Skip")
-            }
+        NavigationLink {
+            ScreenTimeRequestView()
+        } label: {
+            Text("Skip")
         }
+        .simultaneousGesture(TapGesture().onEnded({ _ in
+            // 스키밯면 기본값 "병아리"로 이름이 지어짐
+            viewModel.updateChickName(name: "병아리")
+        }))
     }
 }

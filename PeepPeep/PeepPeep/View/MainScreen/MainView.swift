@@ -16,6 +16,18 @@ struct MainView: View {
     @State private var context: DeviceActivityReport.Context = .mainActivity
     @State private var showModal = false
     @State private var showModal2 = false
+    @State private var filter: DeviceActivityFilter = {
+            let now = Date()
+            let startOfDay = Calendar.current.startOfDay(for: now)
+            let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
+            let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
+        
+            return DeviceActivityFilter(
+                segment: .daily(during: dateInterval),
+                users: .all,
+                devices: .init([.iPhone, .iPad])
+            )
+        }()
     
     var currentUsageTime: CGFloat = 217  // minutes, 사용시간
     var targetUsageTime: CGFloat = 240   // minutes, 목표시간
@@ -25,6 +37,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack{
             VStack{
+
                 // 도움말 ModalView
                 HStack{
                     Button(action: {
@@ -51,7 +64,7 @@ struct MainView: View {
                 Spacer()
                                 
 //                ProgressBarView()
-                DeviceActivityReport(context)
+                DeviceActivityReport(context, filter: filter)
                     .frame(width: 300, height: 500, alignment: .center)
                 
                 
@@ -77,8 +90,8 @@ struct MainView: View {
                     Spacer()
                     
                     // 시간설정 버튼
-                    Button {
-                        self.showModal2 = true
+                    NavigationLink {
+                        SettingView()
                     } label: {
                         VStack{
                             Image("Setting")
@@ -89,9 +102,7 @@ struct MainView: View {
                                 .font(.custom("DOSSaemmul", size: 16))
                         }
                     }
-                    .sheet(isPresented: self.$showModal2){
-//                        TimeSettingView()
-                    }
+
                     
                     Spacer()
                     

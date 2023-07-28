@@ -15,6 +15,7 @@ struct PeepPeepApp: App {
         }
     }
 }
+
 // 앱그룹을 이용해 유저디폴트를 익스텐션으로 전달할 때 사용하는 코드
 extension UserDefaults {
     static var shared: UserDefaults {

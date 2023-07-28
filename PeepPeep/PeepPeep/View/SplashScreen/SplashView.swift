@@ -67,7 +67,7 @@ struct SplashView: View {
 
                     Image("ChickSeller3")
                         .resizable()
-                        .frame(width: 300, height: 300)
+                        .frame(width: 400, height: 400)
                         .offset(y: 50)
                 }
 
