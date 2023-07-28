@@ -24,3 +24,10 @@ struct DeviceActivityExtension: DeviceActivityReportExtension {
         }
     }
 }
+
+extension UserDefaults {
+    static var shared: UserDefaults {
+        let appGroupId = "group.7C76V3X7AB.com.restco.PeepPeep"
+        return UserDefaults(suiteName: appGroupId)!
+    }
+}

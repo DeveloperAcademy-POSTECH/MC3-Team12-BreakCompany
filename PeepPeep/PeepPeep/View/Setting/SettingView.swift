@@ -11,7 +11,7 @@ import Foundation
 struct SettingView: View {
     
     let grayColor: Color = Color("GrayColor")
-    @State var name: String = ""
+    @State var chickName: String = ""
     @State var showModal = false
     
     var body: some View {
@@ -27,9 +27,11 @@ struct SettingView: View {
                     .font(.custom("DOSSaemmul", size: 15))
                     .foregroundColor(grayColor)
                 
-                TextField("병아리", text: $name)
+                TextField(chickName, text: $chickName)
                     .font(.custom("DOSSaemmul", size: 15))
-                    
+                    .onSubmit {
+                        UserDefaults.shared.set(chickName, forKey: "chickName")
+                    }
             }
             .frame(width: 320, height: 60)
             .overlay(){
@@ -58,9 +60,10 @@ struct SettingView: View {
             
             Spacer()
 
-            
         } // VStack
-        
+        .onAppear{
+            chickName = UserDefaults.shared.string(forKey: "chickName") ?? "병아리"
+        }
     }
         
 }

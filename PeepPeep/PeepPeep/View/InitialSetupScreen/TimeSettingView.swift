@@ -9,10 +9,11 @@ import SwiftUI
 import DeviceActivity
 
 struct TimeSettingView: View {
-    let hours = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    let hours = Array(0...23)
     let minutes = [0, 10, 20, 30, 40, 50]
     @State var selectedHours = 4
     @State var selectedMinutes = 0
+    @State var testGoalTime = 0
     
     var body: some View {
         VStack {
@@ -52,7 +53,12 @@ struct TimeSettingView: View {
             }
             .padding(.vertical, 20)
             Button {
-                print("결정")
+                let goalTime = hours[hours.firstIndex(of: selectedHours) ?? 0]*60 + minutes[minutes.firstIndex(of: selectedMinutes) ?? 0]
+                let DateFormatter = DateFormatter()
+                DateFormatter.dateFormat = "yyyy.MM.dd"
+                let settedDay = DateFormatter.string(from: Date())
+                UserDefaults.shared.set(goalTime, forKey: settedDay)
+                testGoalTime = UserDefaults.shared.integer(forKey: settedDay)
             } label: {
                 Text("결정")
                     .frame(width: 106, height: 44)
@@ -64,6 +70,25 @@ struct TimeSettingView: View {
                     }
             }
             .padding(.vertical, 20)
+            .onAppear{
+                for (key, value) in UserDefaults.shared.dictionaryRepresentation() {
+                   print("\(key), \(value)")
+                 }
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy.MM.dd"
+                let today = dateFormatter.string(from: Date())
+                if UserDefaults.shared.object(forKey: today) == nil {
+                    // 기존 설정된 목표시간이 없다면 4시간 0분이 기본값
+                    selectedHours = 4
+                    selectedMinutes = 0
+                } else {
+                    // 기존 설정된 목표시간이 있다면 피커가 그 시간에 맞게 세팅이 되어 나옴
+                    testGoalTime = UserDefaults.shared.integer(forKey: today)
+                    selectedHours = hours.firstIndex(of: testGoalTime / 60) ?? 4
+                    selectedMinutes = minutes.firstIndex(of: testGoalTime % 60) ?? 0
+                }
+            }
+//            Text("현재목표시간 : \(testGoalTime)")
         }
     }
 }
