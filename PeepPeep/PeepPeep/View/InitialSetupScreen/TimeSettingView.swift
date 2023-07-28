@@ -54,9 +54,9 @@ struct TimeSettingView: View {
             .padding(.vertical, 20)
             Button {
                 let goalTime = hours[hours.firstIndex(of: selectedHours) ?? 0]*60 + minutes[minutes.firstIndex(of: selectedMinutes) ?? 0]
-                let DateFormatter = DateFormatter()
-                DateFormatter.dateFormat = "yyyy.MM.dd"
-                let settedDay = DateFormatter.string(from: Date())
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy.MM.dd"
+                let settedDay = dateFormatter.string(from: Date())
                 UserDefaults.shared.set(goalTime, forKey: settedDay)
                 testGoalTime = UserDefaults.shared.integer(forKey: settedDay)
             } label: {

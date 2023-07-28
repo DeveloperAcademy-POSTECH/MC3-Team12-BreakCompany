@@ -12,7 +12,7 @@ struct MainActivityView: View {
     @State var goalTime: Int = 480
     @State var chickName: String = "병아리"
     let gaugeWidth : CGFloat = 106
-    let mainActivity : Double
+    let mainActivity : String
     var color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
     let formatter: DateComponentsFormatter = {
             let formatter = DateComponentsFormatter()
@@ -70,9 +70,9 @@ struct MainActivityView: View {
             
         }
         .onAppear{
-            let DateFormatter = DateFormatter()
-            DateFormatter.dateFormat = "yyyy.MM.dd"
-            let today = DateFormatter.string(from: Date())
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            let today = dateFormatter.string(from: Date())
             //오늘 목표 설정시간이 있다면 가져오고 없다면 240분이 목표시간 기본값
             if UserDefaults.shared.object(forKey: today) == nil {
                 goalTime = 240
