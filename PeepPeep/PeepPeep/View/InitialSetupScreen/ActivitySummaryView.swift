@@ -4,13 +4,15 @@
 //
 //  Created by Ha Jong Myeong on 2023/07/12.
 //
+
 import DeviceActivity
 import FamilyControls
 import PeepPeepCommons
 import SwiftUI
 
 struct ActivitySummaryView: View {
-    @EnvironmentObject var model: ScreenTimeAppSelection
+    @ObservedObject var model: ScreenTimeAppSelection
+    @ObservedObject var viewModel: ScreenTimeAppSelectionViewModel
     @State var isPresented = false
     @State private var totalActivityContext: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var navigateToMain = false
@@ -31,19 +33,16 @@ struct ActivitySummaryView: View {
         VStack {
             ProgressBar(currentStep: 3)
             CustomSpacer(height: 30)
-            Text("오늘, 이만큼 휴대폰을 사용했어요!")
-                .font(.dosSsaemmul(size: 20))
-                .padding(.bottom, 5)
             DeviceActivityReport(totalActivityContext, filter: filter)
-            Button("확인") { isPresented = true }
-                .buttonStyle(CommonButtonStyle(paddingSize: 30))
-                .familyActivityPicker(isPresented: $isPresented, selection: $model.newSelection)
-                .onChange(of: model.newSelection) { _ in
+            Button("선택하기") { isPresented = true }
+                .buttonStyle(CommonButtonStyle(paddingSize: 60))
+                .familyActivityPicker(isPresented: $isPresented, selection: $model.activitySelection)
+                .onChange(of: model.activitySelection) { _ in
                     navigateToMain = true
+                    viewModel.saveSelection(selection: model.activitySelection)
                 }
-                NavigationLink(destination: MainView(), isActive: $navigateToMain) {
-                    EmptyView()
-                }
+            NavigationLink(destination: MainView(), isActive: $navigateToMain) {
+            }
             CustomSpacer(height: 30)
         }
         .navigationBarBackButtonHidden(true)

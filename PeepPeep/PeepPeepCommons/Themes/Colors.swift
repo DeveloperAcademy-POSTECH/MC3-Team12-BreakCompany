@@ -6,3 +6,6 @@
 //
 
 import Foundation
+import SwiftUI
+
+public let pieChartColorPalette: [Color] = [.red, .orange, .yellow, .green, .blue, .purple, .pink]

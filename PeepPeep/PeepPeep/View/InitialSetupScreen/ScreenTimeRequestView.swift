@@ -4,6 +4,7 @@
 //
 //  Created by Ha Jong Myeong on 2023/07/24.
 //
+
 import DeviceActivity
 import FamilyControls
 import SwiftUI
@@ -39,7 +40,7 @@ struct ScreenTimeRequestView: View {
     }
 }
 
-// 모래시계 이미지 뷰
+/// 모래시계 이미지 뷰
 struct HourGlassImage: View {
     var body: some View {
         Image("Hourglass")
@@ -49,7 +50,7 @@ struct HourGlassImage: View {
     }
 }
 
-// 스크린타임 요청 텍스트
+/// 스크린타임 요청 텍스트
 struct RequestText: View {
     var body: some View {
         Text("스크린타임을 승인해주세요")
@@ -57,7 +58,7 @@ struct RequestText: View {
     }
 }
 
-// 스크린타임 설명 텍스트
+/// 스크린타임 설명 텍스트
 struct DescriptionText: View {
     var body: some View {
         Text("핸드폰 사용시간은\n스크린 타임 데이터를 기반으로\n측정됩니다")
@@ -68,13 +69,12 @@ struct DescriptionText: View {
     }
 }
 
-// 확인 버튼
+/// 확인 버튼
 struct ConfirmationButton: View {
     var body: some View {
         Button(action: {
         }) {
-            NavigationLink(destination: ActivitySummaryView()
-                .environmentObject(ScreenTimeAppSelection.shared)) {
+            NavigationLink(destination: ActivitySummaryView(model: ScreenTimeAppSelection(), viewModel: ScreenTimeAppSelectionViewModel())) {
                 Text("확인")
             }
         }
