@@ -28,13 +28,6 @@ struct DeviceActivityExtension: DeviceActivityReportExtension {
 extension UserDefaults {
     static var shared: UserDefaults {
         let appGroupId = "group.7C76V3X7AB.com.restco.PeepPeep"
-        return UserDefaults(suiteName: appGroupId)!
-    }
-}
-
-extension UserDefaults {
-    static var shared: UserDefaults {
-        let appGroupId = "group.7C76V3X7AB.com.restco.PeepPeep"
         guard let defaults = UserDefaults(suiteName: appGroupId) else {
             fatalError("appGroup을 통한 UserDefault를 생성할 수 없습니다.")
         }

@@ -20,7 +20,7 @@ extension DeviceActivityReport.Context {
 
 struct MainActivityReport: DeviceActivityReportScene {
     // Define which context your scene will represent.
-    let context: DeviceActivityReport.Context = .MainActivity
+    let context: DeviceActivityReport.Context = .mainActivity
 
     // Define the custom configuration and the resulting view for this report.
     let content: (String) -> MainActivityView
