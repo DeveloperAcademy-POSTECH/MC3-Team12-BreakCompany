@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct DiaryActivityView: View {
+    @State var dateBeforeDownload: Bool = false
+    @State var downloadedDate: String = ""
     @State var clickedDate: String = ""
     @State var goalTime: Int = 480
     let mainActivity : Double
@@ -24,28 +26,49 @@ struct DiaryActivityView: View {
     
     var body: some View {
         VStack {
-            Text("사용 시간")
-                .font(.custom("DOSSaemmul", size: 11))
-            Text(formatter.string(from: mainActivity) ?? "0시간0분")
-                .font(.custom("DOSSaemmul", size: 20))
-                .padding(.top, 7)
-            Text("스트레스 지수")
-                .font(.custom("DOSSaemmul", size: 12))
-                .padding(.top, 30)
-            Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
-                .font(.custom("DOSSaemmul", size: 16))
-                .padding(.top, 7)
+            if dateBeforeDownload {
+                Text("사용 시간")
+                    .font(.custom("DOSSaemmul", size: 11))
+                Text(formatter.string(from: mainActivity) ?? "0시간0분")
+                    .font(.custom("DOSSaemmul", size: 20))
+                    .padding(.top, 7)
+                Text("병아리를\n만나기\n전입니다")
+                    .font(.custom("DOSSaemmul", size: 12))
+                    .padding(.top, 30)
+            } else {
+                Text("사용 시간")
+                    .font(.custom("DOSSaemmul", size: 11))
+                Text(formatter.string(from: mainActivity) ?? "0시간0분")
+                    .font(.custom("DOSSaemmul", size: 20))
+                    .padding(.top, 7)
+                Text("스트레스 지수")
+                    .font(.custom("DOSSaemmul", size: 12))
+                    .padding(.top, 30)
+                Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
+                    .font(.custom("DOSSaemmul", size: 16))
+                    .padding(.top, 7)
+//                Text("테스트용 목표시간")
+//                    .font(.custom("DOSSaemmul", size: 12))
+//                Text("\(goalTime)")
+//                    .font(.custom("DOSSaemmul", size: 12))
+            }
         }
         .onAppear{
-            let DateFormatter = DateFormatter()
-            DateFormatter.dateFormat = "yyyy.MM.dd"
-            let today = DateFormatter.string(from: Date())
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            let today = dateFormatter.string(from: Date())
             clickedDate = UserDefaults.shared.string(forKey: "clickedDate") ?? today
-            //목표설정시간이 없는 날은 목표시간을 240분으로 임의로 설정한다
-            if UserDefaults.shared.object(forKey: clickedDate) == nil {
-                goalTime = 240
-            } else {
-                goalTime = UserDefaults.shared.integer(forKey: clickedDate)
+            downloadedDate = UserDefaults.shared.string(forKey: "downloadedDate") ?? "2023.07.17"
+            //클릭한 날짜를 다운로드한 날짜와 비교해서, 전자가 후자보다 빠르면 dateBeforeDownload 를 true로 바꾸어 코드를 분기
+            if dateFormatter.date(from: clickedDate)?.compare((dateFormatter.date(from: downloadedDate) ?? dateFormatter.date(from: "2023.07.17"))!) == .orderedAscending {
+                dateBeforeDownload = true
+            } else{
+                //달력에서 클릭한 날짜의 목표시간이 없다면, 이전 날짜를 하나씩 검사하며 가장 최근에 설정된 목표시간을 가져와 반영
+                var dayCount = 0
+                while (UserDefaults.shared.object(forKey: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: dayCount, to: dateFormatter.date(from: clickedDate)!)!)) == nil){
+                    dayCount -= 1
+                }
+                goalTime = UserDefaults.shared.integer(forKey: dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: dayCount, to: dateFormatter.date(from: clickedDate)!)!))
             }
         }
     }
