@@ -4,6 +4,7 @@
 //
 //  Created by Ha Jong Myeong on 2023/07/24.
 //
+
 import SwiftUI
 import PeepPeepCommons
 
@@ -65,14 +66,15 @@ struct DecisionButton: View {
     let name: String
 
     var body: some View {
-        Button(action: {
-            viewModel.updateChickName(name: name)
-        }) {
-            NavigationLink(destination: ScreenTimeRequestView()) {
-                Text("결정")
-            }
+        NavigationLink {
+            ScreenTimeRequestView()
+        } label: {
+            Text("결정")
         }
         .buttonStyle(CommonButtonStyle(paddingSize: 30))
+        .simultaneousGesture(TapGesture().onEnded({ _ in
+            viewModel.updateChickName(name: name)
+        }))
     }
 }
 
