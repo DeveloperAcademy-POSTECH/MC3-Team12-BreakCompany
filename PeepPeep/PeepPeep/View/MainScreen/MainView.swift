@@ -16,6 +16,8 @@ struct MainView: View {
     @State private var showModal = false
     @State private var showModal2 = false
     @State private var showTotalActivity = false
+    @State private var showHelperView = false
+    @State private var showLevelModal = false
     @State private var filter: DeviceActivityFilter = {
         let now = Date()
         let startOfDay = Calendar.current.startOfDay(for: now)
@@ -39,41 +41,44 @@ struct MainView: View {
             VStack{
                 
                 // 도움말 ModalView
-                HStack{
-                    Button(action: {
-                        self.showModal.toggle()
-                    }){
-                        Text("!")
-                            .font(.custom("DOSSaemmul", size: 25))
-                            .background(
-                                Circle()
-                                    .frame(width: 36, height: 36)
-                                    .foregroundColor(lightGray)
-                            )
-                            .foregroundColor(.black)
-                        
-                    }
-                    .sheet(isPresented: self.$showModal){
-                        HelperView()
-                            .presentationDetents([.large])
-                            .presentationDragIndicator(.visible)
-                    }
-                    .padding(EdgeInsets(top: 5, leading: 36, bottom: 5, trailing: 5))
-                    Spacer()
-                }// 도움말 ModalView
+//                HStack{
+//                    Button(action: {
+//                        self.showModal.toggle()
+//                    }){
+//                        Text("!")
+//                            .font(.custom("DOSSaemmul", size: 25))
+//                            .background(
+//                                Circle()
+//                                    .frame(width: 36, height: 36)
+//                                    .foregroundColor(lightGray)
+//                            )
+//                            .foregroundColor(.black)
+//
+//                    }
+//                    .sheet(isPresented: self.$showModal){
+//                        HelperView()
+//                            .presentationDetents([.large])
+//                            .presentationDragIndicator(.visible)
+//                    }
+//                    .padding(EdgeInsets(top: 5, leading: 36, bottom: 5, trailing: 5))
+//                    Spacer()
+//                }// 도움말 ModalView
                 Spacer()
+                    .frame(height: 77)
                 
                 ZStack {
                     // ProgressBarView()
                     DeviceActivityReport(context, filter: filter)
                         .frame(width: 300, height: 500, alignment: .center)
+                    // 터치하면 모달 올라오기
                     VStack{
+                        // 현재 사용 시간 터치
                         Button {
                             showTotalActivity.toggle()
                         } label: {
                             Rectangle()
                                 .foregroundColor(.white.opacity(0.1))
-                                .frame(width: 99, height: 30)
+                                .frame(width: 99, height: 40)
                             
                         }
                         .sheet(isPresented: $showTotalActivity) {
@@ -83,9 +88,40 @@ struct MainView: View {
                         }
                         
                         Spacer()
-                            .frame(height: 390)
+                            .frame(height: 81)
                         
+                        // 스트레스 지수 게이지바 터치
+                        Button {
+                            showHelperView.toggle()
+                        } label: {
+                            Rectangle()
+                                .foregroundColor(.white.opacity(0.1))
+                                .frame(width: 110, height: 30)
+                        }
+                        .sheet(isPresented: $showHelperView) {
+                            HelperView()
+                                .presentationDetents([.height(724)])
+                                .presentationDragIndicator(.visible)
+                        }
                         
+                        Spacer()
+                            .frame(height: 234)
+                        
+                        // 레벨 터치
+                        Button {
+                            showLevelModal.toggle()
+                        } label: {
+                            Rectangle()
+                                .foregroundColor(.white.opacity(0.1))
+                                .frame(width: 49, height: 18)
+                        }
+                        .sheet(isPresented: $showLevelModal) {
+                            Text("레벨")
+                                .presentationDetents([.height(453)])
+                                .presentationDragIndicator(.visible)
+                        }
+
+
                     }
 
                     
@@ -103,8 +139,24 @@ struct MainView: View {
                         VStack{
                             Image("Closet")
                                 .resizable()
-                                .frame(width: 49, height: 49, alignment: .center)
+                                .frame(width: 70, height: 70, alignment: .center)
                             Text("옷장")
+                                .foregroundColor(.black)
+                                .font(.custom("DOSSaemmul", size: 16))
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    // 성장일지 버튼
+                    NavigationLink {
+                        DailyFeedBackView(isClick: false, month: Date(), nowDay: Date(), stressLevel: 0)
+                    } label: {
+                        VStack{
+                            Image("Diary")
+                                .resizable()
+                                .frame(width: 70, height: 70, alignment: .center)
+                            Text("성장일지")
                                 .foregroundColor(.black)
                                 .font(.custom("DOSSaemmul", size: 16))
                         }
@@ -119,29 +171,13 @@ struct MainView: View {
                         VStack{
                             Image("Setting")
                                 .resizable()
-                                .frame(width: 49, height: 49, alignment: .center)
+                                .frame(width: 70, height: 70, alignment: .center)
                             Text("시간설정")
                                 .foregroundColor(.black)
                                 .font(.custom("DOSSaemmul", size: 16))
                         }
                     }
                     
-                    
-                    Spacer()
-                    
-                    // 성장일지 버튼
-                    NavigationLink {
-                        DailyFeedBackView(isClick: false, month: Date(), nowDay: Date(), stressLevel: 0)
-                    } label: {
-                        VStack{
-                            Image("Diary")
-                                .resizable()
-                                .frame(width: 49, height: 49, alignment: .center)
-                            Text("성장일지")
-                                .foregroundColor(.black)
-                                .font(.custom("DOSSaemmul", size: 16))
-                        }
-                    }
                     Spacer()
                 } // 하단 메뉴 HStack
                 Spacer()
