@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */; };
+		32F265FA2A70528900979BB2 /* CostumeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F265F92A70528900979BB2 /* CostumeBookView.swift */; };
 		6765512B2A7010F800617638 /* HelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512A2A7010F800617638 /* HelperView.swift */; };
 		6765512D2A70115000617638 /* MainActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512C2A70115000617638 /* MainActivityReport.swift */; };
 		6765512F2A70118E00617638 /* MainActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512E2A70118E00617638 /* MainActivityView.swift */; };
@@ -44,6 +45,7 @@
 		C96B03B52A5EA03200B86493 /* WidgetVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03B42A5EA03200B86493 /* WidgetVIew.swift */; };
 		C96B03BE2A5EA0E600B86493 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03BD2A5EA0E600B86493 /* MainView.swift */; };
 		C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03BF2A5EA10100B86493 /* SplashView.swift */; };
+		C96B03C22A5EA11500B86493 /* InitialSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03C12A5EA11500B86493 /* InitialSetupView.swift */; };
 		C96B03C42A5EA16B00B86493 /* CostumesBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */; };
 		C9713FC52A65389F00589A1C /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FC42A65389F00589A1C /* EmptyModel.swift */; };
 		C9713FC82A6538B300589A1C /* EmptyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FC72A6538B300589A1C /* EmptyViewModel.swift */; };
@@ -151,6 +153,9 @@
 		32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeeklyFeedBackView.swift; path = PeepPeep/View/WeeklyFeedBack/WeeklyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F992A5E8281000DE3D4 /* DailyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyFeedBackView.swift; path = PeepPeep/View/DailyFeedBack/DailyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F9A2A5E82A4000DE3D4 /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalReportView.swift; path = PeepPeep/View/FinalReport/FinalReportView.swift; sourceTree = SOURCE_ROOT; };
+		32F265F92A70528900979BB2 /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
+		C909C2BE2A68379700854575 /* ActivityReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportModels.swift; sourceTree = "<group>"; };
+		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/kim_yejin/Documents/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
 		6765512A2A7010F800617638 /* HelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperView.swift; sourceTree = "<group>"; };
 		6765512C2A70115000617638 /* MainActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityReport.swift; sourceTree = "<group>"; };
 		6765512E2A70118E00617638 /* MainActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityView.swift; sourceTree = "<group>"; };
@@ -186,6 +191,7 @@
 		C96B03BB2A5EA0D600B86493 /* EmptyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyUtils.swift; sourceTree = "<group>"; };
 		C96B03BD2A5EA0E600B86493 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C96B03BF2A5EA10100B86493 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		C96B03C12A5EA11500B86493 /* InitialSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupView.swift; sourceTree = "<group>"; };
 		C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CostumesBookView.swift; path = PeepPeep/View/CostumeBook/CostumesBookView.swift; sourceTree = SOURCE_ROOT; };
 		C9713FC42A65389F00589A1C /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
 		C9713FC72A6538B300589A1C /* EmptyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewModel.swift; sourceTree = "<group>"; };
@@ -356,7 +362,7 @@
 		C91953FC2A5E63710090E916 /* CostumeBook */ = {
 			isa = PBXGroup;
 			children = (
-				C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */,
+				32F265F92A70528900979BB2 /* CostumeBookView.swift */,
 			);
 			path = CostumeBook;
 			sourceTree = "<group>";
@@ -810,6 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F265FA2A70528900979BB2 /* CostumeBookView.swift in Sources */,
 				C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */,
 				C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */,
 				C96B03B52A5EA03200B86493 /* WidgetVIew.swift in Sources */,
@@ -827,7 +834,6 @@
 				C96B03AA2A5E9F8B00B86493 /* EmptyViewModel.swift in Sources */,
 				C9DFECDA2A715BB2003190FD /* Chick.swift in Sources */,
 				C96B03BE2A5EA0E600B86493 /* MainView.swift in Sources */,
-				C96B03C42A5EA16B00B86493 /* CostumesBookView.swift in Sources */,
 				C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */,
 				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
 				C9DFECE02A715C9A003190FD /* ProgressBar.swift in Sources */,
