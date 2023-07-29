@@ -7,5 +7,9 @@
 		<key>EXExtensionPointIdentifier</key>
 		<string>com.apple.deviceactivityui.report-extension</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DOSSaemmul.ttf</string>
+	</array>
 </dict>
 </plist>

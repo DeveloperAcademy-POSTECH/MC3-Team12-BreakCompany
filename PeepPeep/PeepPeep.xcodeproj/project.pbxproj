@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */; };
 		32F265FA2A70528900979BB2 /* CostumeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F265F92A70528900979BB2 /* CostumeBookView.swift */; };
+		6765512B2A7010F800617638 /* HelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512A2A7010F800617638 /* HelperView.swift */; };
+		6765512D2A70115000617638 /* MainActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512C2A70115000617638 /* MainActivityReport.swift */; };
+		6765512F2A70118E00617638 /* MainActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512E2A70118E00617638 /* MainActivityView.swift */; };
+		85DBE1DA2A70365C00AECFB5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DBE1D92A70365C00AECFB5 /* SettingView.swift */; };
+		85DBE1DC2A7060FE00AECFB5 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DBE1DB2A7060FE00AECFB5 /* LoadingView.swift */; };
 		C909C2B82A6803D300854575 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954062A5E63BE0090E916 /* Colors.swift */; };
 		C909C2BA2A68106F00854575 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91954082A5E63C50090E916 /* Styles.swift */; };
 		C909C2BB2A68107200854575 /* EmptyComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03B62A5EA04F00B86493 /* EmptyComponents.swift */; };
 		C909C2BC2A68107500854575 /* EmptyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03B92A5EA08C00B86493 /* EmptyExtensions.swift */; };
 		C909C2BD2A68108300854575 /* EmptyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03BB2A5EA0D600B86493 /* EmptyUtils.swift */; };
-		C909C2BF2A68379700854575 /* ActivityReportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C2BE2A68379700854575 /* ActivityReportModels.swift */; };
 		C909C2C42A683B7100854575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C909C2C32A683B7100854575 /* Assets.xcassets */; };
 		C909C2C52A683B7100854575 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C909C2C32A683B7100854575 /* Assets.xcassets */; };
 		C910C9B92A67D8A300EEF718 /* PeepPeepCommons.docc in Sources */ = {isa = PBXBuildFile; fileRef = C910C9B82A67D8A300EEF718 /* PeepPeepCommons.docc */; };
@@ -42,15 +46,33 @@
 		C96B03BE2A5EA0E600B86493 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03BD2A5EA0E600B86493 /* MainView.swift */; };
 		C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03BF2A5EA10100B86493 /* SplashView.swift */; };
 		C96B03C22A5EA11500B86493 /* InitialSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03C12A5EA11500B86493 /* InitialSetupView.swift */; };
+		C96B03C42A5EA16B00B86493 /* CostumesBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */; };
 		C9713FC52A65389F00589A1C /* EmptyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FC42A65389F00589A1C /* EmptyModel.swift */; };
 		C9713FC82A6538B300589A1C /* EmptyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FC72A6538B300589A1C /* EmptyViewModel.swift */; };
 		C9713FE52A6593E400589A1C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FE42A6593E400589A1C /* SplashView.swift */; };
-		C9713FE72A65941C00589A1C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FE62A65941C00589A1C /* MainView.swift */; };
-		C9713FE92A65942600589A1C /* DailyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FE82A65942600589A1C /* DailyFeedBackView.swift */; };
 		C9713FEB2A65943200589A1C /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */; };
 		C9713FED2A65943D00589A1C /* FinalReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEC2A65943D00589A1C /* FinalReportView.swift */; };
 		C9713FEF2A65944C00589A1C /* CostumeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEE2A65944C00589A1C /* CostumeBookView.swift */; };
 		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
+		C9C215152A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
+		C9C215162A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
+		C9C215172A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
+		C9DFECD02A7159A9003190FD /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECCF2A7159A9003190FD /* FontManager.swift */; };
+		C9DFECDA2A715BB2003190FD /* Chick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECD92A715BB2003190FD /* Chick.swift */; };
+		C9DFECDC2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift */; };
+		C9DFECDE2A715C6B003190FD /* ChickNamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */; };
+		C9DFECE02A715C9A003190FD /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECDF2A715C9A003190FD /* ProgressBar.swift */; };
+		C9DFECE22A715CD0003190FD /* ScreenTimeRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */; };
+		C9DFECE62A715EF6003190FD /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECE52A715EF6003190FD /* BackButton.swift */; };
+		C9DFECE82A715F1F003190FD /* CustomSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECE72A715F1F003190FD /* CustomSpacer.swift */; };
+		C9DFECE92A716024003190FD /* ChickNamingVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECE32A715EBF003190FD /* ChickNamingVIewModel.swift */; };
+		C9DFECEB2A716169003190FD /* ActivityReportModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C909C2BE2A68379700854575 /* ActivityReportModels.swift */; };
+		C9DFECED2A716211003190FD /* TimeSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECEC2A716211003190FD /* TimeSettingView.swift */; };
+		C9DFECEE2A71638D003190FD /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECD52A715B1C003190FD /* PieChartView.swift */; };
+		C9DFECF62A72EBCA003190FD /* ScreenTimeAppSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECF52A72EBCA003190FD /* ScreenTimeAppSelection.swift */; };
+		C9DFECF82A73D6FF003190FD /* TimeIntervalFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DFECF72A73D6FF003190FD /* TimeIntervalFormatter.swift */; };
+		D99ED39A2A725549005D3878 /* DiaryActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99ED3992A725549005D3878 /* DiaryActivityReport.swift */; };
+		D99ED39C2A7255C2005D3878 /* DiaryActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99ED39B2A7255C2005D3878 /* DiaryActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +156,13 @@
 		32F265F92A70528900979BB2 /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
 		C909C2BE2A68379700854575 /* ActivityReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportModels.swift; sourceTree = "<group>"; };
 		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/kim_yejin/Documents/MC3-Team12-PeepPeep/PeepPeep/Assets.xcassets"; sourceTree = "<absolute>"; };
+		6765512A2A7010F800617638 /* HelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperView.swift; sourceTree = "<group>"; };
+		6765512C2A70115000617638 /* MainActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityReport.swift; sourceTree = "<group>"; };
+		6765512E2A70118E00617638 /* MainActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityView.swift; sourceTree = "<group>"; };
+		85DBE1D92A70365C00AECFB5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		85DBE1DB2A7060FE00AECFB5 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C909C2BE2A68379700854575 /* ActivityReportModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityReportModels.swift; sourceTree = "<group>"; };
+		C909C2C32A683B7100854575 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		C910C9B52A67D8A300EEF718 /* PeepPeepCommons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeepPeepCommons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C910C9B72A67D8A300EEF718 /* PeepPeepCommons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeepPeepCommons.h; sourceTree = "<group>"; };
 		C910C9B82A67D8A300EEF718 /* PeepPeepCommons.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PeepPeepCommons.docc; sourceTree = "<group>"; };
@@ -163,15 +192,32 @@
 		C96B03BD2A5EA0E600B86493 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C96B03BF2A5EA10100B86493 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C96B03C12A5EA11500B86493 /* InitialSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetupView.swift; sourceTree = "<group>"; };
+		C96B03C32A5EA16B00B86493 /* CostumesBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CostumesBookView.swift; path = PeepPeep/View/CostumeBook/CostumesBookView.swift; sourceTree = SOURCE_ROOT; };
 		C9713FC42A65389F00589A1C /* EmptyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyModel.swift; sourceTree = "<group>"; };
 		C9713FC72A6538B300589A1C /* EmptyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewModel.swift; sourceTree = "<group>"; };
 		C9713FE42A6593E400589A1C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		C9713FE62A65941C00589A1C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		C9713FE82A65942600589A1C /* DailyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyFeedBackView.swift; sourceTree = "<group>"; };
 		C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFeedBackView.swift; sourceTree = "<group>"; };
 		C9713FEC2A65943D00589A1C /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReportView.swift; sourceTree = "<group>"; };
 		C9713FEE2A65944C00589A1C /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
 		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C9C215142A74C96F00268345 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOSSaemmul.ttf; path = PeepPeepCommons/Fonts/DOSSaemmul.ttf; sourceTree = SOURCE_ROOT; };
+		C9DFECCF2A7159A9003190FD /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		C9DFECD32A7159F2003190FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C9DFECD42A715A8F003190FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C9DFECD52A715B1C003190FD /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		C9DFECD92A715BB2003190FD /* Chick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chick.swift; sourceTree = "<group>"; };
+		C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAppSelectionViewModel.swift; sourceTree = "<group>"; };
+		C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickNamingView.swift; sourceTree = "<group>"; };
+		C9DFECDF2A715C9A003190FD /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeRequestView.swift; sourceTree = "<group>"; };
+		C9DFECE32A715EBF003190FD /* ChickNamingVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickNamingVIewModel.swift; sourceTree = "<group>"; };
+		C9DFECE52A715EF6003190FD /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		C9DFECE72A715F1F003190FD /* CustomSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacer.swift; sourceTree = "<group>"; };
+		C9DFECEC2A716211003190FD /* TimeSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingView.swift; sourceTree = "<group>"; };
+		C9DFECF52A72EBCA003190FD /* ScreenTimeAppSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAppSelection.swift; sourceTree = "<group>"; };
+		C9DFECF72A73D6FF003190FD /* TimeIntervalFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalFormatter.swift; sourceTree = "<group>"; };
+		D99ED3992A725549005D3878 /* DiaryActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryActivityReport.swift; sourceTree = "<group>"; };
+		D99ED39B2A7255C2005D3878 /* DiaryActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,9 +255,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85DBE1D82A70363F00AECFB5 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				85DBE1D92A70365C00AECFB5 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		C910C9B62A67D8A300EEF718 /* PeepPeepCommons */ = {
 			isa = PBXGroup;
 			children = (
+				C9DFECD42A715A8F003190FD /* Info.plist */,
+				C9DFECCE2A71599C003190FD /* Fonts */,
 				C91954052A5E63B40090E916 /* Themes */,
 				C919540C2A5E63D70090E916 /* Components */,
 				C919540B2A5E63CE0090E916 /* Extensions */,
@@ -256,6 +312,7 @@
 		C91953E72A5E633F0090E916 /* PeepPeep */ = {
 			isa = PBXGroup;
 			children = (
+				C9DFECD32A7159F2003190FD /* Info.plist */,
 				C9242BD02A64D6BE000ECECF /* PeepPeep.entitlements */,
 				C91953F62A5E63500090E916 /* AppDelegate.swift */,
 				C91953E82A5E633F0090E916 /* PeepPeepApp.swift */,
@@ -280,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				C96B03A42A5E9F6300B86493 /* EmptyModel.swift */,
+				C9DFECD92A715BB2003190FD /* Chick.swift */,
+				C9DFECF52A72EBCA003190FD /* ScreenTimeAppSelection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +346,7 @@
 		C91953FA2A5E63630090E916 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				85DBE1D82A70363F00AECFB5 /* Setting */,
 				C91954022A5E63A20090E916 /* SplashScreen */,
 				C91954012A5E63990090E916 /* InitialSetupScreen */,
 				C91954002A5E63920090E916 /* MainScreen */,
@@ -335,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				C96B03BD2A5EA0E600B86493 /* MainView.swift */,
+				6765512A2A7010F800617638 /* HelperView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -342,8 +403,11 @@
 		C91954012A5E63990090E916 /* InitialSetupScreen */ = {
 			isa = PBXGroup;
 			children = (
-				C96B03C12A5EA11500B86493 /* InitialSetupView.swift */,
 				C9242BE62A64D80D000ECECF /* ActivitySummaryView.swift */,
+				C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */,
+				C9DFECDF2A715C9A003190FD /* ProgressBar.swift */,
+				C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */,
+				C9DFECEC2A716211003190FD /* TimeSettingView.swift */,
 			);
 			path = InitialSetupScreen;
 			sourceTree = "<group>";
@@ -352,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				C96B03BF2A5EA10100B86493 /* SplashView.swift */,
+				85DBE1DB2A7060FE00AECFB5 /* LoadingView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -359,6 +424,8 @@
 		C91954032A5E63AB0090E916 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C9DFECE32A715EBF003190FD /* ChickNamingVIewModel.swift */,
+				C9DFECDB2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift */,
 				C96B03A92A5E9F8B00B86493 /* EmptyViewModel.swift */,
 			);
 			path = ViewModel;
@@ -377,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				C96B03BB2A5EA0D600B86493 /* EmptyUtils.swift */,
+				C9DFECF72A73D6FF003190FD /* TimeIntervalFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -394,6 +462,8 @@
 			isa = PBXGroup;
 			children = (
 				C96B03B62A5EA04F00B86493 /* EmptyComponents.swift */,
+				C9DFECE52A715EF6003190FD /* BackButton.swift */,
+				C9DFECE72A715F1F003190FD /* CustomSpacer.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -422,8 +492,8 @@
 		C9713FC32A65388F00589A1C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C9713FC42A65389F00589A1C /* EmptyModel.swift */,
 				C909C2BE2A68379700854575 /* ActivityReportModels.swift */,
+				C9713FC42A65389F00589A1C /* EmptyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -433,6 +503,8 @@
 			children = (
 				C9242BD92A64D78D000ECECF /* TotalActivityViewModel.swift */,
 				C9713FC72A6538B300589A1C /* EmptyViewModel.swift */,
+				6765512C2A70115000617638 /* MainActivityReport.swift */,
+				D99ED3992A725549005D3878 /* DiaryActivityReport.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -462,6 +534,7 @@
 		C9713FCB2A6538CA00589A1C /* InitialSetupScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C9DFECD52A715B1C003190FD /* PieChartView.swift */,
 				C9242BDB2A64D78D000ECECF /* TotalActivityView.swift */,
 			);
 			path = InitialSetupScreen;
@@ -470,7 +543,7 @@
 		C9713FCC2A6538E600589A1C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				C9713FE62A65941C00589A1C /* MainView.swift */,
+				6765512E2A70118E00617638 /* MainActivityView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -478,7 +551,7 @@
 		C9713FCD2A6538ED00589A1C /* DailyFeedBack */ = {
 			isa = PBXGroup;
 			children = (
-				C9713FE82A65942600589A1C /* DailyFeedBackView.swift */,
+				D99ED39B2A7255C2005D3878 /* DiaryActivityView.swift */,
 			);
 			path = DailyFeedBack;
 			sourceTree = "<group>";
@@ -505,6 +578,15 @@
 				C9713FEE2A65944C00589A1C /* CostumeBookView.swift */,
 			);
 			path = CostumeBook;
+			sourceTree = "<group>";
+		};
+		C9DFECCE2A71599C003190FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C9C215142A74C96F00268345 /* DOSSaemmul.ttf */,
+				C9DFECCF2A7159A9003190FD /* FontManager.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,6 +732,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C215172A74C97000268345 /* DOSSaemmul.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +747,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C215152A74C97000268345 /* DOSSaemmul.ttf in Resources */,
 				C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */,
 				C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */,
 				C909C2C42A683B7100854575 /* Assets.xcassets in Resources */,
@@ -674,6 +758,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9C215162A74C97000268345 /* DOSSaemmul.ttf in Resources */,
 				C909C2C52A683B7100854575 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,12 +791,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DFECE82A715F1F003190FD /* CustomSpacer.swift in Sources */,
 				C909C2BD2A68108300854575 /* EmptyUtils.swift in Sources */,
 				C910C9B92A67D8A300EEF718 /* PeepPeepCommons.docc in Sources */,
 				C909C2BC2A68107500854575 /* EmptyExtensions.swift in Sources */,
 				C909C2B82A6803D300854575 /* Colors.swift in Sources */,
 				C910C9DA2A67DA1200EEF718 /* TimeInterval+.swift in Sources */,
+				C9DFECF82A73D6FF003190FD /* TimeIntervalFormatter.swift in Sources */,
+				C9DFECE62A715EF6003190FD /* BackButton.swift in Sources */,
 				C909C2BB2A68107200854575 /* EmptyComponents.swift in Sources */,
+				C9DFECD02A7159A9003190FD /* FontManager.swift in Sources */,
 				C909C2BA2A68106F00854575 /* Styles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,16 +820,26 @@
 				C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */,
 				C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */,
 				C96B03B52A5EA03200B86493 /* WidgetVIew.swift in Sources */,
+				C9DFECE92A716024003190FD /* ChickNamingVIewModel.swift in Sources */,
 				C94C2EDB2A5EBCE100D93A4C /* DailyFeedBackView.swift in Sources */,
 				32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */,
-				C96B03C22A5EA11500B86493 /* InitialSetupView.swift in Sources */,
 				C94C2EDA2A5EBC5200D93A4C /* FinalReportView.swift in Sources */,
 				C9242BE72A64D80D000ECECF /* ActivitySummaryView.swift in Sources */,
+				C9DFECED2A716211003190FD /* TimeSettingView.swift in Sources */,
+				85DBE1DA2A70365C00AECFB5 /* SettingView.swift in Sources */,
+				6765512B2A7010F800617638 /* HelperView.swift in Sources */,
+				C9DFECDE2A715C6B003190FD /* ChickNamingView.swift in Sources */,
 				C96B03A52A5E9F6300B86493 /* EmptyModel.swift in Sources */,
+				C9DFECDC2A715BF0003190FD /* ScreenTimeAppSelectionViewModel.swift in Sources */,
 				C96B03AA2A5E9F8B00B86493 /* EmptyViewModel.swift in Sources */,
+				C9DFECDA2A715BB2003190FD /* Chick.swift in Sources */,
 				C96B03BE2A5EA0E600B86493 /* MainView.swift in Sources */,
 				C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */,
 				C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */,
+				C9DFECE02A715C9A003190FD /* ProgressBar.swift in Sources */,
+				85DBE1DC2A7060FE00AECFB5 /* LoadingView.swift in Sources */,
+				C9DFECF62A72EBCA003190FD /* ScreenTimeAppSelection.swift in Sources */,
+				C9DFECE22A715CD0003190FD /* ScreenTimeRequestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,16 +849,19 @@
 			files = (
 				C9713FE52A6593E400589A1C /* SplashView.swift in Sources */,
 				C9713FED2A65943D00589A1C /* FinalReportView.swift in Sources */,
-				C9713FE72A65941C00589A1C /* MainView.swift in Sources */,
 				C9242BDC2A64D78D000ECECF /* TotalActivityView.swift in Sources */,
+				D99ED39C2A7255C2005D3878 /* DiaryActivityView.swift in Sources */,
 				C9713FEB2A65943200589A1C /* WeeklyFeedBackView.swift in Sources */,
-				C909C2BF2A68379700854575 /* ActivityReportModels.swift in Sources */,
 				C9713FEF2A65944C00589A1C /* CostumeBookView.swift in Sources */,
+				C9DFECEE2A71638D003190FD /* PieChartView.swift in Sources */,
+				6765512D2A70115000617638 /* MainActivityReport.swift in Sources */,
 				C9242BD82A64D78D000ECECF /* DeviceActivityExtension.swift in Sources */,
 				C9713FC82A6538B300589A1C /* EmptyViewModel.swift in Sources */,
 				C9242BDA2A64D78D000ECECF /* TotalActivityViewModel.swift in Sources */,
-				C9713FE92A65942600589A1C /* DailyFeedBackView.swift in Sources */,
+				C9DFECEB2A716169003190FD /* ActivityReportModels.swift in Sources */,
+				6765512F2A70118E00617638 /* MainActivityView.swift in Sources */,
 				C9713FC52A65389F00589A1C /* EmptyModel.swift in Sources */,
+				D99ED39A2A725549005D3878 /* DiaryActivityReport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,15 +899,18 @@
 		C910C9CD2A67D8A300EEF718 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeepPeepCommons/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -819,6 +924,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeepCommons;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -831,15 +937,18 @@
 		C910C9CE2A67D8A300EEF718 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeepPeepCommons/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -853,6 +962,7 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeepCommons;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -866,14 +976,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeepCommonsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -885,14 +999,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeepCommonsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1025,13 +1143,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PeepPeep/PeepPeep.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PeepPeep/Preview Content\"";
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7C76V3X7AB;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeepPeep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1045,6 +1167,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ProvisioningProfile_PeepPeep;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1058,13 +1182,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PeepPeep/PeepPeep.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PeepPeep/Preview Content\"";
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7C76V3X7AB;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PeepPeep/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1078,6 +1206,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ProvisioningProfile_PeepPeep;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1089,9 +1219,12 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = DeviceActivityReportExtension/DeviceActivityReportExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7C76V3X7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeviceActivityReportExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityReportExtension;
@@ -1105,6 +1238,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeep.DeviceActivityReportExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ProvisioningProfile_PeepPeep_Extension;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1117,9 +1252,12 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = DeviceActivityReportExtension/DeviceActivityReportExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7C76V3X7AB;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 7C76V3X7AB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeviceActivityReportExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityReportExtension;
@@ -1133,6 +1271,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hajime.PeepPeep.DeviceActivityReportExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = ProvisioningProfile_PeepPeep_Extension;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
