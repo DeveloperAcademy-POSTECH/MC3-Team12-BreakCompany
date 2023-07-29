@@ -26,6 +26,7 @@ struct CostumeCell: Identifiable {
 
 struct CostumesBookView: View {
     
+    // 이미지 해금 여부 리스트
     let isUnlockedImages = [
         false, true, false, true,
         true, false, false, true,
@@ -62,7 +63,10 @@ struct CostumesBookView: View {
         var result: [CostumeCell] = []
         for i in 0...7 {
             let isUnlockedImage = isUnlockedImages[i]
+            
+            // 이미지 해금 여부에 따라 이미지 다르게 적용
             let imageName = (isUnlockedImage ? costumeNames[i] : costumeShadowNames[i])
+            
             let imageTitle = costumeTitles[i]
             let imageExplain = costumeExplains[i]
             
