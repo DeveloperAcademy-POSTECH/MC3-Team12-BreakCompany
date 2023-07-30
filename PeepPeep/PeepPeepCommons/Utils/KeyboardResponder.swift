@@ -8,6 +8,7 @@
 import Combine
 import SwiftUI
 
+/// 키보드가 보일때, 해당 오브젝트의 위치를 조정합니다.
 public class KeyboardResponder: ObservableObject {
     @Published public var isKeyboardVisible = false
     let keyboardWillShow = NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
