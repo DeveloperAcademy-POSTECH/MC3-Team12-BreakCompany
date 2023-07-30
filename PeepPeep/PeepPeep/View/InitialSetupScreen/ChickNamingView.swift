@@ -62,11 +62,15 @@ struct ChickNameTextField: View {
 
 // 병아리 이미지 뷰
 struct ChickImageView: View {
+    @StateObject private var keyboardResponder = KeyboardResponder()
+
     var body: some View {
         Image("Chick")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 200, height: 200)
+            .offset(y: keyboardResponder.isKeyboardVisible ? 0 : 30)
+            .animation(.easeInOut(duration: 0.2), value: keyboardResponder.isKeyboardVisible)
     }
 }
 
