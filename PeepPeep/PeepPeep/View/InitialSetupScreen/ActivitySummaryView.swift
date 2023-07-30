@@ -32,10 +32,9 @@ struct ActivitySummaryView: View {
     var body: some View {
         VStack {
             ProgressBar(currentStep: 3)
-            CustomSpacer(height: 30)
             DeviceActivityReport(totalActivityContext, filter: filter)
             Button("선택하기") { isPresented = true }
-                .buttonStyle(CommonButtonStyle(paddingSize: 60))
+                .buttonStyle(CommonButtonStyle(paddingSize: 20))
                 .familyActivityPicker(isPresented: $isPresented, selection: $model.activitySelection)
                 .onChange(of: model.activitySelection) { _ in
                     navigateToMain = true
@@ -48,5 +47,13 @@ struct ActivitySummaryView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton())
         .foregroundColor(Color.black)
+    }
+}
+
+struct ActivitySummaryView_Previews: PreviewProvider {
+    @ObservedObject var model: ScreenTimeAppSelection
+    @ObservedObject var viewModel: ScreenTimeAppSelectionViewModel
+    static var previews: some View {
+        ActivitySummaryView(model: ScreenTimeAppSelection(), viewModel: ScreenTimeAppSelectionViewModel())
     }
 }
