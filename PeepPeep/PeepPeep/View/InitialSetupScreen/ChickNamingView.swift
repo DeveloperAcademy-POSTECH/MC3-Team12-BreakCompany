@@ -11,6 +11,11 @@ import PeepPeepCommons
 struct ChickNamingView: View {
     @ObservedObject var viewModel = ChickNamingViewModel()
     @State private var name = ""
+    @FocusState private var focusedField: Field?
+
+    enum Field: Hashable {
+        case chickName
+    }
 
     var body: some View {
         NavigationStack {
@@ -20,7 +25,7 @@ struct ChickNamingView: View {
                 Text("병아리의 이름을 지어주세요")
                     .font(.dosSsaemmul(size: 20))
                 CustomSpacer(height: 70)
-                ChickNameTextField(name: $name)
+                ChickNameTextField(name: $name, focusedField: _focusedField)
                 // 스크롤을 비활성화한 스크롤 뷰 추가, 키보드 영역으로 인한 UI 요소가 변화하지 않도록 합니다.
                 ScrollView {
                     CustomSpacer(height: 20)
@@ -30,13 +35,13 @@ struct ChickNamingView: View {
                     CustomSpacer(height: 30)
                 }.scrollDisabled(true)
             }
+            .onTapGesture {
+                focusedField = nil
+            }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(trailing: SkipButton(viewModel: viewModel, name: name))
             .font(.dosSsaemmul(size: 20))
             .foregroundColor(Color.black)
-            .onAppear{
-                print(name)
-            }
         }
     }
 }
@@ -44,12 +49,14 @@ struct ChickNamingView: View {
 // 병아리 이름 입력 텍스트 필드
 struct ChickNameTextField: View {
     @Binding var name: String
+    @FocusState var focusedField: ChickNamingView.Field?
 
     var body: some View {
         TextField("병아리", text: $name)
             .textFieldStyle(UnderlinedTextFieldStyle())
             .multilineTextAlignment(.center)
             .font(.dosSsaemmul(size: 20))
+            .focused($focusedField, equals: .chickName)
     }
 }
 
@@ -67,7 +74,7 @@ struct ChickImageView: View {
 struct DecisionButton: View {
     let viewModel: ChickNamingViewModel
     let name: String
-    
+
     var body: some View {
         NavigationLink {
             ScreenTimeRequestView()
@@ -79,7 +86,8 @@ struct DecisionButton: View {
             // 아무것도 입력하지 않고 결정을 누르면 기본값 "병아리"로 이름이 지어짐
             if name == "" {
                 viewModel.updateChickName(name: "병아리")
-            } else{
+            }
+            else {
                 viewModel.updateChickName(name: name)
             }
         }))
