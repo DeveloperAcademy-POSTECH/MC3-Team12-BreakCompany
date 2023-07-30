@@ -17,13 +17,19 @@ struct ActivitySummaryView: View {
     @State private var totalActivityContext: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var navigateToMain = false
     @State private var filter: DeviceActivityFilter = {
-        // 현재 날짜를 불러올 수 없다면, 이전 24시간의 기준으로 날짜의 사용시간 데이터를 받아올 수 있도록 설정
-        let now = Date()
-        let startOfDay = Calendar.current.startOfDay(for: now)
-        let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
-        let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
+        // 이전날의 데이터를 받아올 수 없다면, 이틀 전의 데이터를 받아올 수 있도록 설정
+        let dateIntervals: [DateInterval] = (1...2).compactMap { daysAgo -> DateInterval? in
+            let now = Date()
+            guard let startOfDay = Calendar.current.date(byAdding: .day, value: -daysAgo, to: Calendar.current.startOfDay(for: now)),
+                  let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) else {
+                return nil
+            }
+            return DateInterval(start: startOfDay, end: endOfDay)
+        }
+        let previousDayInterval = dateIntervals.first
+
         return DeviceActivityFilter(
-            segment: .daily(during: dateInterval),
+            segment: .daily(during: previousDayInterval ?? DateInterval()),
             users: .all,
             devices: .init([.iPhone, .iPad])
         )
