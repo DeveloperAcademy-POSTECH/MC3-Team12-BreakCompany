@@ -61,17 +61,17 @@ struct CostumesBookView: View {
     
     var cells: [CostumeCell] {
         var result: [CostumeCell] = []
-        for i in 0...7 {
-            let isUnlockedImage = isUnlockedImages[i]
+        for index in 0...7 {
+            let isUnlockedImage = isUnlockedImages[index]
             
             // 이미지 해금 여부에 따라 이미지 다르게 적용
-            let imageName = (isUnlockedImage ? costumeNames[i] : costumeShadowNames[i])
+            let imageName = (isUnlockedImage ? costumeNames[index] : costumeShadowNames[index])
             
-            let imageTitle = costumeTitles[i]
-            let imageExplain = costumeExplains[i]
+            let imageTitle = costumeTitles[index]
+            let imageExplain = costumeExplains[index]
             
             result.append(
-                CostumeCell(cellNum: i,
+                CostumeCell(cellNum: index,
                             imageName: imageName,
                             imageTitle: imageTitle,
                             imageExplain: imageExplain,
@@ -87,11 +87,11 @@ struct CostumesBookView: View {
     
     var body: some View {
         VStack {
-            CostumeGridView
+            costumeGridView
         }
     }
     
-    private var CostumeGridView: some View {
+    private var costumeGridView: some View {
         
         return VStack {
             ScrollView {
