@@ -37,7 +37,7 @@ public struct CommonButtonStyle: ButtonStyle {
         configuration.label
             .font(.dosSsaemmul(size: 20))
             .padding(.horizontal, paddingSize)
-            .padding(.vertical, 11)
+            .padding(.vertical, 13)
             .foregroundColor(configuration.isPressed ? Color.gray.opacity(0.5) : Color.black)
             .cornerRadius(30)
             .overlay(
