@@ -10,6 +10,7 @@ import SwiftUI
 struct HelperView: View {
     
     var body: some View {
+        // swiftlint:disable closure_body_length
         VStack(alignment: .center){
             VStack{
                 Spacer()
