@@ -23,7 +23,7 @@ struct MainView: View {
         let startOfDay = Calendar.current.startOfDay(for: now)
         let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
         let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
-        
+
         return DeviceActivityFilter(
             segment: .daily(during: dateInterval),
             users: .all,
