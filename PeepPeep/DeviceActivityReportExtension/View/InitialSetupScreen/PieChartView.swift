@@ -38,14 +38,14 @@ struct PieChartView: View {
         var startAngle = Angle.zero
         for (value, color) in data {
             let angle = Angle(degrees: 360 * (value / total))
-            let endAngle = startAngle + angle - Angle(degrees: 1)
+            let endAngle = startAngle + angle
             let path = Path { path in
                 path.move(to: center)
                 path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
                 path.closeSubpath()
             }
             context.fill(path, with: .color(color))
-            startAngle = endAngle + Angle(degrees: 1)
+            startAngle = endAngle
         }
     }
 }
