@@ -144,3 +144,35 @@ func statusColor(stress: Int) -> Color {
     }
 }
 
+// HelperView에서 띄울 스트레스 게이지 바
+struct StressGaugeView: View {
+    
+    @State var goalTime: Int = 480
+    let mainActivity : Double
+    let gaugeWidth : CGFloat = 102
+    
+    var body: some View {
+        ZStack{
+            RoundedRectangle(cornerRadius: 5)
+                .fill(.white)
+                .frame(width: 106, height: 24.4)
+                .overlay{
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.black)
+                }
+            // 스트레스 게이지 바
+                .overlay(alignment: .leading){
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(statusColor(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100)))
+                        .frame(width: ((CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth) > CGFloat(gaugeWidth) ? CGFloat(gaugeWidth) : CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth), height: 19.26)
+                        .padding(.leading, 2.4)
+                }
+            // 스트레스 퍼센트
+            Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
+                .font(.custom("DOSSaemmul", size: 17))
+                .foregroundColor(.black)
+            
+        }
+    }
+}
+
