@@ -20,6 +20,7 @@ struct ChickNamingView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                CustomSpacer(height: 10)
                 ProgressBar(currentStep: 1)
                 CustomSpacer(height: 80)
                 Text("병아리의 이름을 지어주세요")
@@ -28,9 +29,9 @@ struct ChickNamingView: View {
                 ChickNameTextField(name: $name, focusedField: _focusedField)
                 // 스크롤을 비활성화한 스크롤 뷰 추가, 키보드 영역으로 인한 UI 요소가 변화하지 않도록 합니다.
                 ScrollView {
-                    CustomSpacer(height: 20)
+                    CustomSpacer(height: 10)
                     ChickImageView()
-                    CustomSpacer(height: 150)
+                    CustomSpacer(height: 190)
                     DecisionButton(viewModel: viewModel, name: name)
                     CustomSpacer(height: 30)
                 }.scrollDisabled(true)

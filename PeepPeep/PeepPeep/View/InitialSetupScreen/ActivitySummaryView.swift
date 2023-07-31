@@ -37,6 +37,7 @@ struct ActivitySummaryView: View {
 
     var body: some View {
         VStack {
+            CustomSpacer(height: 10)
             ProgressBar(currentStep: 3)
             DeviceActivityReport(totalActivityContext, filter: filter)
             Button("선택하기") { isPresented = true }
@@ -48,7 +49,7 @@ struct ActivitySummaryView: View {
                 }
             NavigationLink(destination: MainView(), isActive: $navigateToMain) {
             }
-            CustomSpacer(height: 30)
+            CustomSpacer(height: 20)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton())
