@@ -39,30 +39,6 @@ struct MainView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                
-                // 도움말 ModalView
-                //                HStack{
-                //                    Button(action: {
-                //                        self.showModal.toggle()
-                //                    }){
-                //                        Text("!")
-                //                            .font(.custom("DOSSaemmul", size: 25))
-                //                            .background(
-                //                                Circle()
-                //                                    .frame(width: 36, height: 36)
-                //                                    .foregroundColor(lightGray)
-                //                            )
-                //                            .foregroundColor(.black)
-                //
-                //                    }
-                //                    .sheet(isPresented: self.$showModal){
-                //                        HelperView()
-                //                            .presentationDetents([.large])
-                //                            .presentationDragIndicator(.visible)
-                //                    }
-                //                    .padding(EdgeInsets(top: 5, leading: 36, bottom: 5, trailing: 5))
-                //                    Spacer()
-                //                }// 도움말 ModalView
                 Spacer()
                     .frame(height: 77)
                 
@@ -161,7 +137,7 @@ struct MainView: View {
                     Spacer()
                     // 옷장 버튼
                     NavigationLink {
-                        CostumesBookView()
+                        CostumeBookView()
                     } label: {
                         VStack{
                             Image("Closet")
@@ -188,7 +164,6 @@ struct MainView: View {
                                 .font(.custom("DOSSaemmul", size: 16))
                         }
                     }
-                    
                     Spacer()
                     
                     // 시간설정 버튼
