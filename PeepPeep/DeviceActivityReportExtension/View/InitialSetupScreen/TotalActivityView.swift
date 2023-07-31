@@ -11,6 +11,21 @@ import SwiftUI
 struct TotalActivityView: View {
     var activityReport: ActivityReport
 
+    var body: some View {
+        VStack {
+            if activityReport.totalDuration <= 300 {
+                EmptyActivityView()
+            }
+            else {
+                ActivitySummaryView(activityReport: activityReport)
+            }
+        }
+    }
+}
+
+struct ActivitySummaryView: View {
+    var activityReport: ActivityReport
+
     /// PieChartView에서 사용할 차트 데이터를 반환
     var chartData: [(Double, Color)] {
         activityReport.apps.enumerated().map { (index, app) in
@@ -19,16 +34,14 @@ struct TotalActivityView: View {
     }
 
     var body: some View {
-        VStack {
-            // 파이 차트 뷰와 총 활동 시간을 보여주는 텍스트 뷰를 중첩
-            ZStack {
-                PieChartView(data: chartData)
-                TotalDurationText(duration: activityReport.totalDuration)
-            }
-            InstructionText()
-            // 앱 별 Activity 리스트
-            ActivityList(activities: activityReport.apps)
+        // 파이 차트 뷰와 총 활동 시간을 보여주는 텍스트 뷰를 중첩
+        ZStack {
+            PieChartView(data: chartData)
+            TotalDurationText(duration: activityReport.totalDuration)
         }
+        InstructionText()
+        // 앱 별 Activity 리스트
+        ActivityList(activities: activityReport.apps)
     }
 }
 

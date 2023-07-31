@@ -37,6 +37,7 @@ struct MainView: View {
     let lightGray: Color = Color("LightGray")
     
     var body: some View {
+        // swiftlint:disable closure_body_length
         NavigationStack{
             VStack{
                 Spacer()

@@ -51,6 +51,8 @@
 		C9713FEB2A65943200589A1C /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */; };
 		C9713FED2A65943D00589A1C /* FinalReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEC2A65943D00589A1C /* FinalReportView.swift */; };
 		C9713FEF2A65944C00589A1C /* CostumeActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEE2A65944C00589A1C /* CostumeActivityView.swift */; };
+		C9713FEF2A65944C00589A1C /* CostumeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEE2A65944C00589A1C /* CostumeBookView.swift */; };
+		C97817BD2A7691FB003B1A7E /* EmptyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */; };
 		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
 		C9C215152A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
 		C9C215162A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
@@ -194,6 +196,8 @@
 		C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFeedBackView.swift; sourceTree = "<group>"; };
 		C9713FEC2A65943D00589A1C /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReportView.swift; sourceTree = "<group>"; };
 		C9713FEE2A65944C00589A1C /* CostumeActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeActivityView.swift; sourceTree = "<group>"; };
+		C9713FEE2A65944C00589A1C /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
+		C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyActivityView.swift; sourceTree = "<group>"; };
 		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9C215142A74C96F00268345 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOSSaemmul.ttf; path = PeepPeepCommons/Fonts/DOSSaemmul.ttf; sourceTree = SOURCE_ROOT; };
 		C9DFECCF2A7159A9003190FD /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -533,6 +537,7 @@
 			children = (
 				C9DFECD52A715B1C003190FD /* PieChartView.swift */,
 				C9242BDB2A64D78D000ECECF /* TotalActivityView.swift */,
+				C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */,
 			);
 			path = InitialSetupScreen;
 			sourceTree = "<group>";
@@ -857,6 +862,7 @@
 				C9242BDA2A64D78D000ECECF /* TotalActivityViewModel.swift in Sources */,
 				C9DFECEB2A716169003190FD /* ActivityReportModels.swift in Sources */,
 				6765512F2A70118E00617638 /* MainActivityView.swift in Sources */,
+				C97817BD2A7691FB003B1A7E /* EmptyActivityView.swift in Sources */,
 				C9713FC52A65389F00589A1C /* EmptyModel.swift in Sources */,
 				D99ED39A2A725549005D3878 /* DiaryActivityReport.swift in Sources */,
 				D9EE63112A7790C10003827C /* CostumeActivityReport.swift in Sources */,
