@@ -74,9 +74,15 @@ struct InstructionText: View {
 struct ActivityList: View {
     var activities: [AppDeviceActivity]
 
+    // 5개 앱만 리스트에 추가
+    var sortedAndTopActivities: [AppDeviceActivity] {
+        let sortedActivities = activities
+        return Array(sortedActivities.prefix(5))
+    }
+
     var body: some View {
-        List(activities.indices, id: \.self) { index in
-            ActivityRow(eachApp: activities[index], color: pieChartColorPalette[index % pieChartColorPalette.count])
+        List(sortedAndTopActivities.indices, id: \.self) { index in
+            ActivityRow(eachApp: sortedAndTopActivities[index], color: pieChartColorPalette[index % pieChartColorPalette.count])
         }
         .background(.white)
         .scrollContentBackground(.hidden)
@@ -92,7 +98,7 @@ struct ActivityRow: View {
         HStack {
             Rectangle()
                 .fill(color)
-                .frame(width: 5, height: 10)
+                .frame(width: 5, height: 9)
                 .cornerRadius(5)
             Label(eachApp.iconToken).labelStyle(.iconOnly)
             Text(eachApp.displayName)

@@ -44,6 +44,6 @@ struct TotalActivityReport: DeviceActivityReportScene {
                 appDeviceActivities.append(appDeviceActivity)
             }
         }
-        return appDeviceActivities
+        return appDeviceActivities.sorted(by: { $0.duration > $1.duration })
     }
 }

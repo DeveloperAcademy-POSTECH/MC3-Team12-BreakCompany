@@ -32,7 +32,6 @@
 		C91953E92A5E633F0090E916 /* PeepPeepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953E82A5E633F0090E916 /* PeepPeepApp.swift */; };
 		C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953EA2A5E633F0090E916 /* ContentView.swift */; };
 		C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91953EF2A5E63400090E916 /* Preview Assets.xcassets */; };
-		C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953F62A5E63500090E916 /* AppDelegate.swift */; };
 		C9242BD82A64D78D000ECECF /* DeviceActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BD72A64D78D000ECECF /* DeviceActivityExtension.swift */; };
 		C9242BDA2A64D78D000ECECF /* TotalActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BD92A64D78D000ECECF /* TotalActivityViewModel.swift */; };
 		C9242BDC2A64D78D000ECECF /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BDB2A64D78D000ECECF /* TotalActivityView.swift */; };
@@ -51,6 +50,7 @@
 		C9713FEB2A65943200589A1C /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */; };
 		C9713FED2A65943D00589A1C /* FinalReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEC2A65943D00589A1C /* FinalReportView.swift */; };
 		C97817BD2A7691FB003B1A7E /* EmptyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */; };
+		C97817C12A76A473003B1A7E /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817C02A76A473003B1A7E /* KeyboardResponder.swift */; };
 		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
 		C9C215152A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
 		C9C215162A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
@@ -171,7 +171,6 @@
 		C91953E82A5E633F0090E916 /* PeepPeepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeepPeepApp.swift; sourceTree = "<group>"; };
 		C91953EA2A5E633F0090E916 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C91953EF2A5E63400090E916 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C91953F62A5E63500090E916 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C91954062A5E63BE0090E916 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C91954082A5E63C50090E916 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		C9242BD02A64D6BE000ECECF /* PeepPeep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeepPeep.entitlements; sourceTree = "<group>"; };
@@ -196,6 +195,7 @@
 		C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFeedBackView.swift; sourceTree = "<group>"; };
 		C9713FEC2A65943D00589A1C /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReportView.swift; sourceTree = "<group>"; };
 		C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyActivityView.swift; sourceTree = "<group>"; };
+		C97817C02A76A473003B1A7E /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9C215142A74C96F00268345 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOSSaemmul.ttf; path = PeepPeepCommons/Fonts/DOSSaemmul.ttf; sourceTree = SOURCE_ROOT; };
 		C9DFECCF2A7159A9003190FD /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -322,7 +322,6 @@
 			children = (
 				C9DFECD32A7159F2003190FD /* Info.plist */,
 				C9242BD02A64D6BE000ECECF /* PeepPeep.entitlements */,
-				C91953F62A5E63500090E916 /* AppDelegate.swift */,
 				C91953E82A5E633F0090E916 /* PeepPeepApp.swift */,
 				C91953EA2A5E633F0090E916 /* ContentView.swift */,
 				C91953F82A5E63560090E916 /* Model */,
@@ -411,11 +410,11 @@
 		C91954012A5E63990090E916 /* InitialSetupScreen */ = {
 			isa = PBXGroup;
 			children = (
-				C9242BE62A64D80D000ECECF /* ActivitySummaryView.swift */,
 				C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */,
-				C9DFECDF2A715C9A003190FD /* ProgressBar.swift */,
 				C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */,
+				C9242BE62A64D80D000ECECF /* ActivitySummaryView.swift */,
 				C9DFECEC2A716211003190FD /* TimeSettingView.swift */,
+				C9DFECDF2A715C9A003190FD /* ProgressBar.swift */,
 			);
 			path = InitialSetupScreen;
 			sourceTree = "<group>";
@@ -453,6 +452,7 @@
 			children = (
 				C96B03BB2A5EA0D600B86493 /* EmptyUtils.swift */,
 				C9DFECF72A73D6FF003190FD /* TimeIntervalFormatter.swift */,
+				C97817C02A76A473003B1A7E /* KeyboardResponder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -807,6 +807,7 @@
 				C910C9B92A67D8A300EEF718 /* PeepPeepCommons.docc in Sources */,
 				C909C2BC2A68107500854575 /* EmptyExtensions.swift in Sources */,
 				C909C2B82A6803D300854575 /* Colors.swift in Sources */,
+				C97817C12A76A473003B1A7E /* KeyboardResponder.swift in Sources */,
 				C910C9DA2A67DA1200EEF718 /* TimeInterval+.swift in Sources */,
 				C9DFECF82A73D6FF003190FD /* TimeIntervalFormatter.swift in Sources */,
 				C9DFECE62A715EF6003190FD /* BackButton.swift in Sources */,
@@ -827,7 +828,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */,
 				C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */,
 				C96B03B52A5EA03200B86493 /* WidgetVIew.swift in Sources */,
 				C9DFECE92A716024003190FD /* ChickNamingVIewModel.swift in Sources */,
