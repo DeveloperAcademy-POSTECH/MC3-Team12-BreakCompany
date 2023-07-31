@@ -84,7 +84,7 @@ struct MainView: View {
                         }
                         .sheet(isPresented: $showTotalActivity) {
                             Text("앱 사용 통계")
-                                .presentationDetents([.height(684)])
+                                .presentationDetents([.height(686)])
                                 .presentationDragIndicator(.visible)
                         }
                         
@@ -101,7 +101,7 @@ struct MainView: View {
                         }
                         .sheet(isPresented: $showHelperView) {
                             HelperView()
-                                .presentationDetents([.height(684)])
+                                .presentationDetents([.height(686)])
                                 .presentationDragIndicator(.visible)
                         }
                         

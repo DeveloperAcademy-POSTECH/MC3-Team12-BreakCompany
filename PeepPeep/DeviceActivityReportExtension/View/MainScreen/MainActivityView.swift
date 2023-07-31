@@ -35,27 +35,8 @@ struct MainActivityView: View {
             Text("스트레스 지수")
                 .font(.custom("DOSSaemmul", size: 16))
                 .padding(.top, 58)
-            ZStack{
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(.white)
-                    .frame(width: 106, height: 24.4)
-                    .overlay{
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.black)
-                    }
-                // 스트레스 게이지 바
-                    .overlay(alignment: .leading){
-                        RoundedRectangle(cornerRadius: 3)
-                            .fill(statusColor(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100)))
-                            .frame(width: ((CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth) > CGFloat(gaugeWidth) ? CGFloat(gaugeWidth) : CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth), height: 19.26)
-                            .padding(.leading, 2.4)
-                    }
-                // 스트레스 퍼센트
-                Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
-                    .font(.custom("DOSSaemmul", size: 17))
-                    .foregroundColor(.black)
-                
-            }
+            
+            StressGaugeView(goalTime: goalTime, mainActivity: mainActivity)
             
             ZStack {
                 //현재시간이 자정부터 오전 8시 사이면 자는 병아리이미지, 그 외에는 일반이미지
@@ -144,35 +125,4 @@ func statusColor(stress: Int) -> Color {
     }
 }
 
-// HelperView에서 띄울 스트레스 게이지 바
-struct StressGaugeView: View {
-    
-    @State var goalTime: Int = 480
-    let mainActivity : Double
-    let gaugeWidth : CGFloat = 102
-    
-    var body: some View {
-        ZStack{
-            RoundedRectangle(cornerRadius: 5)
-                .fill(.white)
-                .frame(width: 106, height: 24.4)
-                .overlay{
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color.black)
-                }
-            // 스트레스 게이지 바
-                .overlay(alignment: .leading){
-                    RoundedRectangle(cornerRadius: 3)
-                        .fill(statusColor(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100)))
-                        .frame(width: ((CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth) > CGFloat(gaugeWidth) ? CGFloat(gaugeWidth) : CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth), height: 19.26)
-                        .padding(.leading, 2.4)
-                }
-            // 스트레스 퍼센트
-            Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
-                .font(.custom("DOSSaemmul", size: 17))
-                .foregroundColor(.black)
-            
-        }
-    }
-}
 
