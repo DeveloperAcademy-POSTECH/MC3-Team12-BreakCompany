@@ -54,9 +54,7 @@ struct MainActivityView: View {
                 Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
                     .font(.custom("DOSSaemmul", size: 17))
                     .foregroundColor(.black)
-                
             }
-            
             ZStack {
                 //현재시간이 자정부터 오전 8시 사이면 자는 병아리이미지, 그 외에는 일반이미지
                 if isWithinRange() {
@@ -143,4 +141,5 @@ func statusColor(stress: Int) -> Color {
         return color[1]
     }
 }
+
 

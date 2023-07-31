@@ -23,7 +23,7 @@ struct MainView: View {
         let startOfDay = Calendar.current.startOfDay(for: now)
         let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
         let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
-        
+
         return DeviceActivityFilter(
             segment: .daily(during: dateInterval),
             users: .all,
@@ -40,30 +40,6 @@ struct MainView: View {
         // swiftlint:disable closure_body_length
         NavigationStack{
             VStack{
-                
-                // 도움말 ModalView
-                //                HStack{
-                //                    Button(action: {
-                //                        self.showModal.toggle()
-                //                    }){
-                //                        Text("!")
-                //                            .font(.custom("DOSSaemmul", size: 25))
-                //                            .background(
-                //                                Circle()
-                //                                    .frame(width: 36, height: 36)
-                //                                    .foregroundColor(lightGray)
-                //                            )
-                //                            .foregroundColor(.black)
-                //
-                //                    }
-                //                    .sheet(isPresented: self.$showModal){
-                //                        HelperView()
-                //                            .presentationDetents([.large])
-                //                            .presentationDragIndicator(.visible)
-                //                    }
-                //                    .padding(EdgeInsets(top: 5, leading: 36, bottom: 5, trailing: 5))
-                //                    Spacer()
-                //                }// 도움말 ModalView
                 Spacer()
                     .frame(height: 77)
                 
@@ -84,7 +60,7 @@ struct MainView: View {
                         }
                         .sheet(isPresented: $showTotalActivity) {
                             Text("앱 사용 통계")
-                                .presentationDetents([.height(684)])
+                                .presentationDetents([.height(686)])
                                 .presentationDragIndicator(.visible)
                         }
                         
@@ -101,7 +77,7 @@ struct MainView: View {
                         }
                         .sheet(isPresented: $showHelperView) {
                             HelperView()
-                                .presentationDetents([.height(684)])
+                                .presentationDetents([.height(686)])
                                 .presentationDragIndicator(.visible)
                         }
                         
@@ -162,7 +138,7 @@ struct MainView: View {
                     Spacer()
                     // 옷장 버튼
                     NavigationLink {
-                        CostumesBookView()
+                        CostumeBookView()
                     } label: {
                         VStack{
                             Image("Closet")
@@ -189,7 +165,6 @@ struct MainView: View {
                                 .font(.custom("DOSSaemmul", size: 16))
                         }
                     }
-                    
                     Spacer()
                     
                     // 시간설정 버튼
