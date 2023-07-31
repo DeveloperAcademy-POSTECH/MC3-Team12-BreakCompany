@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */; };
-		32F265FA2A70528900979BB2 /* CostumeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F265F92A70528900979BB2 /* CostumeBookView.swift */; };
+		32F265FA2A70528900979BB2 /* CostumeActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F265F92A70528900979BB2 /* CostumeActivityView.swift */; };
 		6765512B2A7010F800617638 /* HelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512A2A7010F800617638 /* HelperView.swift */; };
 		6765512D2A70115000617638 /* MainActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512C2A70115000617638 /* MainActivityReport.swift */; };
 		6765512F2A70118E00617638 /* MainActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765512E2A70118E00617638 /* MainActivityView.swift */; };
@@ -50,7 +50,6 @@
 		C9713FE52A6593E400589A1C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FE42A6593E400589A1C /* SplashView.swift */; };
 		C9713FEB2A65943200589A1C /* WeeklyFeedBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */; };
 		C9713FED2A65943D00589A1C /* FinalReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEC2A65943D00589A1C /* FinalReportView.swift */; };
-		C9713FEF2A65944C00589A1C /* CostumeActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEE2A65944C00589A1C /* CostumeActivityView.swift */; };
 		C9713FEF2A65944C00589A1C /* CostumeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEE2A65944C00589A1C /* CostumeBookView.swift */; };
 		C97817BD2A7691FB003B1A7E /* EmptyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */; };
 		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
@@ -154,7 +153,7 @@
 		32824F972A5E824C000DE3D4 /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeeklyFeedBackView.swift; path = PeepPeep/View/WeeklyFeedBack/WeeklyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F992A5E8281000DE3D4 /* DailyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DailyFeedBackView.swift; path = PeepPeep/View/DailyFeedBack/DailyFeedBackView.swift; sourceTree = SOURCE_ROOT; };
 		32824F9A2A5E82A4000DE3D4 /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinalReportView.swift; path = PeepPeep/View/FinalReport/FinalReportView.swift; sourceTree = SOURCE_ROOT; };
-		32F265F92A70528900979BB2 /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
+		32F265F92A70528900979BB2 /* CostumeActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeActivityView.swift; sourceTree = "<group>"; };
 		6765512A2A7010F800617638 /* HelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperView.swift; sourceTree = "<group>"; };
 		6765512C2A70115000617638 /* MainActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityReport.swift; sourceTree = "<group>"; };
 		6765512E2A70118E00617638 /* MainActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityView.swift; sourceTree = "<group>"; };
@@ -195,7 +194,6 @@
 		C9713FE42A6593E400589A1C /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C9713FEA2A65943200589A1C /* WeeklyFeedBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFeedBackView.swift; sourceTree = "<group>"; };
 		C9713FEC2A65943D00589A1C /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReportView.swift; sourceTree = "<group>"; };
-		C9713FEE2A65944C00589A1C /* CostumeActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeActivityView.swift; sourceTree = "<group>"; };
 		C9713FEE2A65944C00589A1C /* CostumeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostumeBookView.swift; sourceTree = "<group>"; };
 		C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyActivityView.swift; sourceTree = "<group>"; };
 		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -362,7 +360,7 @@
 		C91953FC2A5E63710090E916 /* CostumeBook */ = {
 			isa = PBXGroup;
 			children = (
-				32F265F92A70528900979BB2 /* CostumeBookView.swift */,
+				32F265F92A70528900979BB2 /* CostumeActivityView.swift */,
 			);
 			path = CostumeBook;
 			sourceTree = "<group>";
@@ -577,7 +575,7 @@
 		C9713FD02A65390400589A1C /* CostumeBook */ = {
 			isa = PBXGroup;
 			children = (
-				C9713FEE2A65944C00589A1C /* CostumeActivityView.swift */,
+				C9713FEE2A65944C00589A1C /* CostumeBookView.swift */,
 			);
 			path = CostumeBook;
 			sourceTree = "<group>";
@@ -818,7 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F265FA2A70528900979BB2 /* CostumeBookView.swift in Sources */,
+				32F265FA2A70528900979BB2 /* CostumeActivityView.swift in Sources */,
 				C91953F72A5E63500090E916 /* AppDelegate.swift in Sources */,
 				C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */,
 				C96B03B52A5EA03200B86493 /* WidgetVIew.swift in Sources */,
@@ -854,7 +852,7 @@
 				C9242BDC2A64D78D000ECECF /* TotalActivityView.swift in Sources */,
 				D99ED39C2A7255C2005D3878 /* DiaryActivityView.swift in Sources */,
 				C9713FEB2A65943200589A1C /* WeeklyFeedBackView.swift in Sources */,
-				C9713FEF2A65944C00589A1C /* CostumeActivityView.swift in Sources */,
+				C9713FEF2A65944C00589A1C /* CostumeBookView.swift in Sources */,
 				C9DFECEE2A71638D003190FD /* PieChartView.swift in Sources */,
 				6765512D2A70115000617638 /* MainActivityReport.swift in Sources */,
 				C9242BD82A64D78D000ECECF /* DeviceActivityExtension.swift in Sources */,
