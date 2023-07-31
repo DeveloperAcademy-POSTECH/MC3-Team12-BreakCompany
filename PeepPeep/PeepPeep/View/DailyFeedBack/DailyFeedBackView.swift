@@ -12,37 +12,86 @@ extension DeviceActivityReport.Context{
     static let diaryActivity = Self("Diary Activity")
 }
 
-struct DailyFeedBackView: View {
-    @State var isClick: Bool
-    @State var month: Date
-    @State var nowDay: Date
-    @State var stressLevel: Int
-    @State var offset: CGSize = CGSize()
-    @State var cellColor: Color = .yellow
-    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
+struct CellBox: Identifiable {
+    let id = UUID()
+    let num: Int
+    let nowDay: Date
+    let color: Color
+    let Level: Int
+}
 
+struct DailyFeedBackView: View {
+    
+    // 각 날짜 별 스트레스 레벨 값. 아직 존재하지 않는 값의 경우 0으로 처리.
+    let Levels = [
+        10, 29, 32, 43,
+        65, 84, 24, 12,
+        35, 46, 84, 43,
+        33, 77, 45, 78,
+        0, 0, 0, 0,
+        0, 0, 0, 0,
+        0, 0, 0, 0,
+        0, 0, 0, 0,
+        0, 0, 0, 0
+    ]
+    
+    var boxes: [CellBox] {
+        
+        var result: [CellBox] = []
+        let daysInMonth: Int = numberOfDays(in: month)
+        let firstWeekday: Int = firstWeekdayOfMonth(in: month)
+        let totalDay: Int = firstWeekday + daysInMonth
+        
+        // 숫자와 색상을 반복문으로 생성하여 배열로 반환
+        for i in 1..<totalDay {
+            let num: Int = (i < firstWeekday) ? 0 : i - firstWeekday + 1
+            // num으로 받아온 값을 getDate로 날짜로 저장
+            let nowDay = getDate(for: num - 1)
+            let Level = Levels[num]
+            let color = stressLevelColor(stressLevel: Level)
+            
+            result.append(CellBox(num: num, nowDay: nowDay, color: color, Level: Level))
+        }
+        return result
+    }
+    
+    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
+    
+    @State var clickNum: Int = 0
+    @State var Level: Int = 0
+    @State var month: Date
+    // CellBoxView의 날짜를 DiaryView에 연결하기 위해 만들어진 변수
+    @State var nowDay: Date
+    @State var offset: CGSize = CGSize()
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
-        ZStack {
+        ZStack{
             VStack {
-                Spacer()
+                
                 headerView
-                calendarGridView
-                Spacer()
-                Spacer()
-                Spacer()
+                
+                // 그리드로 박스 생성
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(boxes) { box in
+                        CellBoxView(box: box, clickNum: $clickNum, Level: $Level, nowDay: $nowDay)
+                    }
+                }
                 Spacer()
             }
-            .padding(30)
-
-            if isClick {
+            .padding(.horizontal, 30)
+            
+            // 날짜 누르면 결과 페이지 나오는 부분
+            if clickNum > 0 {
                 Color.black.opacity(0.5)
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
-                        isClick = false
+                        clickNum = 0
                     }
-                DiaryView(nowDay: $nowDay, stressLevel: $stressLevel)
+                DiaryView(nowDay: $nowDay)
             }
         }
+        .navigationBarItems(leading: backButton)
+        .navigationBarBackButtonHidden(true)
         .gesture(
             DragGesture()
                 .onChanged { gesture in self.offset = gesture.translation
@@ -58,77 +107,76 @@ struct DailyFeedBackView: View {
                 }
         )
     }
-
+    private var backButton: some View{
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .font(.system(size: 17))
+                .padding(.leading, 10)
+                .padding(.top, 10)
+        }
+    }
+    
     private var headerView: some View {
         return VStack {
             Text(month, formatter: Self.dateFormatter)
+                .font(.custom("DOSSaemmul", size: 16))
             LazyVGrid(columns: columns, spacing: 2) {
                 ForEach(Self.weekdaySymbols.indices, id: \.self) { week in
                     Text("\(Self.weekdaySymbols[week])")
                         .frame(width: 50, height: 50)
                         .foregroundColor(Color(.systemGray))
-                }
-            }
-        }
-    }
-
-    private var calendarGridView: some View {
-        let daysInMonth: Int = numberOfDays(in: month)
-        let firstWeekday: Int = firstWeekdayOfMonth(in: month) - 1
-
-        return VStack {
-            LazyVGrid(columns: columns, spacing: 2) {
-                ForEach(0 ..< firstWeekday, id: \.self) { _ in
-                    Text("")
-                        .frame(width: 50, height: 50)
-                }
-
-                ForEach(1 ..< daysInMonth + 1, id: \.self) { day in
-                    CellView(day: day, stressLevel: day)
-                        .padding(.bottom, 20)
-                        .onTapGesture {
-                            isClick = true
-                            nowDay = getDate(for: day) - 1
-                            stressLevel = day
-                        }
+                        .font(.custom("DOSSaemmul", size: 16))
                 }
             }
         }
     }
 }
 
-struct CellView: View {
-    @State var day: Int
-    @State var stressLevel: Int
-
-    init(day: Int, stressLevel: Int) {
-        self.day = day
-        self.stressLevel = stressLevel
-    }
-
+struct CellBoxView: View {
+    let box: CellBox
+    @Binding var clickNum: Int
+    @Binding var Level: Int
+    @Binding var nowDay: Date
+    
     var body: some View {
-        ZStack {
+        ZStack{
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(stressLevelColor(stressLevel: stressLevel % 6))
+                .foregroundColor((box.num != 0) ? box.color : .white)
                 .frame(width: 40, height: 40)
 
-            Text("\(day)")
+            if box.num > 0 {
+                Text("\(box.nowDay, formatter: Self.dateFormatter)")
+                    .font(.custom("DOSSaemmul", size: 15))
+                    .foregroundColor(.black)
+                    .frame(width: 50, height: 50)
+                    
+            }else{
+                Text("")
                 .frame(width: 50, height: 50)
-                .cornerRadius(3)
             }
         }
+            .onTapGesture {
+                clickNum = box.num
+                Level = box.Level
+                // box의 nowDay를 DiaryView에 전달(바인딩으로 묶어서)
+                nowDay = box.nowDay
+            }
     }
+}
 
 struct DiaryView: View {
+//    @Binding var month: Date
+//    @Binding var clickNum: Int
+//    @Binding var Level: Int
     @Binding var nowDay: Date
-    @Binding var stressLevel: Int
     @State private var context: DeviceActivityReport.Context = .diaryActivity
     @State private var filter: DeviceActivityFilter
-    init(nowDay: Binding<Date>, stressLevel: Binding<Int>) {
+    init(nowDay: Binding<Date>) {
         _nowDay = nowDay
-        _stressLevel = stressLevel
         let now = Date()
-        let startOfDay = Calendar.current.date(byAdding: .day, value: -1, to: nowDay.wrappedValue + 1) ?? now
+        let startOfDay = Calendar.current.date(byAdding: .day, value: 0, to: nowDay.wrappedValue) ?? now
         let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
         let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
 
@@ -141,7 +189,7 @@ struct DiaryView: View {
 
     var body: some View {
         ZStack {
-            Image("Paper")
+            Image("Note")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 250)
@@ -172,26 +220,45 @@ struct DiaryView: View {
 }
 
 private extension DailyFeedBackView {
+    func stressLevelColor(stressLevel: Int = 90) -> Color {
+        switch stressLevel {
+        case 0...20:
+            return Color(hex: "FFE500").opacity(0.1)
+        case 21...40:
+            return Color(hex: "FFE500").opacity(0.25)
+        case 41...60:
+            return Color(hex: "FFE500").opacity(0.45)
+        case 61...80:
+            return Color(hex: "FFE500").opacity(0.65)
+        case 81...100:
+            return Color(hex: "FFE500").opacity(1.0)
+        default:
+            return Color.red
+        }
+    }
+}
+
+private extension DailyFeedBackView {
     private func getDate(for day: Int) -> Date {
         return Calendar.current.date(byAdding: .day, value: day, to: startOfMonth())!
     }
-
+    
     func startOfMonth() -> Date {
         let components = Calendar.current.dateComponents([.year, .month], from: month)
         return Calendar.current.date(from: components)!
     }
-
+    
     func numberOfDays(in date: Date) -> Int {
         return Calendar.current.range(of: .day, in: .month, for: date)?.count ?? 0
     }
-
+    
     func firstWeekdayOfMonth(in date: Date) -> Int {
         let components = Calendar.current.dateComponents([.year, .month], from: date)
         let firstDayOfMonth = Calendar.current.date(from: components)!
 
         return Calendar.current.component(.weekday, from: firstDayOfMonth)
     }
-
+    
     func changeMonth(by value: Int) {
         let calendar = Calendar.current
         if let newMonth = calendar.date(byAdding: .month, value: value, to: month) {
@@ -215,25 +282,13 @@ private extension DailyFeedBackView {
     }()
 }
 
-private extension CellView {
-    func stressLevelColor(stressLevel: Int = 90) -> Color {
-        switch stressLevel {
-        case 0:
-            return Color(hex: "FFE500").opacity(0.1)
-        case 1:
-            return Color(hex: "FFE500").opacity(0.25)
-        case 2:
-            return Color(hex: "FFE500").opacity(0.45)
-        case 3:
-            return Color(hex: "FFE500").opacity(0.65)
-        case 4:
-            return Color(hex: "FFE500").opacity(1.0)
-        case 5:
-            return Color(hex: "EF692F").opacity(0.5)
-        default:
-            return Color.red
-        }
-    }
+private extension CellBoxView {
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "d"
+        return formatter
+    }()
 }
 
 private extension DiaryView {
@@ -245,12 +300,6 @@ private extension DiaryView {
     }()
 }
 
-struct DailyFeedBackView_Previews: PreviewProvider {
-    static var previews: some View {
-        DailyFeedBackView(isClick: false, month: Date(), nowDay: Date(), stressLevel: 0)
-    }
-}
-
 extension Color {
   init(hex: String) {
     let scanner = Scanner(string: hex)
@@ -259,9 +308,15 @@ extension Color {
     var rgb: UInt64 = 0
     scanner.scanHexInt64(&rgb)
     
-    let red = Double((rgb >> 16) & 0xFF) / 255.0
-    let green = Double((rgb >>  8) & 0xFF) / 255.0
-    let blue = Double((rgb >>  0) & 0xFF) / 255.0
-    self.init(red: red, green: green, blue: blue)
+    let r = Double((rgb >> 16) & 0xFF) / 255.0
+    let g = Double((rgb >>  8) & 0xFF) / 255.0
+    let b = Double((rgb >>  0) & 0xFF) / 255.0
+    self.init(red: r, green: g, blue: b)
   }
+}
+    
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        DailyFeedBackView(month: Date(), nowDay: Date())
+    }
 }
