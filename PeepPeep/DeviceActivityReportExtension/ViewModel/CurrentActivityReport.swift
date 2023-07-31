@@ -1,8 +1,8 @@
 //
-//  TotalActivityReport.swift
-//  DeviceActuvityReportExtension
+//  CurrentActivityReport.swift
+//  DeviceActivityReportExtension
 //
-//  Created by Ha Jong Myeong on 2023/07/12.
+//  Created by Ha Jong Myeong on 2023/08/01.
 //
 
 import DeviceActivity
@@ -10,15 +10,15 @@ import ManagedSettings
 import SwiftUI
 
 extension DeviceActivityReport.Context {
-    static let totalActivity = Self("Total Activity")
+    static let currentActivity = Self("Current Activity")
 }
 
-struct TotalActivityReport: DeviceActivityReportScene {
-    let context: DeviceActivityReport.Context = .totalActivity
-    // ActivityReport를 입력으로 받아 TotalActivityView를 반환하는 클로저
-    let content: (ActivityReport) -> TotalActivityView
+struct CurrentActivityReport: DeviceActivityReportScene {
+    let context: DeviceActivityReport.Context = .currentActivity
+    // ActivityReport를 입력으로 받아 CurrentActivityView를 반환하는 클로저
+    let content: (ActivityReport) -> CurrentActivityView
 
-    /// 데이터를 ActivityReport로 변환합니다. 명시되는 호출 시점이 없이, TotalActivityReport 구조체가 사용되는 시점에서 암시적으로 호출 되고 있습니다.
+    /// 데이터를 ActivityReport로 변환합니다. 명시되는 호출 시점이 없이, CurrentActivityReport 구조체가 사용되는 시점에서 암시적으로 호출 되고 있습니다.
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
         let totalActivityDuration = await getTotalActivityDuration(from: data)
         let appActivities = await getAppDeviceActivities(from: data)
