@@ -73,9 +73,10 @@ struct InstructionText: View {
 /// 앱 Activity 리스트
 struct ActivityList: View {
     var activities: [AppDeviceActivity]
-    // 정렬된 상위 5개 앱만 리스트에 추가
+
+    // 5개 앱만 리스트에 추가
     var sortedAndTopActivities: [AppDeviceActivity] {
-        let sortedActivities = activities.sorted { $0.duration > $1.duration }
+        let sortedActivities = activities
         return Array(sortedActivities.prefix(5))
     }
 
