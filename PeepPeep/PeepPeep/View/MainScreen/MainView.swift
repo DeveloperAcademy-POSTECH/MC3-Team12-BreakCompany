@@ -19,11 +19,11 @@ struct MainView: View {
     @State private var showHelperView = false
     @State private var showLevelModal = false
     @State private var filter: DeviceActivityFilter = {
+        // 현재 날짜를 불러올 수 없다면, 이전 24시간의 기준으로 날짜의 사용시간 데이터를 받아올 수 있도록 설정
         let now = Date()
         let startOfDay = Calendar.current.startOfDay(for: now)
         let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
         let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
-
         return DeviceActivityFilter(
             segment: .daily(during: dateInterval),
             users: .all,
@@ -154,7 +154,7 @@ struct MainView: View {
                     
                     // 성장일지 버튼
                     NavigationLink {
-                        DailyFeedBackView(isClick: false, month: Date(), nowDay: Date(), stressLevel: 0)
+                        DailyFeedBackView(month: Date(), nowDay: Date())
                     } label: {
                         VStack{
                             Image("Diary")
