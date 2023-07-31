@@ -13,27 +13,31 @@ struct SettingView: View {
     let grayColor: Color = Color("GrayColor")
     @State var chickName: String = ""
     @State var showModal = false
+    //@StateObject private var keyboardResponder = KeyboardResponder()
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("설정")
-                .font(.custom("DOSSaemmul", size: 15))
-                .font(.system(size: 20))
-                .padding(.bottom, 23)
+                .font(.custom("DOSSaemmul", size: 20))
+                .padding(.bottom, 21)
             
             HStack{
                 Text("이름")
-                    .frame(width: 70)
+                    .frame(width: 30)
                     .font(.custom("DOSSaemmul", size: 15))
                     .foregroundColor(grayColor)
+                    .padding(EdgeInsets(top: 0, leading: 36, bottom: 0, trailing: 50))
                 
                 TextField(chickName, text: $chickName)
                     .font(.custom("DOSSaemmul", size: 15))
                     .onSubmit {
                         UserDefaults.shared.set(chickName, forKey: "chickName")
                     }
+                    //.offset(y: keyboardResponder.isKeyboardVisible ? 0 : 30)
+                    //.animation(.easeInOut(duration: 0.2), value: keyboardResponder.isKeyboardVisible)
+                
             }
-            .frame(width: 320, height: 60)
+            .frame(width: 320, height: 61)
             .overlay(){
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(.black)
@@ -47,7 +51,7 @@ struct SettingView: View {
                     .font(.custom("DOSSaemmul", size: 15))
                     .foregroundColor(.black)
             }
-            .frame(width: 320, height: 60)
+            .frame(width: 320, height: 61)
             .overlay(){
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(.black)
@@ -59,15 +63,13 @@ struct SettingView: View {
             }
             
             Spacer()
-
+            
         } // VStack
         .onAppear{
             chickName = UserDefaults.shared.string(forKey: "chickName") ?? "병아리"
         }
     }
-        
 }
-
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
