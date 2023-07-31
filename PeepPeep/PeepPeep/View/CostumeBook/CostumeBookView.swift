@@ -16,7 +16,6 @@ struct CostumeBookView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var context: DeviceActivityReport.Context = .costumeActivity
     var body: some View {
-        
         VStack {
             DeviceActivityReport(context)
         }
@@ -30,7 +29,7 @@ struct CostumeBookView: View {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 17))
                         .padding(.leading, 10)
-                        .padding(.top, 10)
+
                 }
 
             }
