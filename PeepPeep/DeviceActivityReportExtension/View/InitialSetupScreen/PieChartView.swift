@@ -12,7 +12,7 @@ struct PieChartView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let diameter = min(geometry.size.width, geometry.size.height) * 0.65
+            let diameter = min(geometry.size.width, geometry.size.height) * 0.63
             HStack {
                 Spacer()
                 ZStack {
@@ -32,7 +32,7 @@ struct PieChartView: View {
     /// 중심을 기준으로 반지름에 따른 원을 그리고, 각각의 파이 슬라이스를 색상에 맞게 채웁니다.
     private func drawPieSlice(context: GraphicsContext, size: CGSize) {
         let total = data.reduce(0) { $0 + $1.0 }
-        let radius = min(size.width, size.height) * 0.38
+        let radius = min(size.width, size.height) * 0.37
         let center = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
 
         var startAngle = Angle.zero
