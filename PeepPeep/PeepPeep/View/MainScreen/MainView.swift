@@ -64,7 +64,7 @@ struct MainView: View {
                         }
                         
                         Spacer()
-                            .frame(height: 81)
+                            .frame(height: 93)
                         
                         // 스트레스 지수 게이지바 터치
                         Button {
@@ -81,50 +81,7 @@ struct MainView: View {
                         }
                         
                         Spacer()
-                            .frame(height: 234)
-                        
-                        // 레벨 터치
-                        Button {
-                            showLevelModal.toggle()
-                        } label: {
-                            Rectangle()
-                                .foregroundColor(.white.opacity(0.1))
-                                .frame(width: 49, height: 18)
-                        }
-                        .sheet(isPresented: $showLevelModal) {
-                            // 레벨 설명
-                            VStack{
-                                Text("병아리의 레벨")
-                                    .font(.custom("DOSSaemmul", size: 20))
-                                    .padding(.bottom, 18)
-                                
-                                Image("chick")
-                                    .resizable()
-                                    .frame(width: 80, height: 80)
-                                    .padding(.bottom, 26)
-                                
-                                Text("레벨은 목표 사용 시간을 잘 지킨 날짜예요.")
-                                    .font(.custom("DOSSaemmul", size: 17))
-                                    .multilineTextAlignment(.center)
-                                    .padding(.bottom, 25)
-                                
-                                Text("하루 목표 사용 시간을 잘 지키면\n레벨이 1 증가해요.")
-                                    .font(.custom("DOSSaemmul", size: 17))
-                                    .multilineTextAlignment(.center)
-                                    .padding(.bottom, 25)
-                                    .lineSpacing(10)
-                                
-                                Text("하루 목표 사용 시간을 잘 지키지 못하면\n레벨이 오르지 않아요.")
-                                    .font(.custom("DOSSaemmul", size: 17))
-                                    .multilineTextAlignment(.center)
-                                    .lineSpacing(10)
-                                
-                            }
-                            .presentationDetents([.height(419)])
-                            .presentationDragIndicator(.visible)
-                        }
-                        
-                        
+                            .frame(height: 255)
                     }// 터치하면 모달 올라오기
                     
                     
