@@ -4,8 +4,10 @@
 //
 //  Created by Ha Jong Myeong on 2023/08/1.
 //
-import SwiftUI
+
 import DeviceActivity
+import PeepPeepCommons
+import SwiftUI
 
 struct InitialTimeSettingView: View {
     let hours = Array(0...23)
@@ -21,6 +23,8 @@ struct InitialTimeSettingView: View {
             TimePickersView(selectedHours: $selectedHours, selectedMinutes: $selectedMinutes, hours: hours, minutes: minutes)
             DecisionButtonView(setGoalTime: setGoalTime)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: BackButton())
     }
 
     // 목표 시간을 설정하고 저장

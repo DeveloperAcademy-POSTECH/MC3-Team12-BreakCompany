@@ -53,7 +53,6 @@ struct ActivitySummaryView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton())
-        .foregroundColor(Color.black)
     }
 }
 
