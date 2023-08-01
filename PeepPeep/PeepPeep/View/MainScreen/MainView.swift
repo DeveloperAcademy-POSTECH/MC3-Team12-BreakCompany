@@ -41,12 +41,11 @@ struct MainView: View {
         NavigationStack{
             VStack{
                 Spacer()
-                    .frame(height: 77)
                 
                 ZStack {
                     // ProgressBarView()
                     DeviceActivityReport(context, filter: filter)
-                        .frame(width: 300, height: 500, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width, height: 500, alignment: .center)
                     // 터치하면 모달 올라오기
                     VStack{
                         // 현재 사용 시간 터치
