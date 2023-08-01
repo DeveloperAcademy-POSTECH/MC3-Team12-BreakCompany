@@ -40,8 +40,8 @@ struct DiaryActivityView: View {
             } else {
                 Text("사용 시간")
                     .font(.custom("DOSSaemmul", size: 14))
-                Text(formatter.string(from: mainActivity) ?? "0시간0분")
-                    .font(.custom("DOSSaemmul", size: 20))
+                Text("0\(Int(mainActivity/3600.0)):\(Int(Int(mainActivity) % 3600)/60 < 10 ? "0\(Int(Int(mainActivity) % 3600)/60)" : "\(Int(Int(mainActivity) % 3600)/60)")")
+                    .font(.custom("DOSSaemmul", size: 22))
                     .padding(.top, 7)
                 Text("스트레스 지수")
                     .font(.custom("DOSSaemmul", size: 12))

@@ -223,10 +223,11 @@ struct DiaryView: View {
             Image("Chick")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 200)
-                .offset(x: -120, y: 75)
+                .frame(height: 180)
+                .offset(x: -104, y: 75)
                 .scaleEffect(x: -1, y: 1, anchor: .center)
         }
+        .offset(y: -50)
         .onAppear{
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
