@@ -45,7 +45,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                 appDeviceActivities.append(appDeviceActivity)
             }
         }
-        // 반환하는 과정에서 sorting 수행
-        return appDeviceActivities.sorted(by: { $0.duration > $1.duration })
+        // 반환하는 과정에서 sorting, 5개 제한 수행
+        return Array(appDeviceActivities.sorted(by: { $0.duration > $1.duration }).prefix(5))
     }
 }
