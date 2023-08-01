@@ -19,7 +19,7 @@ struct ChickNamingView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
                 CustomSpacer(height: 10)
                 ProgressBar(currentStep: 1)
                 CustomSpacer(height: 80)
@@ -34,8 +34,8 @@ struct ChickNamingView: View {
                     CustomSpacer(height: 190)
                     DecisionButton(viewModel: viewModel, name: name)
                     CustomSpacer(height: 30)
-                }.scrollDisabled(true)
-            }
+                }
+            }.scrollDisabled(true)
             .onTapGesture {
                 focusedField = nil
             }
