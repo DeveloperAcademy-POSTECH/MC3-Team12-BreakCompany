@@ -15,8 +15,8 @@ struct MainView: View {
     @State private var context: DeviceActivityReport.Context = .mainActivity
     @State private var showModal = false
     @State private var showModal2 = false
-    @State private var showTotalActivity = false
-    @State private var showHelperView = false
+    @State var showTotalActivity = false
+    @State var showHelperView = false
     @State private var showLevelModal = false
     @State private var filter: DeviceActivityFilter = {
         // 현재 날짜를 불러올 수 없다면, 이전 24시간의 기준으로 날짜의 사용시간 데이터를 받아올 수 있도록 설정
@@ -58,7 +58,7 @@ struct MainView: View {
                             
                         }
                         .sheet(isPresented: $showTotalActivity) {
-                            ActivityModalView(model: ScreenTimeAppSelection(), viewModel: ScreenTimeAppSelectionViewModel())
+                            ActivityModalView(model: ScreenTimeAppSelection(), viewModel: ScreenTimeAppSelectionViewModel(), showTotalActivity: $showTotalActivity)
                                 .presentationDetents([.height(686)])
                                 .presentationDragIndicator(.visible)
                         }
@@ -75,7 +75,7 @@ struct MainView: View {
                                 .frame(width: 110, height: 30)
                         }
                         .sheet(isPresented: $showHelperView) {
-                            HelperView()
+                            HelperView(showHelperView: $showHelperView)
                                 .presentationDetents([.height(686)])
                                 .presentationDragIndicator(.visible)
                         }
