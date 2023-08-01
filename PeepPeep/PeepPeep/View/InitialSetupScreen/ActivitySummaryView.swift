@@ -4,24 +4,32 @@
 //
 //  Created by Ha Jong Myeong on 2023/07/12.
 //
+
 import DeviceActivity
 import FamilyControls
 import PeepPeepCommons
 import SwiftUI
 
 struct ActivitySummaryView: View {
-    @EnvironmentObject var model: ScreenTimeAppSelection
-    @State var isPresented = false
+    @ObservedObject var model: ScreenTimeAppSelection
+    @ObservedObject var viewModel: ScreenTimeAppSelectionViewModel
+    @State private var isPresented = false
     @State private var totalActivityContext: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var navigateToMain = false
     @State private var filter: DeviceActivityFilter = {
-        // 현재 날짜를 불러올 수 없다면, 이전 24시간의 기준으로 날짜의 사용시간 데이터를 받아올 수 있도록 설정
-        let now = Date()
-        let startOfDay = Calendar.current.startOfDay(for: now)
-        let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? now
-        let dateInterval = DateInterval(start: startOfDay, end: endOfDay)
+        // 이전날의 데이터를 받아올 수 없다면, 이틀 전의 데이터를 받아올 수 있도록 설정
+        let dateIntervals: [DateInterval] = (1...2).compactMap { daysAgo -> DateInterval? in
+            let now = Date()
+            guard let startOfDay = Calendar.current.date(byAdding: .day, value: -daysAgo, to: Calendar.current.startOfDay(for: now)),
+                  let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) else {
+                return nil
+            }
+            return DateInterval(start: startOfDay, end: endOfDay)
+        }
+        let previousDayInterval = dateIntervals.first
+
         return DeviceActivityFilter(
-            segment: .daily(during: dateInterval),
+            segment: .daily(during: previousDayInterval ?? DateInterval()),
             users: .all,
             devices: .init([.iPhone, .iPad])
         )
@@ -29,25 +37,30 @@ struct ActivitySummaryView: View {
 
     var body: some View {
         VStack {
+            CustomSpacer(height: 10)
             ProgressBar(currentStep: 3)
-            CustomSpacer(height: 30)
-            Text("오늘, 이만큼 휴대폰을 사용했어요!")
-                .font(.dosSsaemmul(size: 20))
-                .padding(.bottom, 5)
             DeviceActivityReport(totalActivityContext, filter: filter)
-            Button("확인") { isPresented = true }
-                .buttonStyle(CommonButtonStyle(paddingSize: 30))
-                .familyActivityPicker(isPresented: $isPresented, selection: $model.newSelection)
-                .onChange(of: model.newSelection) { _ in
+            Button("선택하기") { isPresented = true }
+                .buttonStyle(CommonButtonStyle(paddingSize: 20))
+                .familyActivityPicker(isPresented: $isPresented, selection: $model.activitySelection)
+                .onChange(of: model.activitySelection) { _ in
                     navigateToMain = true
+                    viewModel.saveSelection(selection: model.activitySelection)
                 }
-                NavigationLink(destination: MainView(), isActive: $navigateToMain) {
-                    EmptyView()
-                }
-            CustomSpacer(height: 30)
+            NavigationLink(destination: MainView(), isActive: $navigateToMain) {
+            }
+            CustomSpacer(height: 20)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton())
         .foregroundColor(Color.black)
+    }
+}
+
+struct ActivitySummaryView_Previews: PreviewProvider {
+    @ObservedObject var model: ScreenTimeAppSelection
+    @ObservedObject var viewModel: ScreenTimeAppSelectionViewModel
+    static var previews: some View {
+        ActivitySummaryView(model: ScreenTimeAppSelection(), viewModel: ScreenTimeAppSelectionViewModel())
     }
 }

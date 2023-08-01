@@ -7,10 +7,17 @@
 
 import Foundation
 import ManagedSettings
+import SwiftUI
+import PeepPeepCommons
 
 struct ActivityReport {
     let totalDuration: TimeInterval
     let apps: [AppDeviceActivity]
+    var chartData: [(Double, Color)] {
+        apps.enumerated().map { (index, app) in
+            (Double(app.duration), pieChartColorPalette[index % pieChartColorPalette.count])
+        }
+    }
 }
 
 struct AppDeviceActivity: Identifiable {
@@ -18,4 +25,7 @@ struct AppDeviceActivity: Identifiable {
     var displayName: String
     var iconToken: ApplicationToken
     var duration: TimeInterval
+    var color: Color {
+        return pieChartColorPalette[Int(id)! % pieChartColorPalette.count]
+    }
 }
