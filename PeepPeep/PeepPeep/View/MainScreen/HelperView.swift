@@ -9,12 +9,29 @@ import SwiftUI
 
 struct HelperView: View {
     
+    @Binding var showHelperView: Bool
+    
     var body: some View {
         // swiftlint:disable closure_body_length
         VStack(alignment: .center){
-            VStack{
+            HStack {
                 Spacer()
-                    .frame(height: 44)
+                    .frame(width: 340)
+                Button(
+                    action: {
+                        showHelperView = false
+                    },
+                    label: {
+                        Image(systemName: "XButton")
+                            .padding()
+                    }
+                )
+                .padding(.trailing, 10)
+            }
+            
+            VStack{
+//                Spacer()
+//                    .frame(height: 44)
                 Text("병아리의 스트레스 지수")
                     .font(.custom("DOSSaemmul", size: 20))
                 //.padding(.top, 44)
@@ -148,9 +165,11 @@ struct HelperView: View {
     }
 }
 
-struct HelperView_Previews: PreviewProvider {
-    static var previews: some View {
-        HelperView()
-    }
-}
+//struct HelperView_Previews: PreviewProvider {
+//
+//
+//    static var previews: some View {
+//        HelperView(showHelperView: $showHelperView)
+//    }
+//}
 

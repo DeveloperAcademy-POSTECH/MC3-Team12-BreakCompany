@@ -16,6 +16,7 @@ struct ActivityModalView: View {
     @State var isPresented = false
     @State private var currentActivityContext: DeviceActivityReport.Context = .init(rawValue: "Current Activity")
     @State private var navigateToMain = false
+    @Binding var showTotalActivity: Bool
     @State private var filter: DeviceActivityFilter = {
         // 오늘의 데이터를 가져오도록 설정
         let now = Date()
@@ -33,6 +34,20 @@ struct ActivityModalView: View {
 
     var body: some View {
         VStack {
+            HStack {
+                Spacer()
+                    .frame(width: 340)
+                Button(
+                    action: {
+                        showTotalActivity = false
+                    },
+                    label: {
+                        Image(systemName: "XButton")
+                            .padding()
+                    }
+                )
+                .padding(.trailing, 10)
+            }
             DeviceActivityReport(currentActivityContext, filter: filter)
         }
     }
