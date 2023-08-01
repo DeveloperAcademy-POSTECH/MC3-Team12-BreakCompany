@@ -25,6 +25,9 @@ struct DeviceActivityExtension: DeviceActivityReportExtension {
         CostumeActivityReport { costumeActivity in
             CostumeActivityView(mainActivity: costumeActivity)
         }
+        CurrentActivityReport { currentActivity in
+            CurrentActivityView(activityReport: currentActivity)
+        }
     }
 }
 

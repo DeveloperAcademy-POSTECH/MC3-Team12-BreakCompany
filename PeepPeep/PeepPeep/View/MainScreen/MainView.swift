@@ -59,7 +59,7 @@ struct MainView: View {
                             
                         }
                         .sheet(isPresented: $showTotalActivity) {
-                            Text("앱 사용 통계")
+                            ActivityModalView(model: ScreenTimeAppSelection(), viewModel: ScreenTimeAppSelectionViewModel())
                                 .presentationDetents([.height(686)])
                                 .presentationDragIndicator(.visible)
                         }

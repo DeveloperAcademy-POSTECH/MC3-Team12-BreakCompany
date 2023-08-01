@@ -33,7 +33,7 @@
 		C91953EB2A5E633F0090E916 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91953EA2A5E633F0090E916 /* ContentView.swift */; };
 		C91953F02A5E63400090E916 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C91953EF2A5E63400090E916 /* Preview Assets.xcassets */; };
 		C9242BD82A64D78D000ECECF /* DeviceActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BD72A64D78D000ECECF /* DeviceActivityExtension.swift */; };
-		C9242BDA2A64D78D000ECECF /* TotalActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BD92A64D78D000ECECF /* TotalActivityViewModel.swift */; };
+		C9242BDA2A64D78D000ECECF /* TotalActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BD92A64D78D000ECECF /* TotalActivityReport.swift */; };
 		C9242BDC2A64D78D000ECECF /* TotalActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BDB2A64D78D000ECECF /* TotalActivityView.swift */; };
 		C9242BE12A64D78D000ECECF /* DeviceActivityReportExtension.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = C9242BD52A64D78D000ECECF /* DeviceActivityReportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9242BE72A64D80D000ECECF /* ActivitySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9242BE62A64D80D000ECECF /* ActivitySummaryView.swift */; };
@@ -51,6 +51,9 @@
 		C9713FED2A65943D00589A1C /* FinalReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9713FEC2A65943D00589A1C /* FinalReportView.swift */; };
 		C97817BD2A7691FB003B1A7E /* EmptyActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */; };
 		C97817C12A76A473003B1A7E /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817C02A76A473003B1A7E /* KeyboardResponder.swift */; };
+		C97817D22A780FF4003B1A7E /* ActivityModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817D12A780FF4003B1A7E /* ActivityModalView.swift */; };
+		C97817D42A78117E003B1A7E /* CurrentActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817D32A78117E003B1A7E /* CurrentActivityView.swift */; };
+		C97817D62A781ACB003B1A7E /* CurrentActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817D52A781ACB003B1A7E /* CurrentActivityReport.swift */; };
 		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
 		C9C215152A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
 		C9C215162A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
@@ -176,7 +179,7 @@
 		C9242BD02A64D6BE000ECECF /* PeepPeep.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PeepPeep.entitlements; sourceTree = "<group>"; };
 		C9242BD52A64D78D000ECECF /* DeviceActivityReportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = DeviceActivityReportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9242BD72A64D78D000ECECF /* DeviceActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityExtension.swift; sourceTree = "<group>"; };
-		C9242BD92A64D78D000ECECF /* TotalActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityViewModel.swift; sourceTree = "<group>"; };
+		C9242BD92A64D78D000ECECF /* TotalActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityReport.swift; sourceTree = "<group>"; };
 		C9242BDB2A64D78D000ECECF /* TotalActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalActivityView.swift; sourceTree = "<group>"; };
 		C9242BDD2A64D78D000ECECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9242BDE2A64D78D000ECECF /* DeviceActivityReportExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityReportExtension.entitlements; sourceTree = "<group>"; };
@@ -196,6 +199,9 @@
 		C9713FEC2A65943D00589A1C /* FinalReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReportView.swift; sourceTree = "<group>"; };
 		C97817BB2A7691BB003B1A7E /* EmptyActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyActivityView.swift; sourceTree = "<group>"; };
 		C97817C02A76A473003B1A7E /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		C97817D12A780FF4003B1A7E /* ActivityModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModalView.swift; sourceTree = "<group>"; };
+		C97817D32A78117E003B1A7E /* CurrentActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentActivityView.swift; sourceTree = "<group>"; };
+		C97817D52A781ACB003B1A7E /* CurrentActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentActivityReport.swift; sourceTree = "<group>"; };
 		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9C215142A74C96F00268345 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOSSaemmul.ttf; path = PeepPeepCommons/Fonts/DOSSaemmul.ttf; sourceTree = SOURCE_ROOT; };
 		C9DFECCF2A7159A9003190FD /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -403,6 +409,7 @@
 			children = (
 				C96B03BD2A5EA0E600B86493 /* MainView.swift */,
 				6765512A2A7010F800617638 /* HelperView.swift */,
+				C97817D12A780FF4003B1A7E /* ActivityModalView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -509,11 +516,12 @@
 		C9713FC62A6538A400589A1C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C9242BD92A64D78D000ECECF /* TotalActivityViewModel.swift */,
+				C9242BD92A64D78D000ECECF /* TotalActivityReport.swift */,
 				C9713FC72A6538B300589A1C /* EmptyViewModel.swift */,
 				6765512C2A70115000617638 /* MainActivityReport.swift */,
 				D99ED3992A725549005D3878 /* DiaryActivityReport.swift */,
 				D9EE63102A7790C10003827C /* CostumeActivityReport.swift */,
+				C97817D52A781ACB003B1A7E /* CurrentActivityReport.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -555,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				6765512E2A70118E00617638 /* MainActivityView.swift */,
+				C97817D32A78117E003B1A7E /* CurrentActivityView.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -851,6 +860,7 @@
 				85DBE1DC2A7060FE00AECFB5 /* LoadingView.swift in Sources */,
 				C9DFECF62A72EBCA003190FD /* ScreenTimeAppSelection.swift in Sources */,
 				C9DFECE22A715CD0003190FD /* ScreenTimeRequestView.swift in Sources */,
+				C97817D22A780FF4003B1A7E /* ActivityModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,12 +874,14 @@
 				D99ED39C2A7255C2005D3878 /* DiaryActivityView.swift in Sources */,
 				C9713FEB2A65943200589A1C /* WeeklyFeedBackView.swift in Sources */,
 				8539BAE42A779620006D1BF9 /* StressGaugeView.swift in Sources */,
+				C97817D62A781ACB003B1A7E /* CurrentActivityReport.swift in Sources */,
 				D9EE63192A77E4B20003827C /* CostumeActivityView.swift in Sources */,
 				C9DFECEE2A71638D003190FD /* PieChartView.swift in Sources */,
 				6765512D2A70115000617638 /* MainActivityReport.swift in Sources */,
+				C97817D42A78117E003B1A7E /* CurrentActivityView.swift in Sources */,
 				C9242BD82A64D78D000ECECF /* DeviceActivityExtension.swift in Sources */,
 				C9713FC82A6538B300589A1C /* EmptyViewModel.swift in Sources */,
-				C9242BDA2A64D78D000ECECF /* TotalActivityViewModel.swift in Sources */,
+				C9242BDA2A64D78D000ECECF /* TotalActivityReport.swift in Sources */,
 				C9DFECEB2A716169003190FD /* ActivityReportModels.swift in Sources */,
 				6765512F2A70118E00617638 /* MainActivityView.swift in Sources */,
 				C97817BD2A7691FB003B1A7E /* EmptyActivityView.swift in Sources */,

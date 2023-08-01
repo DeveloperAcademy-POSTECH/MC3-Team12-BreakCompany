@@ -1,5 +1,5 @@
 //
-//  TotalActivityViewModel.swift
+//  TotalActivityReport.swift
 //  DeviceActuvityReportExtension
 //
 //  Created by Ha Jong Myeong on 2023/07/12.
@@ -15,7 +15,8 @@ extension DeviceActivityReport.Context {
 
 struct TotalActivityReport: DeviceActivityReportScene {
     let context: DeviceActivityReport.Context = .totalActivity
-    let content: (ActivityReport) -> TotalActivityView // ActivityReport를 입력으로 받아 TotalActivityView를 반환하는 클로저
+    // ActivityReport를 입력으로 받아 TotalActivityView를 반환하는 클로저
+    let content: (ActivityReport) -> TotalActivityView
 
     /// 데이터를 ActivityReport로 변환합니다. 명시되는 호출 시점이 없이, TotalActivityReport 구조체가 사용되는 시점에서 암시적으로 호출 되고 있습니다.
     func makeConfiguration(representing data: DeviceActivityResults<DeviceActivityData>) async -> ActivityReport {
@@ -44,6 +45,7 @@ struct TotalActivityReport: DeviceActivityReportScene {
                 appDeviceActivities.append(appDeviceActivity)
             }
         }
-        return appDeviceActivities.sorted(by: { $0.duration > $1.duration })
+        // 반환하는 과정에서 sorting, 5개 제한 수행
+        return Array(appDeviceActivities.sorted(by: { $0.duration > $1.duration }).prefix(5))
     }
 }

@@ -37,7 +37,7 @@ struct ActivitySummaryView: View {
         // 파이 차트 뷰와 총 활동 시간을 보여주는 텍스트 뷰를 중첩
         ZStack {
             PieChartView(data: chartData)
-            TotalDurationText(duration: activityReport.totalDuration)
+            TotalDurationText(duration: activityReport.totalDuration, text: "어제 총 사용시간")
         }
         InstructionText()
         // 앱 별 Activity 리스트
@@ -48,10 +48,11 @@ struct ActivitySummaryView: View {
 /// 총 사용 시간
 struct TotalDurationText: View {
     var duration: TimeInterval
+    var text: String
 
     var body: some View {
         VStack {
-            Text("어제 총 사용시간")
+            Text(text)
                 .padding(.bottom, 3)
                 .font(.dosSsaemmul(size: 17))
             Text("\(duration.stringFromTimeInterval())")
