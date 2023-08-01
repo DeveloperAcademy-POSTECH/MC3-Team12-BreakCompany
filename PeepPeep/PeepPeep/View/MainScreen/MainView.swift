@@ -142,11 +142,6 @@ struct MainView: View {
                 Spacer()
             }   // VStack
             .navigationBarBackButtonHidden(true)
-            .onAppear{
-                //앱이 처음 다운로드 된 날, 그 날의 목표시간을 유저디폴트에 저장합니다(향후 온보딩 및 초기 설정 페이지로 옮겨야 합니다)
-                UserDefaults.shared.set("2023.07.17", forKey: "downloadedDate")
-                UserDefaults.shared.set(600, forKey: "2023.07.17")
-            }
         }   // NavigationStack
     }
 }
@@ -156,4 +151,3 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
-
