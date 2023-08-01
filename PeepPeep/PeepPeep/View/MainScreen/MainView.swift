@@ -65,7 +65,7 @@ struct MainView: View {
                                 
 //                ProgressBarView()
                 DeviceActivityReport(context, filter: filter)
-                    .frame(width: 300, height: 500, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.width, height: 500, alignment: .center)
                 
                 
                 Spacer()

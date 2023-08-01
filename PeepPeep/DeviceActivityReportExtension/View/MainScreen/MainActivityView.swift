@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct MainActivityView: View {
+    
+    var imageNames: [String] = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
+    @State var imageIndex = 0
+    @State var degrees: Double = 0
+    @State var currentImageLocation: CGPoint = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
+    @State private var tappedLocation: CGPoint = CGPoint(x: UIScreen.main.bounds.width/2, y: 0)
+    
     @State private var currentTime = Date()
     @State var goalTime: Int = 480
     @State var chickName: String = "병아리"
@@ -49,7 +56,7 @@ struct MainActivityView: View {
 
                 Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
                     .font(.custom("DOSSaemmul", size: 17))
-                    .foregroundColor(.black)
+                    .foregroundColor(statusFontColor(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100)))
                 
             }
             //현재시간이 자정부터 오전 8시 사이면 자는 병아리이미지, 그 외에는 일반이미지
@@ -60,7 +67,34 @@ struct MainActivityView: View {
             } else {
                 chickImage(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))
                     .resizable()
-                    .frame(width: 250, height: 250, alignment: .center)
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
+                    .rotation3DEffect(.degrees(degrees), axis: (x:0, y:1, z:0))
+                    .position(x: tappedLocation.x, y:UIScreen.main.bounds.height/6)
+                    .overlay(){
+                        Rectangle()
+                            .foregroundColor(.white)
+                            .opacity(0.01)
+                            .onCustomTapGesture(count: 1) { location in
+                                
+                                // After 2sec, stop chick movement animation
+                                Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { timer in
+                                    withAnimation (Animation.easeInOut(duration: 0)){
+                                        imageIndex = (imageIndex + 1) % imageNames.count
+                                        if imageIndex == 8{
+                                            timer.invalidate()
+                                        }
+                                    }
+                                }
+                                
+                                // Flip chick image
+                                degrees = chickImageRotation(tappedLocation: location, currentImageLocation: currentImageLocation)
+                                
+                                withAnimation(Animation.easeInOut(duration: 2)){
+                                    self.tappedLocation = location
+                                }
+                            }
+                    }
             }
             Text("Lv. 1")
                 .font(.custom("DOSSaemmul", size: 13))
@@ -93,6 +127,8 @@ struct MainActivityView: View {
             return currentHour >= 0 && currentHour < 8
         }
 }
+
+/// Change chick image based on stress gauge
 func chickImage(stress: Int) -> Image {
     switch stress {
     case 0 ..< 20 :
@@ -111,6 +147,8 @@ func chickImage(stress: Int) -> Image {
         return Image("Normal")
     }
 }
+
+/// Change status bar color based on stress gauge
 func statusColor(stress: Int) -> Color {
     let color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
     switch stress {
@@ -129,3 +167,80 @@ func statusColor(stress: Int) -> Color {
     }
 }
 
+func statusFontColor(stress: Int) -> Color {
+    if stress < 60 {
+        return .black
+    }else{
+        return .white
+    }
+}
+
+public struct CustomTapGesture: Gesture {
+  public typealias Value = SimultaneousGesture<TapGesture, DragGesture>.Value
+
+  let count: Int
+  let coordinateSpace: CoordinateSpace
+
+  init(
+    count: Int = 1,
+    coordinateSpace: CoordinateSpace = .global
+  ) {
+    self.count = count
+    self.coordinateSpace = coordinateSpace
+  }
+
+  public var body: SimultaneousGesture<TapGesture, DragGesture> {
+    SimultaneousGesture(
+      TapGesture(count: count),
+      DragGesture(minimumDistance: 0, coordinateSpace: coordinateSpace)
+    )
+  }
+
+  public func onEnded(perform action: @escaping (CGPoint) -> Void) -> _EndedGesture<CustomTapGesture> {
+    self.onEnded { (value: Value) -> Void in
+      guard value.first != nil else { return }
+      guard let location = value.second?.startLocation else { return }
+      guard let endLocation = value.second?.location else { return }
+      guard ((location.x-1)...(location.x+1))
+        .contains(endLocation.x), ((location.y-1)...(location.y+1))
+        .contains(endLocation.y) else {
+        return
+      }
+      action(location)
+    }
+  }
+}
+
+extension View {
+  public func onCustomTapGesture(
+    count: Int,
+    coordinateSpace: CoordinateSpace = .global,
+    perform action: @escaping (CGPoint) -> Void
+  ) -> some View {
+    simultaneousGesture(CustomTapGesture(count: count, coordinateSpace: coordinateSpace)
+      .onEnded(perform: action)
+    )
+  }
+
+  public func onCustomTapGesture(
+    count: Int,
+    perform action: @escaping (CGPoint) -> Void
+  ) -> some View {
+    onCustomTapGesture(count: count, coordinateSpace: .global, perform: action)
+  }
+
+  public func onCustomTapGesture(
+    perform action: @escaping (CGPoint) -> Void
+  ) -> some View {
+    onCustomTapGesture(count: 1, coordinateSpace: .global, perform: action)
+  }
+}
+
+func chickImageRotation(tappedLocation: CGPoint, currentImageLocation: CGPoint) -> Double {
+    
+    if tappedLocation.x-90 >= currentImageLocation.x{
+        return 0
+    }else{
+        return 180
+    }
+}
