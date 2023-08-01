@@ -171,7 +171,7 @@ struct CellBoxView: View {
         }
         .onTapGesture {
             clickNum = box.num
-            Level = box.Level
+//            Level = box.Level
             // box의 nowDay를 DiaryView에 전달(바인딩으로 묶어서)
             nowDay = box.nowDay
         }
