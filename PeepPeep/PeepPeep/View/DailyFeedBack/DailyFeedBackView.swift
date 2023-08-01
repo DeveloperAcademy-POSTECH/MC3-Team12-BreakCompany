@@ -17,13 +17,13 @@ struct CellBox: Identifiable {
     let num: Int
     let nowDay: Date
     let color: Color
-    let Level: Int
+    let level: Int
 }
 
 struct DailyFeedBackView: View {
     
     // 각 날짜 별 스트레스 레벨 값. 아직 존재하지 않는 값의 경우 0으로 처리.
-    let Levels = [
+    let levels = [
         10, 29, 32, 43,
         65, 84, 24, 12,
         35, 46, 84, 43,
@@ -43,14 +43,15 @@ struct DailyFeedBackView: View {
         let totalDay: Int = firstWeekday + daysInMonth
         
         // 숫자와 색상을 반복문으로 생성하여 배열로 반환
-        for i in 1..<totalDay {
-            let num: Int = (i < firstWeekday) ? 0 : i - firstWeekday + 1
+        for index in 1..<totalDay {
+            let num: Int = (index < firstWeekday) ? 0 : index - firstWeekday + 1
             // num으로 받아온 값을 getDate로 날짜로 저장
             let nowDay = getDate(for: num - 1)
             let Level = Int.random(in: 1...120)
             let color = stressLevelColor(stressLevel: Level)
+
             
-            result.append(CellBox(num: num, nowDay: nowDay, color: color, Level: Level))
+            result.append(CellBox(num: num, nowDay: nowDay, color: color, level: level))
         }
         return result
     }
@@ -58,7 +59,7 @@ struct DailyFeedBackView: View {
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     
     @State var clickNum: Int = 0
-    @State var Level: Int = 0
+    @State var level: Int = 0
     @State var month: Date
     // CellBoxView의 날짜를 DiaryView에 연결하기 위해 만들어진 변수
     @State var nowDay: Date
@@ -73,7 +74,7 @@ struct DailyFeedBackView: View {
                 // 그리드로 박스 생성
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(boxes) { box in
-                        CellBoxView(box: box, clickNum: $clickNum, Level: $Level, nowDay: $nowDay)
+                        CellBoxView(box: box, clickNum: $clickNum, level: $level, nowDay: $nowDay)
                     }
                 }
                 Spacer()
@@ -138,7 +139,7 @@ struct CellBoxView: View {
     let box: CellBox
     @State var downloadedDate = ""
     @Binding var clickNum: Int
-    @Binding var Level: Int
+    @Binding var level: Int
     @Binding var nowDay: Date
     let dateFormatter = DateFormatter()
     
@@ -178,7 +179,6 @@ struct CellBoxView: View {
             dateFormatter.dateFormat = "yyyy.MM.dd"
             downloadedDate = UserDefaults.shared.string(forKey: "downloadedDate") ?? "2023.07.17"
         }
-        
     }
 }
 
@@ -327,10 +327,10 @@ extension Color {
     var rgb: UInt64 = 0
     scanner.scanHexInt64(&rgb)
     
-    let r = Double((rgb >> 16) & 0xFF) / 255.0
-    let g = Double((rgb >>  8) & 0xFF) / 255.0
-    let b = Double((rgb >>  0) & 0xFF) / 255.0
-    self.init(red: r, green: g, blue: b)
+    let red = Double((rgb >> 16) & 0xFF) / 255.0
+    let green = Double((rgb >>  8) & 0xFF) / 255.0
+    let blue = Double((rgb >>  0) & 0xFF) / 255.0
+    self.init(red: red, green: green, blue: blue)
   }
 }
     
