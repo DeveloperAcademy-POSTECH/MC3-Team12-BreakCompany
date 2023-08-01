@@ -47,8 +47,9 @@ struct DailyFeedBackView: View {
             let num: Int = (index < firstWeekday) ? 0 : index - firstWeekday + 1
             // num으로 받아온 값을 getDate로 날짜로 저장
             let nowDay = getDate(for: num - 1)
-            let level = levels[num]
-            let color = stressLevelColor(stressLevel: level)
+            let Level = Int.random(in: 1...120)
+            let color = stressLevelColor(stressLevel: Level)
+
             
             result.append(CellBox(num: num, nowDay: nowDay, color: color, level: level))
         }
@@ -136,16 +137,27 @@ struct DailyFeedBackView: View {
 
 struct CellBoxView: View {
     let box: CellBox
+    @State var downloadedDate = ""
     @Binding var clickNum: Int
     @Binding var level: Int
     @Binding var nowDay: Date
+    let dateFormatter = DateFormatter()
+    
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor((box.num != 0) ? box.color : .white)
-                .frame(width: 40, height: 40)
-
+//            RoundedRectangle(cornerRadius: 10)
+//                .foregroundColor((box.num != 0) ? box.color : .white)
+//                .frame(width: 40, height: 40)
+            if box.nowDay.compare((dateFormatter.date(from: downloadedDate)!)) == .orderedAscending || box.nowDay.compare(Date()) == .orderedDescending || box.num == 0 {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.white)
+                    .frame(width: 40, height: 40)
+            } else {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(box.color)
+                    .frame(width: 40, height: 40)
+            }
             if box.num > 0 {
                 Text("\(box.nowDay, formatter: Self.dateFormatter)")
                     .font(.custom("DOSSaemmul", size: 15))
@@ -157,12 +169,16 @@ struct CellBoxView: View {
                 .frame(width: 50, height: 50)
             }
         }
-            .onTapGesture {
-                clickNum = box.num
-                level = box.level
-                // box의 nowDay를 DiaryView에 전달(바인딩으로 묶어서)
-                nowDay = box.nowDay
-            }
+        .onTapGesture {
+            clickNum = box.num
+            Level = box.Level
+            // box의 nowDay를 DiaryView에 전달(바인딩으로 묶어서)
+            nowDay = box.nowDay
+        }
+        .onAppear{
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            downloadedDate = UserDefaults.shared.string(forKey: "downloadedDate") ?? "2023.07.17"
+        }
     }
 }
 
@@ -197,8 +213,9 @@ struct DiaryView: View {
 
             VStack {
                 Text("\(nowDay, formatter: Self.dateFormatter)")
-                    .font(.custom("DOSSaemmul", size: 13))
-                    .padding(.top)
+                    .font(.custom("DOSSaemmul", size: 17))
+                    .padding(.vertical, 10)
+                    
                 DeviceActivityReport(context, filter: filter)
                     .frame(width: 120, height: 144)
                     
@@ -232,6 +249,8 @@ private extension DailyFeedBackView {
             return Color(hex: "FFE500").opacity(0.65)
         case 81...100:
             return Color(hex: "FFE500").opacity(1.0)
+        case 100...120:
+            return Color(hex: "EF692F").opacity(0.5)
         default:
             return Color.red
         }
