@@ -131,7 +131,6 @@ struct TimeSettingView: View {
                     buttonDisabledCheck = true
                 }
             }
-            
             Spacer()
             Spacer()
             Spacer()

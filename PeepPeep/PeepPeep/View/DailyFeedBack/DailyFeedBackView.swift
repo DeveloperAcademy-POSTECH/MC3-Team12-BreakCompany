@@ -17,13 +17,13 @@ struct CellBox: Identifiable {
     let num: Int
     let nowDay: Date
     let color: Color
-    let Level: Int
+    let level: Int
 }
 
 struct DailyFeedBackView: View {
     
     // 각 날짜 별 스트레스 레벨 값. 아직 존재하지 않는 값의 경우 0으로 처리.
-    let Levels = [
+    let levels = [
         10, 29, 32, 43,
         65, 84, 24, 12,
         35, 46, 84, 43,
@@ -43,14 +43,15 @@ struct DailyFeedBackView: View {
         let totalDay: Int = firstWeekday + daysInMonth
         
         // 숫자와 색상을 반복문으로 생성하여 배열로 반환
-        for i in 1..<totalDay {
-            let num: Int = (i < firstWeekday) ? 0 : i - firstWeekday + 1
+        for index in 1..<totalDay {
+            let num: Int = (index < firstWeekday) ? 0 : index - firstWeekday + 1
             // num으로 받아온 값을 getDate로 날짜로 저장
             let nowDay = getDate(for: num - 1)
-            let Level = Levels[num]
+            let Level = Int.random(in: 1...120)
             let color = stressLevelColor(stressLevel: Level)
+
             
-            result.append(CellBox(num: num, nowDay: nowDay, color: color, Level: Level))
+            result.append(CellBox(num: num, nowDay: nowDay, color: color, level: level))
         }
         return result
     }
@@ -58,7 +59,7 @@ struct DailyFeedBackView: View {
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 7)
     
     @State var clickNum: Int = 0
-    @State var Level: Int = 0
+    @State var level: Int = 0
     @State var month: Date
     // CellBoxView의 날짜를 DiaryView에 연결하기 위해 만들어진 변수
     @State var nowDay: Date
@@ -73,7 +74,7 @@ struct DailyFeedBackView: View {
                 // 그리드로 박스 생성
                 LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(boxes) { box in
-                        CellBoxView(box: box, clickNum: $clickNum, Level: $Level, nowDay: $nowDay)
+                        CellBoxView(box: box, clickNum: $clickNum, level: $level, nowDay: $nowDay)
                     }
                 }
                 Spacer()
@@ -136,16 +137,27 @@ struct DailyFeedBackView: View {
 
 struct CellBoxView: View {
     let box: CellBox
+    @State var downloadedDate = ""
     @Binding var clickNum: Int
-    @Binding var Level: Int
+    @Binding var level: Int
     @Binding var nowDay: Date
+    let dateFormatter = DateFormatter()
+    
     
     var body: some View {
         ZStack{
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor((box.num != 0) ? box.color : .white)
-                .frame(width: 40, height: 40)
-
+//            RoundedRectangle(cornerRadius: 10)
+//                .foregroundColor((box.num != 0) ? box.color : .white)
+//                .frame(width: 40, height: 40)
+            if box.nowDay.compare((dateFormatter.date(from: downloadedDate)!)) == .orderedAscending || box.nowDay.compare(Date()) == .orderedDescending || box.num == 0 {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(.white)
+                    .frame(width: 40, height: 40)
+            } else {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(box.color)
+                    .frame(width: 40, height: 40)
+            }
             if box.num > 0 {
                 Text("\(box.nowDay, formatter: Self.dateFormatter)")
                     .font(.custom("DOSSaemmul", size: 15))
@@ -157,12 +169,16 @@ struct CellBoxView: View {
                 .frame(width: 50, height: 50)
             }
         }
-            .onTapGesture {
-                clickNum = box.num
-                Level = box.Level
-                // box의 nowDay를 DiaryView에 전달(바인딩으로 묶어서)
-                nowDay = box.nowDay
-            }
+        .onTapGesture {
+            clickNum = box.num
+//            Level = box.Level
+            // box의 nowDay를 DiaryView에 전달(바인딩으로 묶어서)
+            nowDay = box.nowDay
+        }
+        .onAppear{
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            downloadedDate = UserDefaults.shared.string(forKey: "downloadedDate") ?? "2023.07.17"
+        }
     }
 }
 
@@ -197,8 +213,9 @@ struct DiaryView: View {
 
             VStack {
                 Text("\(nowDay, formatter: Self.dateFormatter)")
-                    .font(.custom("DOSSaemmul", size: 13))
-                    .padding(.top)
+                    .font(.custom("DOSSaemmul", size: 17))
+                    .padding(.vertical, 10)
+                    
                 DeviceActivityReport(context, filter: filter)
                     .frame(width: 120, height: 144)
                     
@@ -206,10 +223,11 @@ struct DiaryView: View {
             Image("Chick")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 200)
-                .offset(x: -120, y: 75)
+                .frame(height: 180)
+                .offset(x: -104, y: 75)
                 .scaleEffect(x: -1, y: 1, anchor: .center)
         }
+        .offset(y: -50)
         .onAppear{
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy.MM.dd"
@@ -232,6 +250,8 @@ private extension DailyFeedBackView {
             return Color(hex: "FFE500").opacity(0.65)
         case 81...100:
             return Color(hex: "FFE500").opacity(1.0)
+        case 100...120:
+            return Color(hex: "EF692F").opacity(0.5)
         default:
             return Color.red
         }
@@ -308,10 +328,10 @@ extension Color {
     var rgb: UInt64 = 0
     scanner.scanHexInt64(&rgb)
     
-    let r = Double((rgb >> 16) & 0xFF) / 255.0
-    let g = Double((rgb >>  8) & 0xFF) / 255.0
-    let b = Double((rgb >>  0) & 0xFF) / 255.0
-    self.init(red: r, green: g, blue: b)
+    let red = Double((rgb >> 16) & 0xFF) / 255.0
+    let green = Double((rgb >>  8) & 0xFF) / 255.0
+    let blue = Double((rgb >>  0) & 0xFF) / 255.0
+    self.init(red: red, green: green, blue: blue)
   }
 }
     

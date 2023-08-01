@@ -14,7 +14,7 @@ struct LoadingView: View {
     var body: some View {
 //        ZStack {
             VStack {
-                Image("appstore")
+                Image("PeepIcon")
                     .resizable()
                     .frame(width: 228, height: 228)
                     .padding(.top, 168)
