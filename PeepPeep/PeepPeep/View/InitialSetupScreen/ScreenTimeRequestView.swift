@@ -54,7 +54,7 @@ struct DescriptionText: View {
     var body: some View {
         Text("핸드폰 사용시간은\n스크린 타임 데이터를 기반으로\n측정됩니다")
             .font(.dosSsaemmul(size: 17))
-            .lineSpacing(3)
+            .lineSpacing(6)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.gray)
     }
