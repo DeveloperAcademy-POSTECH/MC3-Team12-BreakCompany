@@ -65,11 +65,11 @@ struct MainActivityView: View {
             }
             ZStack {
                 //현재시간이 자정부터 오전 8시 사이면 자는 병아리이미지, 그 외에는 일반이미지
-//                if isWithinRange() {
-//                    Image("Sleep2")
-//                        .resizable()
-//                        .frame(width: 228, height: 228, alignment: .center)
-                //                } else {
+               if isWithinRange() {
+                   Image("Sleep2")
+                       .resizable()
+                       .frame(width: 228, height: 228, alignment: .center)
+                               } else {
                 Image(imageNames[imageIndex])
                     .resizable()
                     .scaledToFit()
@@ -121,21 +121,13 @@ struct MainActivityView: View {
                                             timer.invalidate()
                                         }
                                     }
-                                }
-                                
-                                // Flip chick image
-                                degrees = chickImageRotation(tappedLocation: location, currentImageLocation: currentImageLocation)
-                                
-                                withAnimation(Animation.easeInOut(duration: 2)){
-                                    self.tappedLocation = location
-                                }
                             }
                     }
                 VStack{
                     Spacer()
                     
-                    Text("Lv. 1")
-                        .font(.custom("DOSSaemmul", size: 13))
+//                    Text("Lv. 1")
+//                        .font(.custom("DOSSaemmul", size: 13))
                     
                     Text(chickName)
                         .font(.custom("DOSSaemmul", size: 20))
@@ -231,6 +223,25 @@ func chickImage(stress: Int) -> Image {
     }
 }
 
+func chickMoveImage(stress: Int) -> String {
+    switch stress {
+    case 0 ..< 20 :
+        return "Happy"
+    case 20 ..< 40 :
+        return "Normal"
+    case 40 ..< 60 :
+        return "Sad"
+    case 60 ..< 80 :
+        return "SoSad"
+    case 80 ..< 100 :
+        return "Angry"
+    case 100 ..< 1000 :
+        return "Bye"
+    default:
+        return "Normal"
+    }
+}
+
 /// Change status bar color based on stress gauge
 func statusColor(stress: Int) -> Color {
     let color: [Color] = [Color("LightGreen"), .green, .yellow, .orange, .red]
@@ -321,7 +332,7 @@ extension View {
 
 func chickImageRotation(tappedLocation: CGPoint, currentImageLocation: CGPoint) -> Double {
     
-    if tappedLocation.x-90 >= currentImageLocation.x{
+    if tappedLocation.x-50 >= currentImageLocation.x{
         return 0
     }else{
         return 180

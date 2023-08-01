@@ -22,10 +22,11 @@ struct InitialTimeSettingView: View {
             Spacer()
             CustomSpacer(height: 80)
             TitleView()
-            CustomSpacer(height: 40)
+            CustomSpacer(height: 20)
             TimePickersView(selectedHours: $selectedHours, selectedMinutes: $selectedMinutes, hours: hours, minutes: minutes)
-            CustomSpacer(height: 60)
+            CustomSpacer(height: 130)
             DecisionButtonView(setGoalTime: setGoalTime)
+            CustomSpacer(height: 20)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton(), trailing: SkiptoMainButton(setGoalTime: setGoalTime))
@@ -50,7 +51,7 @@ struct InitialTimeSettingView: View {
 struct TitleView: View {
     var body: some View {
         Text("핸드폰 목표 사용 시간 설정")
-            .font(.custom("DOSSaemmul", size: 17))
+            .font(.dosSsaemmul(size: 17))
             .padding(.vertical, 20)
     }
 }
@@ -65,9 +66,9 @@ struct TimePickersView: View {
     var body: some View {
         HStack {
             PickerComponentView(selection: $selectedHours, items: hours)
-            Text("Hours").font(.custom("DOSSaemmul", size: 20))
+            Text("Hours").font(.dosSsaemmul(size: 20))
             PickerComponentView(selection: $selectedMinutes, items: minutes)
-            Text("Mins").font(.custom("DOSSaemmul", size: 20))
+            Text("Mins").font(.dosSsaemmul(size: 20))
         }
         .frame(width: 318, height: 254, alignment: .center)
         .overlay {
@@ -86,7 +87,7 @@ struct PickerComponentView: View {
     var body: some View {
         Picker("", selection: $selection) {
             ForEach(items, id: \.self) { item in
-                Text("\(item)").font(.custom("DOSSaemmul", size: 20))
+                Text("\(item)").font(.dosSsaemmul(size: 20))
             }
         }
         .pickerStyle(.wheel)
@@ -99,7 +100,6 @@ struct DecisionButtonView: View {
     let setGoalTime: () -> Void
     @State private var navigateToMain = false
 
-
     var body: some View {
         VStack {
             NavigationLink("", destination: MainView(), isActive: $navigateToMain)
@@ -110,10 +110,10 @@ struct DecisionButtonView: View {
             }) {
                 Text("결정")
                     .frame(width: 106, height: 44)
-                    .font(.custom("DOSSaemmul", size: 20))
+                    .font(.dosSsaemmul(size: 20))
                     .foregroundColor(.black)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 15)
+                        RoundedRectangle(cornerRadius: 30)
                             .stroke(.black, lineWidth: 1)
                     }
             }
@@ -122,6 +122,9 @@ struct DecisionButtonView: View {
     }
 
     private func checkSetupComplete() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        UserDefaults.shared.set(dateFormatter.string(from: Date()), forKey: "downloadedDate")
         UserDefaults.shared.set(true, forKey: "initialSetupComplete")
     }
 }
