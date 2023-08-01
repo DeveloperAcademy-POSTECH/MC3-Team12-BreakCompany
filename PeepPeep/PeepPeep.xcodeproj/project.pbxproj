@@ -273,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				85DBE1D92A70365C00AECFB5 /* SettingView.swift */,
+				C9DFECEC2A716211003190FD /* TimeSettingView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -420,7 +421,6 @@
 				C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */,
 				C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */,
 				C9242BE62A64D80D000ECECF /* ActivitySummaryView.swift */,
-				C9DFECEC2A716211003190FD /* TimeSettingView.swift */,
 				C9DFECDF2A715C9A003190FD /* ProgressBar.swift */,
 			);
 			path = InitialSetupScreen;

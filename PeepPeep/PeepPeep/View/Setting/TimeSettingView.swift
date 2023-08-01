@@ -7,6 +7,7 @@
 
 import SwiftUI
 import DeviceActivity
+import PeepPeepCommons
 
 struct TimeSettingView: View {
     let hours = Array(0...23)
@@ -16,16 +17,39 @@ struct TimeSettingView: View {
     @State var selectedMinutes = 0
     @State var goalTime: Int = 240
     @State var testGoalTime = 0
+    @Binding var showModal: Bool
     
     var body: some View {
         VStack {
-            Text("핸드폰 목표 사용 시간 설정")
-                .font(.custom("DOSSaemmul", size: 17))
-                .padding(.vertical, 20)
-            Text("하루에 한번만 설정을 바꿀 수 있습니다")
-                .font(.custom("DOSSaemmul", size: 13))
-                .padding(.vertical, 20)
-                .foregroundColor(buttonDisabledCheck ? .red : .black)
+            // 버튼
+            HStack{
+                Spacer()
+                Button(
+                    action: {
+                        showModal = false
+                    },
+                    label: {
+                        Image("XButton")
+                            .font(.system(size: 30))
+                            .foregroundColor(.gray)
+                            .symbolRenderingMode(.hierarchical)
+                            .padding()
+                    }
+                )
+            }
+            
+            // 텍스트
+            VStack{
+                Text("핸드폰 목표 사용 시간 설정")
+                    .font(.custom("DOSSaemmul", size: 17))
+                    .padding(.vertical, 20)
+                Text("하루에 한번만 설정을 바꿀 수 있습니다")
+                    .font(.custom("DOSSaemmul", size: 13))
+                    .foregroundColor(buttonDisabledCheck ? .red : .black)
+            }
+            .padding(.bottom, 25)
+            
+            // 시간
             HStack {
                 Picker("hourPicker", selection: $selectedHours) {
                     ForEach(hours, id: \.self) { hour in
@@ -48,14 +72,17 @@ struct TimeSettingView: View {
                 Text("Mins")
                     .font(.custom("DOSSaemmul", size: 20))
             }
-            
             .frame(width: 318, height: 254, alignment: .center)
             .overlay {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(.black, lineWidth: 1)
             }
             .padding(.vertical, 20)
-            Button {
+            
+            Spacer()
+            
+            // 결정 버튼
+            Button(action: {
                 let goalTime = hours[hours.firstIndex(of: selectedHours) ?? 0]*60 + minutes[minutes.firstIndex(of: selectedMinutes) ?? 0]
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy.MM.dd"
@@ -64,18 +91,20 @@ struct TimeSettingView: View {
                 testGoalTime = UserDefaults.shared.integer(forKey: settedDay)
                 //버튼이 터치되면서 버튼색,글씨색이 바뀜
                 buttonDisabledCheck = true
-            } label: {
-                Text("결정")
-                    .frame(width: 106, height: 44)
-                    .font(.custom("DOSSaemmul", size: 20))
-                    //오늘 설정을 한번 설정을 한 상태라면 버튼 색이 라이트그레이로 바뀜
-                    .foregroundColor(buttonDisabledCheck ? Color("LightGray") : .black)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(buttonDisabledCheck ? Color("LightGray") : .black, lineWidth: 1)
-                    }
+            }) {
+                    Text("결정")
+                        .foregroundColor(buttonDisabledCheck ? Color("LightGray") : .black)
+                        .font(.dosSsaemmul(size: 20))
+                        .padding(.vertical, 13)
+                        .padding(.horizontal, 30)
             }
-            .disabled(buttonDisabledCheck)
+            
+            //오늘 설정을 한번 설정을 한 상태라면 버튼 색이 라이트그레이로 바뀜
+            .overlay(
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(buttonDisabledCheck ? Color("LightGray") : .black, lineWidth: 1)
+            )
+            .padding(.top, 60)
             .padding(.vertical, 20)
             .onAppear{
                 for (key, value) in UserDefaults.shared.dictionaryRepresentation() {
@@ -102,7 +131,10 @@ struct TimeSettingView: View {
                     buttonDisabledCheck = true
                 }
             }
-//            Text("현재목표시간 : \(testGoalTime)")
+            
+            Spacer()
+            Spacer()
+            Spacer()
         }
     }
 }
