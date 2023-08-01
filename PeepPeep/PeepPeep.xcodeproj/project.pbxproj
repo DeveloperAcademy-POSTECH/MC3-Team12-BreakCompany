@@ -54,6 +54,7 @@
 		C97817D22A780FF4003B1A7E /* ActivityModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817D12A780FF4003B1A7E /* ActivityModalView.swift */; };
 		C97817D42A78117E003B1A7E /* CurrentActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817D32A78117E003B1A7E /* CurrentActivityView.swift */; };
 		C97817D62A781ACB003B1A7E /* CurrentActivityReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817D52A781ACB003B1A7E /* CurrentActivityReport.swift */; };
+		C97817DA2A791963003B1A7E /* InitialTImeSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97817D92A791963003B1A7E /* InitialTImeSettingView.swift */; };
 		C992F9B02A5E6C600050EBD1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */; };
 		C9C215152A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
 		C9C215162A74C97000268345 /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9C215142A74C96F00268345 /* DOSSaemmul.ttf */; };
@@ -202,6 +203,7 @@
 		C97817D12A780FF4003B1A7E /* ActivityModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModalView.swift; sourceTree = "<group>"; };
 		C97817D32A78117E003B1A7E /* CurrentActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentActivityView.swift; sourceTree = "<group>"; };
 		C97817D52A781ACB003B1A7E /* CurrentActivityReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentActivityReport.swift; sourceTree = "<group>"; };
+		C97817D92A791963003B1A7E /* InitialTImeSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialTImeSettingView.swift; sourceTree = "<group>"; };
 		C992F9AF2A5E6C600050EBD1 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C9C215142A74C96F00268345 /* DOSSaemmul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = DOSSaemmul.ttf; path = PeepPeepCommons/Fonts/DOSSaemmul.ttf; sourceTree = SOURCE_ROOT; };
 		C9DFECCF2A7159A9003190FD /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				85DBE1D92A70365C00AECFB5 /* SettingView.swift */,
+				C9DFECEC2A716211003190FD /* TimeSettingView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -420,8 +423,8 @@
 				C9DFECDD2A715C6B003190FD /* ChickNamingView.swift */,
 				C9DFECE12A715CD0003190FD /* ScreenTimeRequestView.swift */,
 				C9242BE62A64D80D000ECECF /* ActivitySummaryView.swift */,
-				C9DFECEC2A716211003190FD /* TimeSettingView.swift */,
 				C9DFECDF2A715C9A003190FD /* ProgressBar.swift */,
+				C97817D92A791963003B1A7E /* InitialTImeSettingView.swift */,
 			);
 			path = InitialSetupScreen;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 			files = (
 				C96B03C02A5EA10100B86493 /* SplashView.swift in Sources */,
 				C96B03B52A5EA03200B86493 /* WidgetVIew.swift in Sources */,
+				C97817DA2A791963003B1A7E /* InitialTImeSettingView.swift in Sources */,
 				C9DFECE92A716024003190FD /* ChickNamingVIewModel.swift in Sources */,
 				C94C2EDB2A5EBCE100D93A4C /* DailyFeedBackView.swift in Sources */,
 				32824F982A5E824C000DE3D4 /* WeeklyFeedBackView.swift in Sources */,
