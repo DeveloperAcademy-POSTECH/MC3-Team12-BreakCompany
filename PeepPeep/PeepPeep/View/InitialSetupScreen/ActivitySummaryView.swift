@@ -15,7 +15,7 @@ struct ActivitySummaryView: View {
     @ObservedObject var viewModel: ScreenTimeAppSelectionViewModel
     @State private var isPresented = false
     @State private var totalActivityContext: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
-    @State private var navigateToMain = false
+    @State private var navigateToInitialTimeSetting = false
     @State private var filter: DeviceActivityFilter = {
         // 이전날의 데이터를 받아올 수 없다면, 이틀 전의 데이터를 받아올 수 있도록 설정
         let dateIntervals: [DateInterval] = (1...2).compactMap { daysAgo -> DateInterval? in
@@ -44,10 +44,10 @@ struct ActivitySummaryView: View {
                 .buttonStyle(CommonButtonStyle(paddingSize: 20))
                 .familyActivityPicker(isPresented: $isPresented, selection: $model.activitySelection)
                 .onChange(of: model.activitySelection) { _ in
-                    navigateToMain = true
+                    navigateToInitialTimeSetting = true
                     viewModel.saveSelection(selection: model.activitySelection)
                 }
-            NavigationLink(destination: MainView(), isActive: $navigateToMain) {
+            NavigationLink(destination: InitialTimeSettingView(), isActive: $navigateToInitialTimeSetting) {
             }
             CustomSpacer(height: 20)
         }
