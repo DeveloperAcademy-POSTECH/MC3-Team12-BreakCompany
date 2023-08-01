@@ -33,7 +33,7 @@ struct InitialTimeSettingView: View {
 
     // 목표 시간을 설정하고 저장
     private func setGoalTime() {
-        let goalTime = hours[selectedHours] * 60 + minutes[selectedMinutes]
+        let goalTime = hours[hours.firstIndex(of: selectedHours) ?? 0]*60 + minutes[minutes.firstIndex(of: selectedMinutes) ?? 0]
         let settedDay = getFormattedDate(from: Date())
         UserDefaults.shared.set(goalTime, forKey: settedDay)
     }

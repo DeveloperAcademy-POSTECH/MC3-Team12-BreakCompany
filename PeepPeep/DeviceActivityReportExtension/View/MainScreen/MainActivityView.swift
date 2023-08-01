@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainActivityView: View {
     
-    var imageNames: [String] = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
+    @State var imageNames: [String] = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
+    @State var costumeNames: [String] = ["Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank"]
     @State var imageIndex = 0
     @State var degrees: Double = 0
     @State var currentImageLocation: CGPoint = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
@@ -55,7 +56,7 @@ struct MainActivityView: View {
                         RoundedRectangle(cornerRadius: 3)
                             .fill(statusColor(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100)))
                             .frame(width: ((CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth) > CGFloat(gaugeWidth) ? CGFloat(gaugeWidth) : CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * gaugeWidth), height: 19.26)
-                            .padding(.leading, 2.4)
+                            .padding(.leading, 2)
                     }
                 // 스트레스 퍼센트
                 Text("\(Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))%")
@@ -64,13 +65,13 @@ struct MainActivityView: View {
             }
             ZStack {
                 //현재시간이 자정부터 오전 8시 사이면 자는 병아리이미지, 그 외에는 일반이미지
-                if isWithinRange() {
-                    Image("Sleep2")
-                        .resizable()
-                        .frame(width: 228, height: 228, alignment: .center)
-                } else {
-                    chickImage(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))
-                        .resizable()
+//                if isWithinRange() {
+//                    Image("Sleep2")
+//                        .resizable()
+//                        .frame(width: 228, height: 228, alignment: .center)
+                //                } else {
+                Image(imageNames[imageIndex])
+                    .resizable()
                     .scaledToFit()
                     .frame(width: 247, height: 247)
                     .rotation3DEffect(.degrees(degrees), axis: (x:0, y:1, z:0))
@@ -99,7 +100,37 @@ struct MainActivityView: View {
                                 }
                             }
                     }
-                }
+                //                }
+                Image(costumeNames[imageIndex])
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 247, height: 247)
+                    .rotation3DEffect(.degrees(degrees), axis: (x:0, y:1, z:0))
+                    .position(x: tappedLocation.x, y:UIScreen.main.bounds.height/6)
+                    .overlay(){
+                        Rectangle()
+                            .foregroundColor(.white)
+                            .opacity(0.01)
+                            .onCustomTapGesture(count: 1) { location in
+                                
+                                // After 2sec, stop chick movement animation
+                                Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { timer in
+                                    withAnimation (Animation.easeInOut(duration: 0)){
+                                        imageIndex = (imageIndex + 1) % imageNames.count
+                                        if imageIndex == 8{
+                                            timer.invalidate()
+                                        }
+                                    }
+                                }
+                                
+                                // Flip chick image
+                                degrees = chickImageRotation(tappedLocation: location, currentImageLocation: currentImageLocation)
+                                
+                                withAnimation(Animation.easeInOut(duration: 2)){
+                                    self.tappedLocation = location
+                                }
+                            }
+                    }
                 VStack{
                     Spacer()
                     
@@ -111,7 +142,46 @@ struct MainActivityView: View {
                         .padding(.top, 13)
                 }
             }
-            
+            .onAppear{
+                switch Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100) {
+                case 0 ..< 20 :
+                    imageNames = ["MoveHappy0", "MoveHappy1", "MoveHappy2", "MoveHappy3", "MoveHappy0", "MoveHappy1", "MoveHappy2", "MoveHappy3", "MoveHappy0"]
+                case 20 ..< 40 :
+                    imageNames = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
+                case 40 ..< 60 :
+                    imageNames = ["MoveSad0", "MoveSad1", "MoveSad2", "MoveSad3", "MoveSad0", "MoveSad1", "MoveSad2", "MoveSad3", "MoveSad0"]
+                case 60 ..< 80 :
+                    imageNames = ["MoveSoSad0", "MoveSoSad1", "MoveSoSad2", "MoveSoSad3", "MoveSoSad0", "MoveSoSad1", "MoveSoSad2", "MoveSoSad3", "MoveSoSad0"]
+                case 80 ..< 100 :
+                    imageNames = ["MoveAngry0", "MoveAngry1", "MoveAngry2", "MoveAngry3", "MoveAngry0", "MoveAngry1", "MoveAngry2", "MoveAngry3", "MoveAngry0"]
+                case 100 ..< 1000 :
+                    imageNames = ["Bye", "Bye", "Bye", "Bye", "Bye", "Bye", "Bye", "Bye", "Bye"]
+                default:
+                    imageNames = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
+                }
+                switch UserDefaults.shared.string(forKey: "selectedCostume") {
+                case "Classic" :
+                    costumeNames = ["Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank"]
+                case "Newbie" :
+                    costumeNames = ["NewbieMove0", "NewbieMove1", "NewbieMove2", "NewbieMove3", "NewbieMove0", "NewbieMove1", "NewbieMove2", "NewbieMove3", "NewbieMove0"]
+                case "Apple" :
+                    costumeNames = ["AppleMove0", "AppleMove1", "AppleMove2", "AppleMove3", "AppleMove0", "AppleMove1", "AppleMove2", "AppleMove3", "AppleMove0"]
+                case "Moon" :
+                    costumeNames = ["MoonMove0", "MoonMove1", "MoonMove2", "MoonMove3", "MoonMove0", "MoonMove1", "MoonMove2", "MoonMove3", "MoonMove0"]
+                case "Cake" :
+                    costumeNames = ["CakeMove0", "CakeMove1", "CakeMove2", "CakeMove3", "CakeMove0", "CakeMove1", "CakeMove2", "CakeMove3", "CakeMove0"]
+                case "Bag" :
+                    costumeNames = ["BagMove0", "BagMove1", "BagMove2", "BagMove3", "BagMove0", "BagMove1", "BagMove2", "BagMove3", "BagMove0"]
+                case "Clover" :
+                    costumeNames = ["CloverMove0", "CloverMove1", "CloverMove2", "CloverMove3", "CloverMove0", "CloverMove1", "CloverMove2", "CloverMove3", "CloverMove0"]
+                case "Music" :
+                    costumeNames = ["MusicMove0", "MusicMove1", "MusicMove2", "MusicMove3", "MusicMove0", "MusicMove1", "MusicMove2", "MusicMove3", "MusicMove0"]
+                case .none :
+                    costumeNames = ["Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank"]
+                default:
+                    costumeNames = ["Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank"]
+                }
+            }
             Spacer()
             
         }
