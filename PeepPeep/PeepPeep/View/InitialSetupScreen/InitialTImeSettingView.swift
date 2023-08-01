@@ -99,12 +99,14 @@ struct DecisionButtonView: View {
     let setGoalTime: () -> Void
     @State private var navigateToMain = false
 
+
     var body: some View {
         VStack {
             NavigationLink("", destination: MainView(), isActive: $navigateToMain)
             Button(action: {
                 setGoalTime()
                 navigateToMain = true
+                checkSetupComplete()
             }) {
                 Text("결정")
                     .frame(width: 106, height: 44)
@@ -117,6 +119,10 @@ struct DecisionButtonView: View {
             }
             .padding(.vertical, 20)
         }
+    }
+
+    private func checkSetupComplete() {
+        UserDefaults.shared.set(true, forKey: "initialSetupComplete")
     }
 }
 
