@@ -10,14 +10,26 @@ import SwiftUI
 
 struct TotalActivityView: View {
     var activityReport: ActivityReport
+    @State private var isLoading: Bool = true
 
     var body: some View {
         VStack {
-            if activityReport.totalDuration <= 300 {
-                EmptyActivityView()
+            if isLoading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            isLoading = false
+                        }
+                    }
             }
             else {
-                ActivitySummaryView(activityReport: activityReport)
+                if activityReport.totalDuration <= 300 {
+                    EmptyActivityView()
+                }
+                else {
+                    ActivitySummaryView(activityReport: activityReport)
+                }
             }
         }
     }

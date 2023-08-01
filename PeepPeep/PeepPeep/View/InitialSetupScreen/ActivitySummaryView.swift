@@ -13,7 +13,7 @@ import SwiftUI
 struct ActivitySummaryView: View {
     @ObservedObject var model: ScreenTimeAppSelection
     @ObservedObject var viewModel: ScreenTimeAppSelectionViewModel
-    @State var isPresented = false
+    @State private var isPresented = false
     @State private var totalActivityContext: DeviceActivityReport.Context = .init(rawValue: "Total Activity")
     @State private var navigateToMain = false
     @State private var filter: DeviceActivityFilter = {
