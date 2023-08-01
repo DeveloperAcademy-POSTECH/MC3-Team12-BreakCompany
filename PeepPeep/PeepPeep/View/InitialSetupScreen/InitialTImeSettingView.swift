@@ -15,16 +15,20 @@ struct InitialTimeSettingView: View {
     @State var selectedHours = 4
     @State var selectedMinutes = 0
     @State var goalTime: Int = 240
-    @State var testGoalTime = 0
 
     var body: some View {
         VStack {
+            ProgressBar(currentStep: 4)
+            Spacer()
+            CustomSpacer(height: 80)
             TitleView()
+            CustomSpacer(height: 40)
             TimePickersView(selectedHours: $selectedHours, selectedMinutes: $selectedMinutes, hours: hours, minutes: minutes)
+            CustomSpacer(height: 60)
             DecisionButtonView(setGoalTime: setGoalTime)
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: BackButton())
+        .navigationBarItems(leading: BackButton(), trailing: SkiptoMainButton(setGoalTime: setGoalTime))
     }
 
     // 목표 시간을 설정하고 저장
@@ -32,7 +36,6 @@ struct InitialTimeSettingView: View {
         let goalTime = hours[selectedHours] * 60 + minutes[selectedMinutes]
         let settedDay = getFormattedDate(from: Date())
         UserDefaults.shared.set(goalTime, forKey: settedDay)
-        testGoalTime = UserDefaults.shared.integer(forKey: settedDay)
     }
 
     // 현재 날짜를 "yyyy.MM.dd" 형식의 문자열로 변환
@@ -114,5 +117,31 @@ struct DecisionButtonView: View {
             }
             .padding(.vertical, 20)
         }
+    }
+}
+
+// 스킵 버튼
+struct SkiptoMainButton: View {
+    @State private var navigateToMain = false
+    let setGoalTime: () -> Void
+
+    var body: some View {
+        NavigationLink {
+            MainView()
+        } label: {
+            Text("Skip")
+                .font(.dosSsaemmul(size: 20))
+        }
+        .simultaneousGesture(TapGesture().onEnded({ _ in
+            // 스킵하면 기본값 4시간으로 시간 세팅
+            navigateToMain = true
+            setGoalTime()
+        }))
+    }
+}
+
+struct InitialTimeSettingView_Previews: PreviewProvider {
+    static var previews: some View {
+        InitialTimeSettingView()
     }
 }

@@ -111,7 +111,7 @@ struct ActivityRow: View {
         HStack {
             Rectangle()
                 .fill(color)
-                .frame(width: 5, height: 9)
+                .frame(width: 5, height: 7)
                 .cornerRadius(5)
             Label(eachApp.iconToken).labelStyle(.iconOnly)
             Text(eachApp.displayName)

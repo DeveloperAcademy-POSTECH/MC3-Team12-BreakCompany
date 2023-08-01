@@ -109,6 +109,7 @@ struct SkipButton: View {
             ScreenTimeRequestView()
         } label: {
             Text("Skip")
+                .font(.dosSsaemmul(size: 20))
         }
         .simultaneousGesture(TapGesture().onEnded({ _ in
             // 스키밯면 기본값 "병아리"로 이름이 지어짐

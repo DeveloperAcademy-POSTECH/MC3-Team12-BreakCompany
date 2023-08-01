@@ -47,8 +47,8 @@ struct DailyFeedBackView: View {
             let num: Int = (index < firstWeekday) ? 0 : index - firstWeekday + 1
             // num으로 받아온 값을 getDate로 날짜로 저장
             let nowDay = getDate(for: num - 1)
-            let Level = Int.random(in: 1...120)
-            let color = stressLevelColor(stressLevel: Level)
+            let level = Int.random(in: 1...120)
+            let color = stressLevelColor(stressLevel: level)
 
             
             result.append(CellBox(num: num, nowDay: nowDay, color: color, level: level))
