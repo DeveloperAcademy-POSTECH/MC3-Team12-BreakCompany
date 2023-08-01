@@ -42,7 +42,7 @@ struct ActivityModalView: View {
                         showTotalActivity = false
                     },
                     label: {
-                        Image(systemName: "XButton")
+                        Image("XButton")
                             .padding()
                     }
                 )

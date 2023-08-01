@@ -22,22 +22,16 @@ struct HelperView: View {
                         showHelperView = false
                     },
                     label: {
-                        Image(systemName: "XButton")
+                        Image("XButton")
                             .padding()
                     }
                 )
                 .padding(.trailing, 10)
             }
             
-            VStack{
-//                Spacer()
-//                    .frame(height: 44)
                 Text("병아리의 스트레스 지수")
                     .font(.custom("DOSSaemmul", size: 20))
-                //.padding(.top, 44)
-            }
             
-//            StressGaugeView(goalTime: goalTime, mainActivity: mainActivity)
             
             // MARK: Happy Chick
             HStack{
@@ -146,21 +140,8 @@ struct HelperView: View {
                 }
                 Spacer()
             }
-            .padding(EdgeInsets(top: 0, leading: 77, bottom: 20, trailing: 0))
+            .padding(EdgeInsets(top: 0, leading: 77, bottom: 0, trailing: 0))
             
-            
-            
-            
-//            Text("목표한 시간을 잘 지키면 병아리는 성장하고, \n 사용 시간을 초과하면 무서운 일이 일어납니다.")
-//                .font(.system(size: 15))
-//                .fixedSize(horizontal: false, vertical: true)
-//                .multilineTextAlignment(.center)
-//                .padding()
-//                .frame(width: 350, height: 61)
-//                .overlay(
-//                    RoundedRectangle(cornerRadius: 20)
-//                        .stroke(Color.black)
-//                )
         }   // VStack
     }
 }
