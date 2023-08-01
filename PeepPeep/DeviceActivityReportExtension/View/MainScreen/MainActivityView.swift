@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainActivityView: View {
     
-    var imageNames: [String] = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
+    @State var imageNames: [String] = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
     @State var imageIndex = 0
     @State var degrees: Double = 0
     @State var currentImageLocation: CGPoint = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
@@ -69,46 +69,70 @@ struct MainActivityView: View {
                         .resizable()
                         .frame(width: 228, height: 228, alignment: .center)
                 } else {
-                    chickImage(stress: Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100))
-                        .resizable()
-                    .scaledToFit()
-                    .frame(width: 247, height: 247)
-                    .rotation3DEffect(.degrees(degrees), axis: (x:0, y:1, z:0))
-                    .position(x: tappedLocation.x, y:UIScreen.main.bounds.height/6)
-                    .overlay(){
-                        Rectangle()
-                            .foregroundColor(.white)
-                            .opacity(0.01)
-                            .onCustomTapGesture(count: 1) { location in
-                                
-                                // After 2sec, stop chick movement animation
-                                Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { timer in
-                                    withAnimation (Animation.easeInOut(duration: 0)){
-                                        imageIndex = (imageIndex + 1) % imageNames.count
-                                        if imageIndex == 8{
-                                            timer.invalidate()
+//                    if (Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100) <= 100) {
+                        Image(imageNames[imageIndex])
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 247, height: 247)
+                            .rotation3DEffect(.degrees(degrees), axis: (x:0, y:1, z:0))
+                            .position(x: tappedLocation.x, y:UIScreen.main.bounds.height/6)
+                            .overlay(){
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                    .opacity(0.01)
+                                    .onCustomTapGesture(count: 1) { location in
+                                        
+                                        // After 2sec, stop chick movement animation
+                                        Timer.scheduledTimer(withTimeInterval: 0.25, repeats: true) { timer in
+                                            withAnimation (Animation.easeInOut(duration: 0)){
+                                                imageIndex = (imageIndex + 1) % imageNames.count
+                                                if imageIndex == 8{
+                                                    timer.invalidate()
+                                                }
+                                            }
+                                        }
+                                        
+                                        // Flip chick image
+                                        degrees = chickImageRotation(tappedLocation: location, currentImageLocation: currentImageLocation)
+                                        
+                                        withAnimation(Animation.easeInOut(duration: 3)){
+                                            self.tappedLocation = location
                                         }
                                     }
-                                }
-                                
-                                // Flip chick image
-                                degrees = chickImageRotation(tappedLocation: location, currentImageLocation: currentImageLocation)
-                                
-                                withAnimation(Animation.easeInOut(duration: 2)){
-                                    self.tappedLocation = location
-                                }
                             }
-                    }
+//                    } else {
+//                        Image("Bye")
+//                            .resizable()
+//                            .frame(width: 228, height: 228, alignment: .center)
+//                    }
                 }
                 VStack{
                     Spacer()
                     
-                    Text("Lv. 1")
-                        .font(.custom("DOSSaemmul", size: 13))
+//                    Text("Lv. 1")
+//                        .font(.custom("DOSSaemmul", size: 13))
                     
                     Text(chickName)
                         .font(.custom("DOSSaemmul", size: 20))
                         .padding(.top, 13)
+                }
+            }
+            .onAppear{
+                switch Int(CGFloat(Int(mainActivity/60.0)) / CGFloat(goalTime) * 100) {
+                case 0 ..< 20 :
+                    imageNames = ["MoveHappy0", "MoveHappy1", "MoveHappy2", "MoveHappy3", "MoveHappy0", "MoveHappy1", "MoveHappy2", "MoveHappy3", "MoveHappy0"]
+                case 20 ..< 40 :
+                    imageNames = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
+                case 40 ..< 60 :
+                    imageNames = ["MoveSad0", "MoveSad1", "MoveSad2", "MoveSad3", "MoveSad0", "MoveSad1", "MoveSad2", "MoveSad3", "MoveSad0"]
+                case 60 ..< 80 :
+                    imageNames = ["MoveSoSad0", "MoveSoSad1", "MoveSoSad2", "MoveSoSad3", "MoveSoSad0", "MoveSoSad1", "MoveSoSad2", "MoveSoSad3", "MoveSoSad0"]
+                case 80 ..< 100 :
+                    imageNames = ["MoveAngry0", "MoveAngry1", "MoveAngry2", "MoveAngry3", "MoveAngry0", "MoveAngry1", "MoveAngry2", "MoveAngry3", "MoveAngry0"]
+                case 100 ..< 1000 :
+                    imageNames = ["Bye"]
+                default:
+                    imageNames = ["Move0", "Move1", "Move2", "Move3", "Move0", "Move1", "Move2", "Move3", "Move0"]
                 }
             }
             
@@ -158,6 +182,25 @@ func chickImage(stress: Int) -> Image {
         return Image("Bye")
     default:
         return Image("Normal")
+    }
+}
+
+func chickMoveImage(stress: Int) -> String {
+    switch stress {
+    case 0 ..< 20 :
+        return "Happy"
+    case 20 ..< 40 :
+        return "Normal"
+    case 40 ..< 60 :
+        return "Sad"
+    case 60 ..< 80 :
+        return "SoSad"
+    case 80 ..< 100 :
+        return "Angry"
+    case 100 ..< 1000 :
+        return "Bye"
+    default:
+        return "Normal"
     }
 }
 
@@ -251,7 +294,7 @@ extension View {
 
 func chickImageRotation(tappedLocation: CGPoint, currentImageLocation: CGPoint) -> Double {
     
-    if tappedLocation.x-90 >= currentImageLocation.x{
+    if tappedLocation.x-50 >= currentImageLocation.x{
         return 0
     }else{
         return 180
