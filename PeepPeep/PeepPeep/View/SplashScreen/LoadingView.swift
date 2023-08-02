@@ -18,24 +18,18 @@ struct LoadingView: View {
                     .resizable()
                     .frame(width: 228, height: 228)
                     .padding(.top, 168)
-                //.opacity(loadingViewOpacity)
                 
-                Image("Logo_Typo")
-                    .resizable()
-                    .frame(width: 288, height: 288)
-                //.opacity(loadingViewOpacity)
-                
-//                if isLoading {
-//                    SplashView()
-//                }
+                ZStack{
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .frame(width: UIScreen.main.bounds.width, height: 288)
+                    Image("Logo_Typo")
+                        .resizable()
+                        .frame(width: 288, height: 288)
+                }
+
             }
             .background(ignoresSafeAreaEdges: .all)
-//        }
-//        .onAppear {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-//                isLoading.toggle()
-//            })
-//        }
     }
 }
 
